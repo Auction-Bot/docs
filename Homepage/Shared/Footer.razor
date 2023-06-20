@@ -1,0 +1,53 @@
+﻿@inject IConfiguration Configuration
+
+<MudGrid Class="page-footer pt-16">
+    <MudItem xs="6" sm="3">
+        <div class="d-flex flex-column mt-4">
+            <AuctionBotLogo Style="width:60px; margin-left:-20px;" />
+            <div class="d-flex align-center my-2">
+                <MudTooltip Duration="1000" Text="Webpage Design Library" ShowOnFocus="false">
+                    <MudStack Row="true">
+                        <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Size="Size.Small" Color="Color.Inherit" Class="mr-2" />
+                        <MudText Typo="Typo.body1">MudBlazor</MudText>
+                    </MudStack>
+                </MudTooltip>
+            </div>
+            <div class="d-flex align-center my-2">
+                <MudTooltip Duration="1000" Text="Discord API Library" ShowOnFocus="false">
+                    <MudStack Row="true">
+                        <MudIcon Icon="@Icons.Material.Rounded.LocalLibrary" Size="Size.Small" Color="Color.Inherit" Class="mr-2" />
+                        <MudText Typo="Typo.body1">Disqord</MudText>
+                    </MudStack>
+                </MudTooltip>
+            </div>
+            <div class="d-flex align-center my-2">
+                <MudTooltip Duration="1000" Text="Developed In" ShowOnFocus="false">
+                    <MudStack Row="true">
+                        <MudIcon Icon="@Icons.Material.Rounded.NearMe" Size="Size.Small" Color="Color.Inherit" Class="mr-2" />
+                        <MudText Typo="Typo.body1">Trinidad & Tobago</MudText>
+                    </MudStack>
+                </MudTooltip>
+            </div>
+        </div>
+    </MudItem>
+    <MudItem xs="6" sm="3" Class="d-flex flex-column">
+        <MudText Typo="Typo.subtitle2" Class="mt-7 mb-3">Project</MudText>
+        <MudLink Href=@Configuration["Discord:BotInvite"] Typo="Typo.body1" Color="Color.Inherit" Underline="Underline.None">Invite Auction Bot</MudLink>
+        <MudLink Href=@Configuration["GitHub:Agora"] Typo="Typo.body1" Color="Color.Inherit" Underline="Underline.None">View Source Code</MudLink>
+    </MudItem>
+    <MudItem xs="6" sm="3" Class="d-flex flex-column">
+        <MudText Typo="Typo.subtitle2" Class="mt-7 mb-3">Community</MudText>
+        <MudLink Href=@Configuration["Discord:ServerInvite"] Typo="Typo.body1" Color="Color.Inherit" Underline="Underline.None">Getting Help</MudLink>
+        <MudLink Href=@Configuration["Donate:BuyMeCoffee"] Typo="Typo.body1" Color="Color.Inherit" Underline="Underline.None">Making Donation</MudLink>
+    </MudItem>
+    <MudItem xs="6" sm="3" Class="d-flex flex-column">
+        <MudText Typo="Typo.subtitle2" Class="mt-7 mb-3">Legal</MudText>
+        <MudLink Href=@Configuration["GitHub:Policy"] Target="_blank" Typo="Typo.body1" Color="Color.Inherit" Underline="Underline.None">Privacy Policy</MudLink>
+        <MudLink Href=@Configuration["GitHub:TOS"] Target="_blank" Typo="Typo.body1" Color="Color.Inherit" Underline="Underline.None">Terms of Service</MudLink>
+    </MudItem>
+    <MudItem xs="12">
+        <MudToolBar DisableGutters="true" Dense="true">
+            <MudText Typo="Typo.body1">Copyright © 2023 AuctionBot.</MudText>
+        </MudToolBar>
+    </MudItem>
+</MudGrid>

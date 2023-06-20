@@ -1,0 +1,109 @@
+﻿@inject NavigationManager NavigationManager
+@inject IConfiguration Configuration
+
+﻿<MudHidden Breakpoint="Breakpoint.MdAndUp">
+    <MudIconButton OnClick="DrawerToggleCallback" Icon="@Icons.Material.Rounded.Notes" Color="Color.Inherit" Edge="Edge.Start"/>
+    <MudSpacer/>
+    <NavLink ActiveClass="d-flex" href="/">
+        <AuctionBotLogo />
+        <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction Bot</MudText>
+    </NavLink>
+    <MudSpacer/>
+    <MudIconButton Icon="@Icons.Custom.Brands.Discord" Color="Color.Inherit" Edge="Edge.End" Href=@Configuration["Discord:ServerInvite"] Title="Discord Suppor Server" />
+</MudHidden>
+<MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+    <NavLink ActiveClass="d-flex me-4" href="/">
+        <AuctionBotLogo />
+        <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction Bot</MudText>
+    </NavLink>
+    <MudButton Href="/dashboard" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.Dashboard)">Dashboard</MudButton>
+    <MudButton Href="/commands" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.Commands)">Commands</MudButton>
+    <MudButton Href="/faqs" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.FAQs)">FAQs</MudButton>
+    <MudMenu Color="Color.Inherit" Variant="Variant.Text" LockScroll="true" Label="Features"
+             Class="mx-1 px-3" PopoverClass="mainmenu-shadow" ListClass="d-flex px-4 pb-2 special-menu"
+             EndIcon="@Icons.Material.Filled.KeyboardArrowDown" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter" >
+        <MudList Clickable="true">
+            <MudListSubheader>
+                Features
+            </MudListSubheader>
+@*             <MudListItem Href="https://mudblazor.com/">
+                <div class="d-flex">
+                    <MudText Color="Color.Primary">MudBlazor</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Blazor component library</MudText>
+            </MudListItem>
+            <MudListItem Href="https://try.mudblazor.com/">
+                <div class="d-flex">
+                    <MudText Color="Color.Primary">Try</MudText><MudText>MudBlazor</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Online code editor with Blazor</MudText>
+            </MudListItem>
+            <MudListItem Href="https://github.com/MudBlazor/ThemeManager">
+                <div class="d-flex">
+                    <MudText>Theme</MudText><MudText Color="Color.Secondary">Manager</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Manage your theme live in your app</MudText>
+            </MudListItem>
+            <MudListItem Href="https://github.com/MudBlazor/Templates">
+                <div class="d-flex">
+                    <MudText>Templates</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Blazor templates loaded with MudBlazor</MudText>
+            </MudListItem> *@
+        </MudList>
+        <MudList Clickable="true" Class="relative">
+            <MudListSubheader>
+                Other
+            </MudListSubheader>
+            <MudOverlay Visible="true" LightBackground="true" Absolute="true" Class="docs-menu-overlay" /> @*TODO - docs menu overlay*@
+@*             <MudListItem>
+                <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
+                    <MudText>Mud</MudText><MudText Color="Color.Primary">Store</MudText>
+                </MudBadge>
+                <MudText Typo="Typo.body2">Marketplace for templates and themes</MudText>
+            </MudListItem>
+            <MudListItem>
+                <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
+                    <MudText>Mud</MudText><MudText Color="Color.Success">Academy</MudText>
+                </MudBadge>
+                <MudText Typo="Typo.body2">Learning Blazor and MudBlazor</MudText>
+            </MudListItem>
+            <MudListItem>
+                <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
+                    <MudText>Mud</MudText><MudText Color="Color.Warning">Extensions</MudText>
+                </MudBadge>
+                <MudText Typo="Typo.body2">Official and Community Extensions</MudText>
+            </MudListItem> *@
+        </MudList>
+    </MudMenu>
+    <MudSpacer/>
+    <MudStack Row="true" AlignItems="AlignItems.Center">
+        <MudTooltip Duration="1000" Text="Sponsor Bot Development" ShowOnFocus="false">
+            <MudButton Href=@Configuration["Donate:BuyMeCoffee"] Target="_blank" StartIcon="@AuctionBotIcons.BuyMeCoffee" 
+                       Color="Color.Tertiary" Variant="Variant.Filled">Become a Sponsor</MudButton>
+        </MudTooltip>
+        <MudTooltip Duration="1000" Text="Discord Support Server" ShowOnFocus="false">
+            <MudButton Href=@Configuration["Discord:ServerInvite"] Target="_blank" StartIcon="@Icons.Custom.Brands.Discord" 
+                       Color="Color.Inherit">Support Server</MudButton>
+        </MudTooltip>
+    </MudStack>
+</MudHidden>
+
+@code {
+    private enum MenuOption { None, Dashboard, Commands, FAQs, Features }
+
+    [Parameter] public EventCallback<MouseEventArgs> DrawerToggleCallback { get; set; }
+
+    private string GetActiveClass(MenuOption page)
+    {
+        var selectedOption = NavigationManager.Uri switch
+        {
+            { } when NavigationManager.Uri.Contains("/dashboard") => MenuOption.Dashboard,
+            { } when NavigationManager.Uri.Contains("/commands") => MenuOption.Commands,
+            { } when NavigationManager.Uri.Contains("/faq") => MenuOption.FAQs,
+            _ => MenuOption.None
+        };
+
+        return page == selectedOption ? "mud-chip-text mud-chip-color-primary mx-1 px-3" : "mx-1 px-3";
+    }
+}

@@ -1,7 +1,7 @@
-﻿<CascadingAuthenticationState>
+﻿@* <CascadingAuthenticationState>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(DashboardLayout)">
                 <Authorizing>
                     <p>Determining session state, please wait...</p>
                 </Authorizing>
@@ -19,4 +19,94 @@
             </LayoutView>
         </NotFound>
     </Router>
-</CascadingAuthenticationState>
+</CascadingAuthenticationState> *@
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+
+<MudBlazor.MudThemeProvider Theme="_theme" />
+<MudBlazor.MudDialogProvider />
+<MudBlazor.MudSnackbarProvider />
+
+@code
+{
+    private MudTheme _theme = new()
+    {
+        Palette = new PaletteDark()
+        {
+            Background = "#111019",
+            Surface = "#151521",
+            Primary = "#03b1ca",
+            Secondary = "#ffffff",
+            Tertiary = "#0fa38d"
+        },
+        Typography = PageTypography
+    };
+
+    private static readonly Typography PageTypography = new()
+        {
+            Default = new Default()
+            {
+                FontFamily = new[] { "Public Sans", "Roboto", "Arial", "sans-serif" },
+                LetterSpacing = "normal"
+            },
+            H1 = new H1()
+            {
+                FontSize = "4rem",
+                FontWeight = 700,
+            },
+            H3 = new H3()
+            {
+                FontSize = "3rem",
+                FontWeight = 600,
+                LineHeight = 1.8,
+            },
+            H4 = new H4()
+            {
+                FontSize = "1.8rem",
+                FontWeight = 700,
+            },
+            H5 = new H5()
+            {
+                FontSize = "1.8rem",
+                FontWeight = 700,
+                LineHeight = 2,
+            },
+            H6 = new H6()
+            {
+                FontSize = "1.125rem",
+                FontWeight = 700,
+                LineHeight = 2,
+            },
+            Subtitle1 = new Subtitle1()
+            {
+                FontSize = "1.1rem",
+                FontWeight = 500
+            },
+            Subtitle2 = new Subtitle2()
+            {
+                FontSize = "1rem",
+                FontWeight = 600,
+                LineHeight = 1.8,
+            },
+            Body1 = new Body1()
+            {
+                FontSize = "1rem",
+                FontWeight = 400
+            },
+            Button = new Button()
+            {
+                TextTransform = "none"
+            }
+        };
+}

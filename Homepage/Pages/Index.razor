@@ -1,9 +1,186 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+@layout LandingLayout
 
-<h1>Hello, world!</h1>
+@inject IConfiguration Configuration
 
-Welcome to your new app.
+<LandingSection SectionClass="top-section" BackgroundClass="background">
+    <ChildContent>
+        <MudGrid Class="mb-16 mb-sm-0">
+            <MudItem Class="relative" xs="12" md="7" lg="6">
+                <MudText Typo="Typo.h1" Style="color:white">An all-in-one solution</MudText>
+                <MudText Typo="Typo.h1" Style="color:white" Inline="true">for hosting  </MudText>
+                <MudText Typo="Typo.h1" Inline="true" Class="landing-h1-gradient">Auctions</MudText>
+                <MudText Typo="Typo.h1" Style="color:white">giveaways and more</MudText>
+                <div class="pl-1 my-4">
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary" Inline="true">Turn your Discord server into an</MudText> 
+                    <MudTooltip Duration="1000" Text="A public open space used for commercial activities (in ancient Greece)" ShowOnFocus="false">
+                        <MudText Typo="Typo.subtitle1" Color="Color.Primary" Inline="true">agora.</MudText>
+                    </MudTooltip>
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary" Inline="true"> Manage auctions, sales, trades and giveaways with ease.</MudText>
+                </div>
+                <div class="d-flex py-4 mb-16 mb-md-0">
+                    <MudButton Color="Color.Primary" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.Discord" DisableElevation="true" 
+                               Class="mud-button-gradient-primary" Size="Size.Large" Target="_blank" Href=@Configuration["Discord:BotInvite"]>
+                        Add to Discord
+                    </MudButton>
+                    <MudButton Color="Color.Default" Variant="Variant.Outlined" Size="Size.Large" Class="ms-4" Href="https://www.google.com" Disabled="true">
+                        See Features
+                    </MudButton>
+                </div>
+                <div class="graphic-wrapper" style="height:0px">
+                    <MudPaper Elevation="0" Style="margin-left:106%; margin-top:-4%">
+                        <MudImage Fluid="false" ObjectFit="ObjectFit.ScaleDown" Src="./images/server.png" />
+                    </MudPaper>
+                    <MudPaper Elevation="5" Style="margin-left:102%; margin-top:-33%; width:390px;">
+                        <MudImage Fluid="false" ObjectFit="ObjectFit.ScaleDown" Style="width:inherit" Src="./images/auction.png" />
+                    </MudPaper>
+                </div>
+            </MudItem>
+        </MudGrid>
+    </ChildContent>
+    <Stripes>
+        <div class="stripe gradient"></div>
+        <div class="stripe background"></div>
+    </Stripes>
+</LandingSection>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<LandingSection CustomPadding="true" SectionClass="diagonal-section z-10" BackgroundClass="background" Class="mud-text-secondary pb-16 pt-16">
+    <MudText Typo="Typo.subtitle2" Align="Align.Center" Class="relative mt-16" Style="color: #8898aa;">
+        Auction Bot is an <MudLink Href=@Configuration["GitHub:Agora"]>open sourced project</MudLink> maintained by <MudLink Href=@Configuration["Discord:Owner"]>Anu6is</MudLink>
+    </MudText>
+</LandingSection>
+
+<LandingSection CustomPadding="true" Straight="true" SectionClass="dark-section-text z-10 pb-16" BackgroundClass="surface" Class="pt-4">
+    <MudGrid Class="relative pb-4">
+        <MudItem xs="12" sm="12" md="6">
+            <MudGrid>
+                <MudItem xs="12">
+                    <MudText Typo="Typo.h6" Color="Color.Primary">Designed for customization</MudText>
+                    <MudText Typo="Typo.h5" Class="white-text">Administrators love using Auction Bot</MudText>
+                    <MudText Typo="Typo.subtitle1" Class="my-4">
+                        Designed to allow users in Discord servers to host different types of listings while giving them complete control over the process. With Auction Bot, you can easily select the listings you want and decide where they should be posted. It also allows you to specify which Discord roles can create listings or make offers, ensuring a secure and organized experience.
+                    </MudText>
+                </MudItem>
+            </MudGrid>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="6">
+            <MudPaper Elevation="5" Style="margin-left:25%; margin-top:18%; height:330px;">
+                <MudImage Fluid="false" ObjectFit="ObjectFit.ScaleDown" Style="height:inherit" Src="./images/showrooms.png" />
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+</LandingSection>
+
+<LandingSection CustomPadding="true" SectionClass="dark-section-text z-10 pt-16" BackgroundClass="background">
+    <MudGrid Class="relative" Style="padding-top:100px;">
+        <MudItem xs="12" sm="12" md="6" Class="pt-16">
+            <MudText Typo="Typo.h6" Color="Color.Primary">Built-in Economy Integrations</MudText>
+            <MudText Typo="Typo.h5">Utilize the economy of select Discord bots</MudText>
+            <MudText Typo="Typo.subtitle1" Class="mud-text-secondary my-2 pr-16">
+                Auction Bot makes it easy for Discord server admins to manage their servers and offers a special market system. It also includes a basic economy system to keep track of user balances, and you can even integrate it with other bots for a more comprehensive economy.
+            </MudText>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="3" Class="pt-16">
+            <MudIcon Icon="@Icons.Material.Filled.LocalPizza" Size="Size.Large" />
+            <MudText Typo="Typo.subtitle2" Class="lp-border-title white-text my-2">UnbelievaBoat</MudText>
+            <MudText Class="mt-5">
+                UnbelievaBoat balances can be used when performaing transactions.
+            </MudText>
+            <MudLink Class="landing-link" Href=@Configuration["Integration:UnbelievaBoat"] Taget="_blank">Visit UnbelievaBoat<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="3" Class="pt-16">
+            <MudIcon Icon="@Icons.Material.Filled.CrisisAlert" Size="Size.Large" />
+            <MudText Typo="Typo.subtitle2" Class="lp-border-title white-text my-2">Raid Helper</MudText>
+            <MudText Class="mt-5">
+                DKP balances can be used when performing transactions.
+            </MudText>
+            <MudLink Class="landing-link" Href=@Configuration["Integration:RaidHelper"] Taget="_blank">Visit Raid-Helper<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
+        </MudItem>
+    </MudGrid>
+</LandingSection>
+
+<LandingSection CustomPadding="true" Class="relative py-16" SectionClass="community-section z-10 py-16" BackgroundClass="surface">
+    <div style="max-width:570px; padding-top:80px;">
+        <MudText Typo="Typo.h6" Color="Color.Primary">Community Support</MudText>
+        <MudText Typo="Typo.h5">Join our community</MudText>
+        <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-4">
+            Join our channels to stay updated, ask questions, report bugs, or suggest new features. Become part of the Auction Bot community!
+        </MudText>
+    </div>
+    <MudGrid Class="pt-4">
+        <MudItem xs="12" sm="12" md="4">
+            <MudIcon Icon="@Icons.Custom.Brands.GitHub" Class="github"/>
+            <MudText Typo="Typo.subtitle2">Source</MudText>
+            <MudText Typo="Typo.body1">To view the source code or contribute, check out our GitHub.</MudText>
+            <MudLink Class="landing-link github my-4" Href=@Configuration["GitHub:Agora"] Target="_blank">Check the code<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="4">
+            <MudIcon Icon="@Icons.Custom.Brands.Discord" Class="discord"/>
+            <MudText Typo="Typo.subtitle2">Support</MudText>
+            <MudText Typo="Typo.body1">To get involved in the community, ask questions, make suggestions or help others.</MudText>
+            <MudLink Class="landing-link discord my-4" Href=@Configuration["Discord:ServerInvite"] Target="_blank">Come and chat<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
+        </MudItem>
+        <MudItem xs="12" sm="12" md="4">
+            <MudIcon Icon="@AuctionBotIcons.BuyMeCoffee" />
+            <MudText Typo="Typo.subtitle2">Sponsor</MudText>
+            <MudText Typo="Typo.body1">Support development by making a donation or activating a membership subscription</MudText>
+            <MudLink Class="landing-link buymecoffee my-4" Href=@Configuration["Donate:BuyMeCoffee"] Target="_blank">Show your support<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
+        </MudItem>
+    </MudGrid>
+</LandingSection>
+ 
+<LandingSection StraightEnd="true" SectionClass="dark-section-text" BackgroundClass="backg" Class="relative">
+    <MudGrid>
+        <MudItem xs="12" sm="12" md="6">
+            <MudText Typo="Typo.h6" Color="Color.Primary">Fun Statistics</MudText>
+            <MudText Typo="Typo.h5" Class="white-text">Auction Bot is growing steadily</MudText>
+            <MudText Typo="Typo.subtitle1" Class="my-4">
+                Auction Bot is continuously growing in popularity, being adopted by various servers, including yours. It regularly receives improvements based on community feedback and discussions, making it an excellent option for those looking for a versatile Discord bot that specializes in auctions and beyond. We invite you to join us on this exciting journey and become a part of our successful story!
+            </MudText>
+        </MudItem>
+        <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+            <MudItem Class="relative" xs="12" sm="12" md="6">
+                 <div class="absolute" style="top:0; left:0; height:100%; width:100%; user-select:none;">
+                    <WorldMap/>
+                </div>
+            </MudItem>
+        </MudHidden>
+        <MudItem xs="6" sm="3">
+            <div class="global-scale-item">
+                <MudText Typo="Typo.h3" Color="Color.Primary">3.1K</MudText>
+                <div class="d-flex align-center">
+                    <MudIcon Icon="@AuctionBotIcons.Downloads"/>
+                    <MudText Typo="Typo.body1" Class="ml-4">Total Serverss</MudText>
+                </div>
+            </div>
+        </MudItem>
+        <MudItem xs="6" sm="3">
+            <div class="global-scale-item">
+                <MudText Typo="Typo.h3" Color="Color.Primary">10K</MudText>
+                <div class="d-flex align-center">
+                    <MudIcon Icon="@AuctionBotIcons.Rooms"/>
+                    <MudText Typo="Typo.body1" Class="ml-4">Total Showrooms</MudText>
+                </div>
+            </div>
+        </MudItem>
+        <MudItem xs="6" sm="3">
+            <div class="global-scale-item">
+                <MudText Typo="Typo.h3" Color="Color.Primary">400K</MudText>
+                <div class="d-flex align-center">
+                    <MudIcon Icon="@AuctionBotIcons.Community"/>
+                    <MudText Typo="Typo.body1" Class="ml-4">Discord Users</MudText>
+                </div>
+            </div>
+        </MudItem>
+        <MudItem xs="6" sm="3">
+            <div class="global-scale-item">
+                <MudText Typo="Typo.h3" Color="Color.Primary">1M</MudText>
+                <div class="d-flex align-center">
+                    <MudIcon Icon="@AuctionBotIcons.Package"/>
+                    <MudText Typo="Typo.body1" Class="ml-4">Listings Created</MudText>
+                </div>
+            </div>
+        </MudItem>
+    </MudGrid>
+</LandingSection>
