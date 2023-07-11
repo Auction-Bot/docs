@@ -17,20 +17,20 @@ namespace Homepage.Services
 
     public class MenuService : IMenuService
     {
-        private readonly List<BotCommand> _slashCommands = new ApplicationCommand()
-            .AddNavGroup("Auction",false, new ApplicationCommand()
+        private readonly List<BotCommand> _slashCommands = new ApplicationCommandBilder()
+            .AddNavGroup("Auction",false, new ApplicationCommandBilder()
                 .AddItem("/Auction Add Standard")
                 .AddItem("/Auction Add Vickrey")
                 .AddItem("/Auction Add Live"))
-            .AddNavGroup("Market", false, new ApplicationCommand()
+            .AddNavGroup("Market", false, new ApplicationCommandBilder()
                 .AddItem("/Market Add Standard")
                 .AddItem("/Market Add Flash")
                 .AddItem("/Market Add Multi-Item")
                 .AddItem("/Market Add Bulk"))
-            .AddNavGroup("Trade", false, new ApplicationCommand()
+            .AddNavGroup("Trade", false, new ApplicationCommandBilder()
                 .AddItem("/Trade Add Standard")
                 .AddItem("/Trade Add Request"))
-            .AddNavGroup("Giveaway", false, new ApplicationCommand()
+            .AddNavGroup("Giveaway", false, new ApplicationCommandBilder()
                 .AddItem("/Giveaway Add Standard")
                 .AddItem("/Giveaway Add Raffle"))
             .AddItem("/Bid")
@@ -38,10 +38,10 @@ namespace Homepage.Services
             .AddItem("/Watchlist")
             .AddItem("/Outbid Alerts")
             .AddItem("/Auto-Reschedule")
-            .AddNavGroup("Image", false, new ApplicationCommand()
+            .AddNavGroup("Image", false, new ApplicationCommandBilder()
                 .AddItem("/Image Upload")
                 .AddItem("/Image Link"))
-            .AddNavGroup("Economy", false, new ApplicationCommand()
+            .AddNavGroup("Economy", false, new ApplicationCommandBilder()
                 .AddItem("/Leaderboard")
                 .AddItem("/Balance")
                 .AddItem("/Give")
@@ -49,7 +49,7 @@ namespace Homepage.Services
                 .AddItem("/Remove-Money")
                 .AddItem("/Reset-Balance")
                 .AddItem("/Reset-Economy"))
-            .AddNavGroup("Server", false, new ApplicationCommand()
+            .AddNavGroup("Server", false, new ApplicationCommandBilder()
                 .AddItem("/Server Setup")
                 .AddItem("/Server Settings")
                 .AddItem("/Server Rooms")
@@ -61,21 +61,22 @@ namespace Homepage.Services
                 .AddItem("/Server Currencies")
                 .AddItem("/Server Listing Requirements")
                 .AddItem("/Server Reset"))
-            .GetCommandsSortedByName();
+            .Build();
 
-        private readonly List<BotCommand> _messageCommands = new ApplicationCommand()
+        private readonly List<BotCommand> _messageCommands = new ApplicationCommandBilder()
             .AddItem("Review Transaction")
             .AddItem("Remove Review")
+            .AddItem("View Logs")
             .AddItem("Cancel Reschedule")
-            .GetCommandsSortedByName();
+            .Build();
 
-        private readonly List<BotCommand> _userCommands = new ApplicationCommand()
+        private readonly List<BotCommand> _userCommands = new ApplicationCommandBilder()
             .AddItem("Merchant Rating")
-            .GetCommandsSortedByName();
+            .Build();
 
-        private readonly List<BotCommand> _hiddenCommands = new ApplicationCommand()
+        private readonly List<BotCommand> _hiddenCommands = new ApplicationCommandBilder()
             .AddItem("Schedule")
-            .GetCommandsSortedByName();
+            .Build();
 
         public IEnumerable<BotCommand> SlashCommands => _slashCommands;
         public IEnumerable<BotCommand> MessageCommands => _messageCommands;

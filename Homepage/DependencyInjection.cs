@@ -8,7 +8,7 @@ namespace Homepage
         {
             services.AddHttpClient<AgoraApiService>(client => client.BaseAddress = new Uri(configuration["API:BaseUri"]!));
             services.AddHttpClient<AgoraSecuredApiService>(client => client.BaseAddress = new Uri(configuration["API:BaseUri"]!))
-                            .AddHttpMessageHandler<ApiAddressAuthorizationMessageHandler>();
+                    .AddHttpMessageHandler<ApiAddressAuthorizationMessageHandler>();
 
             services.AddSingleton<IMenuService, MenuService>();
             services.AddSingleton<ICommandNavigationService, CommandNavigationService>();

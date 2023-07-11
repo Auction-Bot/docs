@@ -24,5 +24,20 @@ namespace Homepage
         {
             return navMan.Uri == navMan.BaseUri;
         }
+
+        public static bool IsDashboard(this NavigationManager navMan)
+        {
+            return navMan.Uri.Contains("dashboard");
+        }
+
+        public static bool IsCommands(this NavigationManager navMan)
+        {
+            return navMan.Uri.Contains("commands");
+        }
+
+        public static bool IsFAQ(this NavigationManager navMan)
+        {
+            return navMan.Uri.Contains("faqs");
+        }
     }
 }
