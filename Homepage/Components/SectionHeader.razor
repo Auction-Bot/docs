@@ -1,0 +1,68 @@
+﻿<div @ref="@SectionReference" id="@GetSectionId()" class="@Classname" style="@Style">
+    @if (!String.IsNullOrWhiteSpace(Title) && HideTitle == false)
+	{
+		<MudText Typo="@GetTitleTypo()">
+			<b>@Title</b>
+		</MudText>
+	}
+	@if (SubTitle != null)
+	{
+		<MudText Class="mb-2 mt-n2" Typo="Typo.h6">@SubTitle</MudText>
+	}
+	@if (Description != null)
+	{
+		<MudText Class="mb-5">@Description</MudText>
+	}
+</div>
+
+@code {
+    [CascadingParameter] private CommandPage CommandPage { get; set; } = null!;
+    [CascadingParameter] private SectionSubGroups? SubGroup { get; set; }
+    [CascadingParameter] private PageSection Section { get; set; } = null!;
+
+    private string Style => SubGroup is null ? "margin-top: 60px; margin-bottom: 20px;" : "margin-top: 24px; margin-bottom: 12px;";
+
+    protected string Classname =>
+        new CssBuilder("docs-section-header")
+            .AddClass(Class)
+            .Build();
+
+    [Parameter] public string? Class { get; set; }
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public bool HideTitle { get; set; }
+    [Parameter] public RenderFragment? SubTitle { get; set; }
+    [Parameter] public RenderFragment? Description { get; set; }
+
+    public SectionLink? SectionInfo { get; set; }
+
+    public ElementReference SectionReference;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        if (CommandPage == null || string.IsNullOrWhiteSpace(Title)) return;
+
+        var id = (Title).Replace(" ", "-").ToLowerInvariant();
+
+        SectionInfo = new SectionLink { Id = id, Title = Title, };
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+
+        if (firstRender && CommandPage != null && !String.IsNullOrWhiteSpace(Title) && SectionInfo != null)
+            await CommandPage.AddSectionAsync(SectionInfo, Section);
+    }
+
+    private string GetSectionId() => SectionInfo?.Id ?? Guid.NewGuid().ToString();
+
+    private Typo GetTitleTypo()
+    {
+        if (Section.Level >= 1)
+            return Typo.h6;
+        else
+            return Typo.h5;
+    }
+}

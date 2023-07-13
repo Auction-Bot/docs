@@ -4,6 +4,34 @@
     --browser-scaler-value: 0.8;
 }
 
+.inline-code {
+    display: inline-block;
+    padding: 0 5px;
+    direction: ltr;
+    font-size: .999em;
+    font-weight: 900;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    line-height: 1.4;
+    border-radius: 2px;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    &.inline-code-primary {
+        color: var(--mud-palette-primary);
+        background-color: var(--mud-palette-primary-hover);
+    }
+
+    &.inline-code-secondary {
+        color: var(--mud-palette-secondary);
+        background-color: var(--mud-palette-secondary-hover);
+    }
+
+    &.inline-code-tertiary {
+        color: var(--mud-palette-tertiary);
+        background-color: var(--mud-palette-tertiary-hover);
+    }
+
+}
+
 .gray-bg {
     background-color: var(--mud-palette-background-grey);
 }

@@ -1,0 +1,7 @@
+﻿<div style="min-height: calc(100vh - 600px);">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

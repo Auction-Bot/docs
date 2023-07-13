@@ -12,6 +12,7 @@ namespace Homepage
 
             services.AddSingleton<IMenuService, MenuService>();
             services.AddSingleton<ICommandNavigationService, CommandNavigationService>();
+            services.AddSingleton<IRenderQueueService>(new RenderQueueService { Capacity = int.MaxValue });
         }
     }
 }

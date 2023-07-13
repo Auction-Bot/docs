@@ -1,7 +1,9 @@
-﻿@inject NavigationManager NavigationManager
-@inject ICommandNavigationService CommandService
+﻿@using System.Diagnostics;
+@using MudBlazor.Interfaces;
 
-@* @inject IRenderQueueService RenderQueue *@
+@inject NavigationManager NavigationManager
+@inject ICommandNavigationService CommandService
+@inject IRenderQueueService RenderQueue
 
 <MudMainContent>
     <MudContainer MaxWidth="MaxWidth.Large">
@@ -20,46 +22,36 @@
             <Footer />
         </MudContainer>
     }
-    <MudDrawer Class="docs-page-content-navigation-drawer" @bind-Open="_contentDrawerOpen" Breakpoint="Breakpoint.Lg" Anchor="Anchor.End" ClipMode="DrawerClipMode.Always" Elevation="0" Color="Color.Transparent">
-        @if (_displayView)
-        {
-            <MudText Typo="Typo.subtitle1" Class="title" GutterBottom="true">
-                Mode
-            </MudText>
-            <div class="d-flex px-2 mb-2">
-                <NavLink class="mode-links mr-2" href="@($"components/{_componentName}")" Match="NavLinkMatch.All">Overview</NavLink>
-                <NavLink class="mode-links ml-2" href="@($"api/{_componentName}")" Match="NavLinkMatch.All">API</NavLink>
-            </div>
-        }
+    <MudDrawer Class="page-content-navigation-drawer" @bind-Open="_contentDrawerOpen" Breakpoint="Breakpoint.Lg" Anchor="Anchor.End" ClipMode="DrawerClipMode.Always" Elevation="0" Color="Color.Transparent">
         <MudPageContentNavigation SectionClassSelector="docs-section-header" @ref="_contentNavigation" ActivateFirstSectionAsDefault="true"/>
-        @if (_renderAds)
+@*         @if (_renderAds)
         {
             <MudElement HtmlTag="script" async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESDLK3E&placement=mudblazorcom" id="_carbonads_js"></MudElement>
-        }
+        } *@
     </MudDrawer>
 </MudMainContent>
 
 @code {
     [Parameter] public bool DisplayFooter { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
 
-    // private Queue<DocsSectionLink> _bufferedSections = new();
-    private MudPageContentNavigation _contentNavigation;
-    private NavigationFooterLink _previous;
-    private NavigationFooterLink _next;
+    private MudPageContentNavigation? _contentNavigation;
+    private NavigationFooterLink? _previous;
+    private NavigationFooterLink? _next;
     private NavigationSection _section;
-    // private Stopwatch _stopwatch = Stopwatch.StartNew();
-    private string _anchor = null;
+
+    private Queue<SectionLink> _bufferedSections = new();
+    private Stopwatch _stopwatch = Stopwatch.StartNew();
+    private string _componentName = string.Empty;
+    private string? _anchor = null;
+    private int _sectionCount;
+    private bool _contentDrawerOpen = true;
     private bool _displayView;
-    private string _componentName;
     private bool _renderAds;
 
-    [Parameter] public RenderFragment ChildContent { get; set; }
+    public event Action<Stopwatch>? Rendered;
 
-    private bool _contentDrawerOpen = true;
-    // public event Action<Stopwatch> Rendered;
-    // private Dictionary<DocsPageSection, MudPageContentSection> _sectionMapper = new();
-
-    int _sectionCount;
+    private Dictionary<PageSection, MudPageContentSection> _sectionMapper = new();
 
     public int SectionCount
     {
@@ -76,99 +68,80 @@
             return _sectionCount++;
     }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        base.OnInitialized();
-        // RenderQueue.Clear();
+        await base.OnInitializedAsync();
+
+        RenderQueue.Clear();
+
         var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
-        if (relativePath.Contains("#") == true)
-        {
+
+        if (relativePath.Contains("#"))
             _anchor = relativePath.Split(new[] { "#" }, StringSplitOptions.RemoveEmptyEntries)[1];
+    }
+
+    protected override void OnParametersSet()
+    {
+        _stopwatch = Stopwatch.StartNew();
+        _sectionCount = 0;
+        _previous = CommandService.Previous;
+        _next = CommandService.Next;
+        _section = CommandService.Section;
+        _displayView = false;
+        _componentName = "temp";
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (_stopwatch.IsRunning)
+        {
+            _stopwatch.Stop();
+            Rendered?.Invoke(_stopwatch);
+        }
+        if (firstRender)
+        {
+            _renderAds = true;
+            StateHasChanged();
         }
     }
 
-    // protected override void OnParametersSet()
-    // {
-    //     _stopwatch = Stopwatch.StartNew();
-    //     _sectionCount = 0;
-    //     _previous = DocsService.Previous;
-    //     _next = DocsService.Next;
-    //     _section = DocsService.Section;
+    internal async Task AddSectionAsync(SectionLink sectionLinkInfo, PageSection section)
+    {
+        _bufferedSections.Enqueue(sectionLinkInfo);
 
-    //     /*for after this release is done*/
-    //     _displayView = false;
-    //     _componentName = "temp";
-    //     /*if (NavigationManager.Uri.ToString().Contains("/api/") ||
-    //         NavigationManager.Uri.ToString().Contains("/components/"))
-    //     {
-    //         _componentName = NavigationManager.Uri.ToString().Split('/', StringSplitOptions.RemoveEmptyEntries)
-    //             .LastOrDefault();
-    //         _displayView = true;
-    //     }*/
-    // }
+        if (_contentNavigation != null)
+        {
+            while (_bufferedSections.Count > 0)
+            {
+                var item = _bufferedSections.Dequeue();
 
-    // protected override void OnAfterRender(bool firstRender)
-    // {
-    //     if (_stopwatch.IsRunning)
-    //     {
-    //         _stopwatch.Stop();
-    //         Rendered?.Invoke(_stopwatch);
-    //     }
-    //     if (firstRender)
-    //     {
-    //         _renderAds = true;
-    //         StateHasChanged();
-    //     }
-    // }
+                if (_contentNavigation.Sections.FirstOrDefault(x => x.Id == sectionLinkInfo.Id) == default)
+                {
+                    MudPageContentSection? parentInfo = null;
 
-    // public string GetParentTitle(DocsPageSection section)
-    // {
-    //     if (section == null) { return string.Empty; }
+                    if (section.ParentSection != null && _sectionMapper.ContainsKey(section.ParentSection) == true)
+                    {
+                        parentInfo = _sectionMapper[section.ParentSection];
+                    }
 
-    //     if (section == null || section.ParentSection == null ||
-    //         _sectionMapper.ContainsKey(section.ParentSection) == false) { return string.Empty; }
+                    var info = new MudPageContentSection(sectionLinkInfo.Title, sectionLinkInfo.Id, section.Level, parentInfo);
 
-    //     var item = _sectionMapper[section.ParentSection];
+                    _sectionMapper.Add(section, info);
 
-    //     return item.Title;
-    // }
+                    _contentNavigation.AddSection(info, false);
+                }
+            }
 
-    // internal async void AddSection(DocsSectionLink sectionLinkInfo, DocsPageSection section)
-    // {
-    //     _bufferedSections.Enqueue(sectionLinkInfo);
+            ((IMudStateHasChanged)_contentNavigation).StateHasChanged();
 
-    //     if (_contentNavigation != null)
-    //     {
-    //         while (_bufferedSections.Count > 0)
-    //         {
-    //             var item = _bufferedSections.Dequeue();
-
-    //             if (_contentNavigation.Sections.FirstOrDefault(x => x.Id == sectionLinkInfo.Id) == default)
-    //             {
-    //                 MudPageContentSection parentInfo = null;
-    //                 if (section.ParentSection != null && _sectionMapper.ContainsKey(section.ParentSection) == true)
-    //                 {
-    //                     parentInfo = _sectionMapper[section.ParentSection];
-    //                 }
-
-    //                 var info =
-    //                     new MudPageContentSection(sectionLinkInfo.Title, sectionLinkInfo.Id, section.Level,
-    //                         parentInfo);
-    //                 _sectionMapper.Add(section, info);
-    //                 _contentNavigation.AddSection(info, false);
-    //             }
-    //         }
-
-    //         ((IMudStateHasChanged)_contentNavigation).StateHasChanged();
-
-    //         if (_anchor != null)
-    //         {
-    //             if (sectionLinkInfo.Id == _anchor)
-    //             {
-    //                 await _contentNavigation.ScrollToSection(new Uri(NavigationManager.Uri));
-    //                 _anchor = null;
-    //             }
-    //         }
-    //     }
-    // }
+            if (_anchor != null)
+            {
+                if (sectionLinkInfo.Id == _anchor)
+                {
+                    await _contentNavigation.ScrollToSection(new Uri(NavigationManager.Uri));
+                    _anchor = null;
+                }
+            }
+        }
+    }
 }

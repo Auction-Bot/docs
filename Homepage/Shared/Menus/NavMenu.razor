@@ -5,7 +5,7 @@
 @inject NavigationManager NavigationManager;
 
 <MudText Typo="Typo.subtitle1" Class="mt-1 mb-2 ml-2 d-flex d-md-none"><b>Commands</b></MudText>
-<MudNavLink Href="commands/overview" Class="docs-single-link">Overview</MudNavLink>
+<MudNavLink Href="commands/overview" Class="docs-single-link">Getting Started</MudNavLink>
 <MudNavGroup Title="Slash Commands" Expanded="@(_section == "slash-commands")" ExpandIcon="@Icons.Material.Filled.ExpandMore">
     @foreach (var item in MenuService.SlashCommands)
     {
