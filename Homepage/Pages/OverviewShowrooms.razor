@@ -1,0 +1,211 @@
+﻿@page "/commands/overview-showrooms"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <CommandPageHeader Title="Showroom Channel Options" Typography="Typo.h5" SubTitle="Each Discord channel type has unique offerings when used as a Showroom." />
+    </MudHidden>
+    <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+        <CommandPageHeader Title="Showroom Channel Options" SubTitle="Each Discord channel type has unique offerings when used as a Showroom." />
+    </MudHidden>
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Forum Channel" HideSectionLink="true">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Success">
+                        <MudText>Recommended</MudText>
+                    </MudAlert>
+                </SubTitle>
+                <Description>
+                    Maximize engagement and simplify the user experience by harnessing the power of Forum Channels.
+                </Description>
+            </SectionHeader>
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Forum Channel Features">
+                        <SubTitle>
+                            <MudText>
+                                For those seeking a more immersive experience, the Forum Channel Showroom is the ideal choice. With built-in listing search, tags, and compact view options, this Showroom type delivers a comprehensive and engaging environment.
+                            </MudText>
+                        </SubTitle>
+                        <Description>
+                            <MudAlert Severity="Severity.Info">Create a pinned post to execute the listing commands</MudAlert>
+
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Each listing has its own unique post created for better organization.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Additional commands related to a listing should be executed within its respective post.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        The post title matches the listing title to provide clarity and consistency.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        The listing owner is automatically subscribed to the post for easy tracking of discussions and updates.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Tags, including "pending," "active," "expired," or "sold," and listing categories are added automatically based on specified listing categories.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Once a listing is marked as "sold" or has expired, the post automatically closes and is locked to prevent further interactions.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+
+        <PageSection>
+            <SectionHeader Title="Text Channel" HideSectionLink="true" />
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Text Channel Features">
+                        <SubTitle>
+                            <MudText>
+                                Text Channel Showrooms provide a straightforward and efficient way to display your auction items. All listings are organized within a single text channel, and each listing has a dedicated thread for interactions.
+                            </MudText>
+                        </SubTitle>
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        All listings are added to a single Showroom channel.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Each listing has its own thread created for better organization.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Additional commands related to a listing should be executed within its respective thread.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+
+        <PageSection>
+            <SectionHeader Title="Category Channel" HideSectionLink="true" />
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Category Channel Features">
+                        <SubTitle>
+                            <MudText>
+                                Category Channel Showrooms offer a customizable and organized approach to displaying items. Auction Bot automatically generates individual text channels for each new listing within the selected category.
+                            </MudText>
+                        </SubTitle>
+                        <Description>
+                            <MudAlert Severity="Severity.Info">Create a channel within the category for executing the listing commands</MudAlert>
+
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        Each new listing automatically creates a text channel within the Showroom category.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Additional commands related to a listing should be executed within the respective channel for that listing.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        The channel name corresponds to the title of the listing, providing clear and easy identification.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+
+        <PageSection>
+            <SectionHeader Title="Announcement Channel" HideSectionLink="true" />
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Announcement Channel Features">
+                        <SubTitle>
+                            <MudText>
+                                Announcement Channel Showrooms is a powerful option for showcasing your items while reaching a wider audience. Listings are automatically published to external servers, increasing visibility and attracting potential bidders from different communities.
+                            </MudText>
+                        </SubTitle>
+                        <Description>
+                            <MudAlert Severity="Severity.Warning">There is a limit of 10 listings per hour for an Announcement Channel</MudAlert>
+
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        All listings are added to a single Showroom channel.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Each listing has its own thread created for better organization.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Additional commands related to a listing should be executed within its respective thread.
+                                    </div>
+                                </MudBadge>
+                                                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Listings are automatically published to external servers.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Interactions with the listing are limited to the main server.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+
+        <PageSection>
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Additional Details" HideTitle="true" />
+                    <div class="d-flex flex-row flex-wrap mud-width-full">
+                        <MudList Clickable="true" Class="flex-grow-1 flex-shrink-0 mud-paper-outlined rounded py-0 ma-2">
+                            <MudListItem Icon="@Icons.Material.Filled.FileDownloadDone" IconColor="Color.Tertiary" Class="pl-6" Href="/commands/overview">
+                                <MudText Typo="Typo.body1">Installation</MudText>
+                                <MudText Typo="Typo.body2">Quick Setup Guide</MudText>
+                            </MudListItem>
+                        </MudList>
+                        <MudList Clickable="true" Class="flex-grow-1 flex-shrink-0 mud-paper-outlined rounded py-0 ma-2">
+                            <MudListItem Icon="@Icons.Material.Filled.VerifiedUser" IconColor="Color.Primary" Class="pl-6" Href="/commands/overview-roles">
+                                <MudText Typo="Typo.body1">Access Roles</MudText>
+                                <MudText Typo="Typo.body2">Control who can buy/sell and more...</MudText>
+                            </MudListItem>
+                        </MudList>
+                    </div>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

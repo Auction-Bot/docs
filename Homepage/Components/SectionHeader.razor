@@ -30,6 +30,7 @@
     [Parameter] public string? Class { get; set; }
     [Parameter] public string? Title { get; set; }
     [Parameter] public bool HideTitle { get; set; }
+    [Parameter] public bool HideSectionLink { get; set; }
     [Parameter] public RenderFragment? SubTitle { get; set; }
     [Parameter] public RenderFragment? Description { get; set; }
 
@@ -41,7 +42,7 @@
     {
         await base.OnInitializedAsync();
 
-        if (CommandPage == null || string.IsNullOrWhiteSpace(Title)) return;
+        if (CommandPage == null || string.IsNullOrWhiteSpace(Title) || HideSectionLink) return;
 
         var id = (Title).Replace(" ", "-").ToLowerInvariant();
 
