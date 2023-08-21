@@ -1,0 +1,63 @@
+﻿@page "/slash-commands/serverlistingrequirements"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Define Listing Requirements">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Warning">
+                        <MudText>Restricted to users with Manage_Server permissions.</MudText>
+                    </MudAlert>
+                </SubTitle>
+                <Description>
+                    By default, each listing type has a pre-defined set of required parameter values that must be included when executing a command. <br/>
+                    Admins can force some of the optional parameter values to be required. This ensures that user must include these values when creating a new listing. 
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <InlineCode>/server listing requirements</InlineCode> [for]
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        <InlineCode>For</InlineCode> - They type of listing to set the requirements for. Options: Auction, Market, Trade, Giveaway
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

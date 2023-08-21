@@ -1,0 +1,62 @@
+﻿@page "/slash-commands/servercategories"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Manage Categories">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Warning">
+                        <MudText>Restricted to users with Manage_Server permissions.</MudText>
+                    </MudAlert>
+                </SubTitle>
+                <Description>
+                    Add/Remove the available categories for users to select from.
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <InlineCode>/server categories</InlineCode>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

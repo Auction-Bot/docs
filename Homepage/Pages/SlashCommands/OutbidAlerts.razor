@@ -1,0 +1,58 @@
+﻿@page "/slash-commands/outbidalerts"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Auction Outbid Alerts">
+                <Description>
+                    Get notifications via direct messages whenever someone outbids you on an auction item.<br/>
+                    Run the command again to disable alerts.
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <InlineCode>/outbid alerts</InlineCode>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

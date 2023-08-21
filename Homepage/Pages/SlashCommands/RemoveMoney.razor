@@ -1,0 +1,70 @@
+﻿@page "/slash-commands/remove-money"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Decrease User Balance">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Info">
+                        <MudText>Basic economy must be enabled in order to use this command.</MudText>
+                    </MudAlert>
+                    <MudAlert Severity="Severity.Warning">
+                        <MudText>Restricted to users with the Manager role or Manage_Server permissions.</MudText>
+                    </MudAlert>
+                </SubTitle>
+                <Description>
+                    Decrease the current balance of a specified user.
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <InlineCode>/remove-money</InlineCode> [amount] [user]
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        <InlineCode>Amount</InlineCode> - The amount of money to remove.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>User</InlineCode> - The user to remove the money from.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

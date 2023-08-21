@@ -1,0 +1,132 @@
+﻿@page "/slash-commands/marketaddstandard"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Standard Market">
+                <Description>
+                    List your items for sale at a fixed price.
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <InlineCode>/market add standard</InlineCode> [title] [price]
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        <InlineCode>Title</InlineCode> - Title of the item to be sold.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Price</InlineCode> - Price at which the item is being sold.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        <InlineCode>Duration</InlineCode> - Length of time the auction should run for. Example: 7d or 1 week.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Currency</InlineCode> - Currency type/symbol to use.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Quantity</InlineCode> - Amount available.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Image</InlineCode> - Attach an image to be included with the listing.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Description</InlineCode> - Additional information about the item.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Discount-Type</InlineCode> - The type of discount to apply. Options: None, Percent, Amount
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Discount-Amount</InlineCode> - The amount of discount to apply. Requires discount type to be set.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Allow-Offers</InlineCode> - Allow buyers to submit a counter offer.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Scheduled-Start</InlineCode> - Scheduled start of the auction (yyyy-mm-dd HH:mm). Defaults to now.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Category</InlineCode> - Category the item is associated with.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Subcategory</InlineCode> - Subcategory to list the item under. Requires category to be set.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Message</InlineCode> - A hidden message to be sent to the winner.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Owner</InlineCode> - Item owner. Defaults to the command user. Can be set by Brokers.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Reschedule</InlineCode> - Repost the listing after it ends. Options: Never, Always, When [Sold | Expired]
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Anonymous</InlineCode> - True to hide the item owner. Defaults to False
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

@@ -141,7 +141,13 @@
         </PageSection>
 
         <PageSection>
-            <SectionHeader Title="Announcement Channel" HideSectionLink="true" />
+            <SectionHeader Title="Announcement Channel" HideSectionLink="true">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Warning">
+                        <MudText>There is a limit of 10 listings per hour for an Announcement Channel</MudText>
+                    </MudAlert>
+                </SubTitle>
+            </SectionHeader>
             <SectionSubGroups>
                 <PageSection>
                     <SectionHeader Title="Announcement Channel Features">
@@ -151,8 +157,6 @@
                             </MudText>
                         </SubTitle>
                         <Description>
-                            <MudAlert Severity="Severity.Warning">There is a limit of 10 listings per hour for an Announcement Channel</MudAlert>
-
                             <div class="d-flex flex-column px-2">
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4">

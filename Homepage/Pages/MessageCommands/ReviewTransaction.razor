@@ -1,0 +1,107 @@
+﻿@page "/message-commands/reviewtransaction"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Review Transaction">
+                <Description>
+                    A completed transaction (posted in the Result Log) can be reviewed by the member that claimed the item.
+                    The member in question has the option of rating the overall experience with the item owner. <br/><br/>
+                    Rating options include
+                    <div class="d-flex flex-column px-2">
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4">
+                                <InlineCode>Avoid</InlineCode> - Warn other users to stay away from this seller. <InlineCode>[⭐]</InlineCode>
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Poor</InlineCode> - The experience was less than satisfactory. <InlineCode>[⭐⭐]</InlineCode>
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>OK</InlineCode> - Faily standard experience; Meets basic expectations. <InlineCode>[⭐⭐⭐]</InlineCode>
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Good</InlineCode> - Offers a positive experience. Quite satisfying in many aspects. <InlineCode>[⭐⭐⭐⭐]</InlineCode>
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Recommend</InlineCode> - Provides an exceptional experience; Exceeds expectations. <InlineCode>[⭐⭐⭐⭐⭐]</InlineCode>
+                            </div>
+                        </MudBadge>
+                    </div>
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        Right-click the successful claim <InlineCode>message</InlineCode> in the Result Log channel
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Select <InlineCode>Apps</InlineCode> from the context list
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Select <InlineCode>Review Transaction</InlineCode>
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        Successful result log message
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Selected Rating Option
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

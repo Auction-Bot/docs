@@ -1,0 +1,74 @@
+﻿@page "/hidden-commands/schedule"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Fixed Schedule">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Info">
+                        <MudText>This is not an executable bot command</MudText>
+                    </MudAlert>
+                </SubTitle>
+                <Description>
+                    <MudText>To define a standard end date for all items listed in a showroom, add a <InlineCode>channel topic</InlineCode> to the showroom channel.</MudText>
+                    <MudText>The topic must include the expected day and time that all listings within the channel should end.</MudText>
+                    <br/>
+                    <MudText>When a user lists and item, the end date will be automatically adjusted to the next upcoming scheduled end date.</MudText>
+                    <MudText>The duration provided when listing the item will be used to set the schedule start date.</MudText>
+                    <MudText>This means a listing may not always start immediately. Based on the duration provided, the scheduled start can be a future date or time to ensure it ends at the desired time.</MudText>
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <InlineCode>Schedule: Friday 18:00</InlineCode>
+                            <br/>or<br/>
+                            <InlineCode>Schedule: Thursday 15:00; Sunday 15:00</InlineCode>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        <InlineCode>Weekday</InlineCode> - The day of the week the listing should end.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Time</InlineCode> - The time of day the listing should end.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

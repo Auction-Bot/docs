@@ -20,7 +20,7 @@ namespace Homepage.Services
         private readonly List<BotCommand> _slashCommands = new ApplicationCommandBilder()
             .AddNavGroup("Auction",false, new ApplicationCommandBilder()
                 .AddItem("/Auction Add Standard")
-                .AddItem("/Auction Add Vickrey")
+                .AddItem("/Auction Add Sealed")
                 .AddItem("/Auction Add Live"))
             .AddNavGroup("Market", false, new ApplicationCommandBilder()
                 .AddItem("/Market Add Standard")
