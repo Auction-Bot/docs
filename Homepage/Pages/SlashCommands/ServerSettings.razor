@@ -13,6 +13,79 @@
                 </SubTitle>
                 <Description>
                     Review and modify the settings/configurations for Auction Bot.
+
+                    <div class="d-flex flex-column px-2">
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4">
+                                <InlineCode>Server-Time</InlineCode>: The time-zone Auction Bot should use in your server. Defaults to UTC
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Server-Economy</InlineCode>: The economy type to use. Defaults to none (disabled). Can be set to other Discord Bot economies.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Default-Currency</InlineCode>: The default currency to use when creating a listing.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Result-Log</InlineCode>: The notification channel in which sold/expired items will be posted to.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Audit-Log</InlineCode>: The notification channel in which all item activites (create, withdraw, offer submissions) are logged.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Minimum-Duration</InlineCode>: The minimum length of time a user can list an item for.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Maximum-Duration</InlineCode>: The maximum length of time a user can list an item for.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Default-Duration</InlineCode>: If duration is not specified when creating a listing, set the default to either the min or the max.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Snipe-Trigger</InlineCode>: If a bid is placed within the specified trigger time-frame, the auction is extended.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Snipe-Extension</InlineCode>: The amount of time to extend the auction by if a bid is added during the snipe-trigger time-frame.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Bid-Recall-Limit</InlineCode>: The amount of time a user is given to undo their submitted offer.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Toggle Options</InlineCode>: A list of options that can be enabled/disabled.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Access-Roles</InlineCode>: Bot roles used to restrict access to Auction Bot commands. See <MudLink Href="/commands/overview-roles">Access Roles</MudLink> for more details.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Allowed-Listings</InlineCode>: The types of listings user are allowed to create. 
+                            </div>
+                        </MudBadge>
+                    </div>
                 </Description>
             </SectionHeader>
 

@@ -26,54 +26,60 @@
             <MudListSubheader>
                 Features
             </MudListSubheader>
-@*             <MudListItem Href="https://mudblazor.com/">
+            <MudListItem Href="/commands/overview-showrooms#category-channel-features">
                 <div class="d-flex">
-                    <MudText Color="Color.Primary">MudBlazor</MudText>
+                    <MudText Inline="true" Color="Color.Primary">Auto</MudText><MudText Inline="true" Color="Color.Secondary">-Showrooms</MudText>
                 </div>
-                <MudText Typo="Typo.body2">Blazor component library</MudText>
+                <MudText Typo="Typo.body2">Auto create a new showroom channel for each listing</MudText>
             </MudListItem>
-            <MudListItem Href="https://try.mudblazor.com/">
+            <MudListItem Href="/slash-commands//imageupload#optional-values">
                 <div class="d-flex">
-                    <MudText Color="Color.Primary">Try</MudText><MudText>MudBlazor</MudText>
+                    <MudText Color="Color.Primary">Multi Image</MudText><MudText Color=" Color.Secondary">-Listings</MudText>
                 </div>
-                <MudText Typo="Typo.body2">Online code editor with Blazor</MudText>
+                <MudText Typo="Typo.body2">Include up to four images on each listing</MudText>
             </MudListItem>
-            <MudListItem Href="https://github.com/MudBlazor/ThemeManager">
+            <MudListItem Href="/slash-commands//imageupload#optional-values">
                 <div class="d-flex">
-                    <MudText>Theme</MudText><MudText Color="Color.Secondary">Manager</MudText>
+                    <MudText Color="Color.Primary">Anti Snipe</MudText><MudText Color=" Color.Secondary">-Settings</MudText>
                 </div>
-                <MudText Typo="Typo.body2">Manage your theme live in your app</MudText>
+                <MudText Typo="Typo.body2">Prevent last minute auction sniping</MudText>
             </MudListItem>
-            <MudListItem Href="https://github.com/MudBlazor/Templates">
+            <MudListItem Href="/slash-commands//serversettings#auction-bot-settings">
                 <div class="d-flex">
-                    <MudText>Templates</MudText>
+                    <MudText Color="Color.Secondary">UnbelievaBoat-</MudText><MudText Color="Color.Success">Integration</MudText>
                 </div>
-                <MudText Typo="Typo.body2">Blazor templates loaded with MudBlazor</MudText>
-            </MudListItem> *@
+                <MudText Typo="Typo.body2">Works seamlessly with UnbelievaBoat economy</MudText>
+            </MudListItem>
+            <MudListItem Href="/message-commands/reviewtransaction#review-transaction">
+                <div class="d-flex">
+                    <MudText>Transaction</MudText><MudText Color="Color.Success">-Reviews</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Review completed transactions and view a merchants overall rating</MudText>
+            </MudListItem>
         </MudList>
         <MudList Clickable="true" Class="relative">
             <MudListSubheader>
-                Other
+                Upcoming
             </MudListSubheader>
-            <MudOverlay Visible="true" LightBackground="true" Absolute="true" Class="docs-menu-overlay" /> @*TODO - docs menu overlay*@
-@*             <MudListItem>
+            <MudOverlay Visible="true" LightBackground="false" Absolute="true" Class="docs-menu-overlay" /> @*TODO - docs menu overlay*@
+            <MudListItem>
                 <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
-                    <MudText>Mud</MudText><MudText Color="Color.Primary">Store</MudText>
+                    <MudText Color="Color.Secondary">Default-</MudText><MudText Color="Color.Warning">Templates</MudText>
                 </MudBadge>
-                <MudText Typo="Typo.body2">Marketplace for templates and themes</MudText>
+                <MudText Typo="Typo.body2">Store and recall default field values for various listing types</MudText>
             </MudListItem>
             <MudListItem>
                 <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
-                    <MudText>Mud</MudText><MudText Color="Color.Success">Academy</MudText>
+                    <MudText Color="Color.Secondary">Giveaway-</MudText><MudText Color="Color.Warning">Reroll</MudText>
                 </MudBadge>
-                <MudText Typo="Typo.body2">Learning Blazor and MudBlazor</MudText>
+                <MudText Typo="Typo.body2">Select a new winner for a concluded giveaway</MudText>
             </MudListItem>
             <MudListItem>
                 <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
-                    <MudText>Mud</MudText><MudText Color="Color.Warning">Extensions</MudText>
+                    <MudText Color="Color.Warning">Multiple</MudText><MudText Color="Color.Secondary">-Giveaways</MudText>
                 </MudBadge>
-                <MudText Typo="Typo.body2">Official and Community Extensions</MudText>
-            </MudListItem> *@
+                <MudText Typo="Typo.body2">Select multiple winners for a single Giveaway</MudText>
+            </MudListItem>
         </MudList>
     </MudMenu>
     <MudSpacer/>
@@ -94,6 +100,7 @@
 
     [Parameter] public EventCallback<MouseEventArgs> DrawerToggleCallback { get; set; }
 
+    private string _badgeTextSoon = "coming soon";
     private string GetActiveClass(MenuOption page)
     {
         var selectedOption = NavigationManager.Uri switch

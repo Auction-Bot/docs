@@ -17,7 +17,6 @@ namespace Homepage.Services
     public class CommandNavigationService : ICommandNavigationService
     {
         private readonly NavigationManager _navigationManager;
-        private readonly IMenuService _menuService;
 
         private string CurrentLink => _navigationManager.GetCommandLink();
 
@@ -39,10 +38,9 @@ namespace Homepage.Services
             }
         }
 
-        public CommandNavigationService(NavigationManager navigationManager, IMenuService menuService)
+        public CommandNavigationService(NavigationManager navigationManager)
         {
             _navigationManager = navigationManager;
-            _menuService = menuService;
         }
 
         private NavigationFooterLink? GetNavigationLink(NavigationOrder order)
@@ -60,29 +58,7 @@ namespace Homepage.Services
 
         private List<NavigationFooterLink> GetOrderedMenuLinks(NavigationSection section)
         {
-            //var menuElements = section == NavigationSection.Components ? _menuService.SlashCommands : _menuService.MessageCommands;
             var links = new List<NavigationFooterLink>();
-            //foreach (var menuElement in menuElements)
-            //{
-            //    if (menuElement.Link != null)
-            //    {
-            //        var link = section == NavigationSection.Api
-            //            ? ApiLink.GetApiLinkFor(menuElement.Type).Split("/").Last()
-            //            : menuElement.Link;
-
-            //        var name = menuElement.Name;
-
-            //        links.Add(new NavigationFooterLink(name, link));
-            //    }
-
-            //    if (menuElement.GroupCommands != null)
-            //    {
-            //        links.AddRange(menuElement.GroupCommands.Select(i => new NavigationFooterLink(i.Name, i.Link))
-            //            .OrderBy(i => i.Link));
-            //    }
-            //}
-
-            ;
             return links;
         }
 
