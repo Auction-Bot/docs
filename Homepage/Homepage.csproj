@@ -8,8 +8,7 @@
 	<BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
 	<BlazorEnableCompression>true</BlazorEnableCompression>
 	<InvariantGlobalization>true</InvariantGlobalization>
-	<PublishTrimmed>true</PublishTrimmed>
-	<TrimMode>link</TrimMode>	  
+	<PublishTrimmed>false</PublishTrimmed> 
   </PropertyGroup>
 
   <ItemGroup>
