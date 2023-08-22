@@ -1,0 +1,16 @@
+﻿<MudExpansionPanel>
+    <TitleContent>
+        <div class="d-flex">
+            <MudIcon Icon="@Icons.Material.Filled.LiveHelp" class="mr-3"></MudIcon>
+            <MudText>@Question</MudText>
+        </div>
+    </TitleContent>
+    <ChildContent>
+        <MudText Typo="Typo.body1" Color="Color.Secondary">@Answer</MudText>
+    </ChildContent>
+</MudExpansionPanel>
+
+@code {
+    [Parameter][EditorRequired] public RenderFragment Question { get; set; } = null!;
+    [Parameter][EditorRequired] public RenderFragment Answer { get; set; } = null!;
+}

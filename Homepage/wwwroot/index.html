@@ -50,27 +50,28 @@
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
     <script type="module">
-        import { Brotli } from './brotli_decode.min.js';
-
-        if (window.location.hostname == 'localhost') {
-            Blazor.start({
-                loadBootResource: function (type, name, defaultUri, integrity) {
-                    if (type !== 'dotnetjs' && location.hostname !== 'localhost') {
-                        return (async function () {
-                            const response = await fetch(defaultUri + '.br', { cache: 'no-cache' });
-                            if (!response.ok) {
-                                throw new Error(response.statusText);
-                            }
-                            const originalResponseBuffer = await response.arrayBuffer();
-                            const originalResponseArray = new Int8Array(originalResponseBuffer);
-                            const decompressedResponseArray = Brotli(originalResponseArray);
-                            const contentType = type ===
-                                'dotnetwasm' ? 'application/wasm' : 'application/octet-stream';
-                            return new Response(decompressedResponseArray,
-                                { headers: { 'content-type': contentType } });
-                        })();
+        if (location.hostname === 'localhost') {
+            import('./brotli_decode.min.js').then(module => {
+                const { Brotli } = module;
+                Blazor.start({
+                    loadBootResource: function (type, name, defaultUri, integrity) {
+                        if (type !== 'dotnetjs' && location.hostname !== 'localhost') {
+                            return (async function () {
+                                const response = await fetch(defaultUri + '.br', { cache: 'no-cache' });
+                                if (!response.ok) {
+                                    throw new Error(response.statusText);
+                                }
+                                const originalResponseBuffer = await response.arrayBuffer();
+                                const originalResponseArray = new Int8Array(originalResponseBuffer);
+                                const decompressedResponseArray = Brotli(originalResponseArray);
+                                const contentType = type ===
+                                    'dotnetwasm' ? 'application/wasm' : 'application/octet-stream';
+                                return new Response(decompressedResponseArray,
+                                    { headers: { 'content-type': contentType } });
+                            })();
+                        }
                     }
-                }
+                });
             });
         }
     </script>

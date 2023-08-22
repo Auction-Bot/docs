@@ -2,8 +2,25 @@
 
 @layout StandardLayout
 
-<h3>Faq</h3>
-
-@code {
-
-}
+<MudMainContent>
+    <MudContainer Class="mt-6" MaxWidth="MaxWidth.Large">
+        <MudStack>
+            <MudText Typo="Typo.h5">Frequently Asked Questions</MudText>
+        </MudStack>
+        <MudExpansionPanels>
+            <FaqItem>
+                <Question>How do I use the Bot</Question>
+                <Answer>
+                    Follow the <MudLink Href="commands/overview">Quick Start Guide</MudLink> to get started.<br/>
+                    Once you've setup the bot, you can start creating listings right away.
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>What is the command to add an item</Question>
+                <Answer>
+                    To add an item, simply utilize the appropriate listing command: <InlineCode>/auction add</InlineCode> | <InlineCode>/market add</InlineCode> | <InlineCode>/trade add</InlineCode> | <InlineCode>/giveaway add</InlineCode>
+                </Answer>
+            </FaqItem>
+        </MudExpansionPanels>
+    </MudContainer>
+</MudMainContent>
