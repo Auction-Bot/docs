@@ -4,7 +4,7 @@
 ﻿<MudHidden Breakpoint="Breakpoint.MdAndUp">
     <MudIconButton OnClick="DrawerToggleCallback" Icon="@Icons.Material.Rounded.Notes" Color="Color.Inherit" Edge="Edge.Start"/>
     <MudSpacer/>
-    <NavLink ActiveClass="d-flex" href="/">
+    <NavLink ActiveClass="d-flex" href="">
         <AuctionBotLogo />
         <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction Bot</MudText>
     </NavLink>
@@ -12,13 +12,13 @@
     <MudIconButton Icon="@Icons.Custom.Brands.Discord" Color="Color.Inherit" Edge="Edge.End" Href=@Configuration["Discord:ServerInvite"] Title="Discord Suppor Server" />
 </MudHidden>
 <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
-    <NavLink ActiveClass="d-flex me-4" href="/">
+    <NavLink ActiveClass="d-flex me-4" href="">
         <AuctionBotLogo />
         <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction Bot</MudText>
     </NavLink>
-    <MudButton Href="/dashboard" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.Dashboard)">Dashboard</MudButton>
-    <MudButton Href="/commands/overview" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.Commands)">Commands</MudButton>
-    <MudButton Href="/faqs" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.FAQs)">FAQs</MudButton>
+    <MudButton Href="dashboard" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.Dashboard)">Dashboard</MudButton>
+    <MudButton Href="commands/overview" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.Commands)">Commands</MudButton>
+    <MudButton Href="faqs" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.FAQs)">FAQs</MudButton>
     <MudMenu Color="Color.Inherit" Variant="Variant.Text" LockScroll="true" Label="Features"
              Class="mx-1 px-3" PopoverClass="mainmenu-shadow" ListClass="d-flex px-4 pb-2 special-menu"
              EndIcon="@Icons.Material.Filled.KeyboardArrowDown" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter" >
@@ -26,31 +26,31 @@
             <MudListSubheader>
                 Features
             </MudListSubheader>
-            <MudListItem Href="/commands/overview-showrooms#category-channel-features">
+            <MudListItem Href="commands/overview-showrooms#category-channel-features">
                 <div class="d-flex">
                     <MudText Inline="true" Color="Color.Primary">Auto</MudText><MudText Inline="true" Color="Color.Secondary">-Showrooms</MudText>
                 </div>
                 <MudText Typo="Typo.body2">Auto create a new showroom channel for each listing</MudText>
             </MudListItem>
-            <MudListItem Href="/slash-commands//imageupload#optional-values">
+            <MudListItem Href="slash-commands//imageupload#optional-values">
                 <div class="d-flex">
                     <MudText Color="Color.Primary">Multi Image</MudText><MudText Color=" Color.Secondary">-Listings</MudText>
                 </div>
                 <MudText Typo="Typo.body2">Include up to four images on each listing</MudText>
             </MudListItem>
-            <MudListItem Href="/slash-commands//imageupload#optional-values">
+            <MudListItem Href="slash-commands//imageupload#optional-values">
                 <div class="d-flex">
                     <MudText Color="Color.Primary">Anti Snipe</MudText><MudText Color=" Color.Secondary">-Settings</MudText>
                 </div>
                 <MudText Typo="Typo.body2">Prevent last minute auction sniping</MudText>
             </MudListItem>
-            <MudListItem Href="/slash-commands//serversettings#auction-bot-settings">
+            <MudListItem Href="slash-commands//serversettings#auction-bot-settings">
                 <div class="d-flex">
                     <MudText Color="Color.Secondary">UnbelievaBoat-</MudText><MudText Color="Color.Success">Integration</MudText>
                 </div>
                 <MudText Typo="Typo.body2">Works seamlessly with UnbelievaBoat economy</MudText>
             </MudListItem>
-            <MudListItem Href="/message-commands/reviewtransaction#review-transaction">
+            <MudListItem Href="message-commands/reviewtransaction#review-transaction">
                 <div class="d-flex">
                     <MudText>Transaction</MudText><MudText Color="Color.Success">-Reviews</MudText>
                 </div>
@@ -105,9 +105,9 @@
     {
         var selectedOption = NavigationManager.Uri switch
         {
-            { } when NavigationManager.Uri.Contains("/dashboard") => MenuOption.Dashboard,
-            { } when NavigationManager.Uri.Contains("/commands") => MenuOption.Commands,
-            { } when NavigationManager.Uri.Contains("/faq") => MenuOption.FAQs,
+            { } when NavigationManager.Uri.Contains("dashboard") => MenuOption.Dashboard,
+            { } when NavigationManager.Uri.Contains("commands") => MenuOption.Commands,
+            { } when NavigationManager.Uri.Contains("faq") => MenuOption.FAQs,
             _ => MenuOption.None
         };
 

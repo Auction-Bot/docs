@@ -16,7 +16,7 @@
 @code{
     private Task BeginSignOut(MouseEventArgs args)
     {
-        Navigation.NavigateToLogout("authentication/logout", "/");
+        Navigation.NavigateToLogout("authentication/logout", "");
         
         return Task.CompletedTask;
     }
