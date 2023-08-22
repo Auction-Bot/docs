@@ -50,7 +50,7 @@
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
     <script type="module">
-        import { BrotliDecode } from './decode.min.js';
+        import { Brotli } from './brotli_decode.min.js';
 
         if (window.location.hostname == 'localhost') {
             Blazor.start({
@@ -63,7 +63,7 @@
                             }
                             const originalResponseBuffer = await response.arrayBuffer();
                             const originalResponseArray = new Int8Array(originalResponseBuffer);
-                            const decompressedResponseArray = BrotliDecode(originalResponseArray);
+                            const decompressedResponseArray = Brotli(originalResponseArray);
                             const contentType = type ===
                                 'dotnetwasm' ? 'application/wasm' : 'application/octet-stream';
                             return new Response(decompressedResponseArray,
