@@ -21,6 +21,127 @@
                     To add an item, simply utilize the appropriate listing command: <InlineCode>/auction add</InlineCode> | <InlineCode>/market add</InlineCode> | <InlineCode>/trade add</InlineCode> | <InlineCode>/giveaway add</InlineCode>
                 </Answer>
             </FaqItem>
+            <FaqItem>
+                <Question>How can I keep track of all the items that I placed a bid on</Question>
+                <Answer>
+                    You have two options for staying on top off the items you've bid on. <br/>
+                    <div class="d-flex flex-column px-2">
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4">
+                                <InlineCode>/watchlist</InlineCode> - Displays a list of all the items that you placed a bid on, even if you don't currently have the highest bid.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>/Outbid Alerts</InlineCode> - Notifies you via Direct Message if someone outbids you for an item.
+                            </div>
+                        </MudBadge>
+                    </div>
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>Can more than one <strong>Merchant</strong> role be assigned</Question>
+                <Answer>
+                    Sorry, this is not currently possible. Only one role can be set per Bot role (Manager, Broker, Merchant, Buyer).
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>Are administrators able to remove invalid bids submitted by other users</Question>
+                <Answer>
+                    Yes. The <InlineCode>Undo Bid</InlineCode> button allows for the following persons to undo a bid.
+                    <div class="d-flex flex-column px-2">
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4">
+                                The owner of the item.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                The user that submitted the bid.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                Users with the <InlineCode>Manager</InlineCode> role or <InlineCode>Manage_Server</InlineCode> permissions.
+                            </div>
+                        </MudBadge>
+                    </div>
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>Are administrators able to remove invalid listings created by other users</Question>
+                <Answer>
+                    Yes. The <InlineCode>Withdraw</InlineCode> button allows for the following persons to undo a bid.
+                    <div class="d-flex flex-column px-2">
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4">
+                                The owner of the item.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                Users with the <InlineCode>Manager</InlineCode> role or <InlineCode>Manage_Server</InlineCode> permissions.
+                            </div>
+                        </MudBadge>
+                    </div>
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>Is it possible to use a currency other than <strong>$</strong></Question>
+                <Answer>
+                    Sure. You can change the default currency or even add multiple currencies. Check out the <MudLink Href="slash-commands/servercurrencies">/server currencies</MudLink> command for managing the currencies available on your server.
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>Sometimes the username is displayed as a number...why :/</Question>
+                <Answer>
+                    This is an issue that sometimes happens with the Discord client/application.<br/> 
+                    One possible workaround is to copy the number shown and search for it using the Discord search feature.<br/>
+                    At the top right of your client, you should see a search option. Use the <strong>from</strong> filter and paste the number to search for the user. This will update your application cache and the username should appear.
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>Why does the Bot keep saying <strong>Missing Access</strong> or <strong>...lacks the necessary permissions</strong></Question>
+                <Answer>
+                    As the message suggests, the bot is unable to complete some action as it's restricted based on permissions granted in the <strong>channel</strong>.<br/>
+                    Execute the <InlineCode>server rooms</InlineCode> command and use the <InlineCode>permissions</InlineCode> button to see which permissions are required/missing. Once you give those permissions to the bot, the error message should go away.<br/><br/>
+                    <strong>NOTE:</strong> In Discord, Channel permissions override Server/Guild permissions. So while you may have given the bot certain Server level permissions when you added it, your channel permissions may still be restricting access.
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>How can I use <strong>Auction Bot</strong> with <strong>UnbelievaBoat</strong> economy</Question>
+                <Answer>
+                    In order for <strong>Auction Bot</strong> to use <strong>UnbelievaBoat</strong> balances when making transactions, <strong>Auction Bot</strong> needs to be authorized by <strong>UnbelievaBoat</strong> <br/><br/>
+                    To connect <strong>Auction Bot</strong> with <strong>UnbelievaBoat</strong>, you need to do the following:
+                    <div class="d-flex flex-column px-2">
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4">
+                                Execute ther <MudLink Href="slash-commands/serversettings">/server settings</MudLink> command
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                Select the <strong>Server Economy</strong> option from the drop down list
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                Select the <strong>UnbelievaBoat</strong> option from the second drop down list
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                Follow the <MudLink Href="https://discord.com/channels/392774790945046538/1105831139597361253/1105831139597361253">authorize</MudLink> link on the <strong>Authorization Required</strong> message
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                On the <strong>UnbelievaBoat</strong> site, select your server and <strong>authorize Auction Bot</strong> 
+                            </div>
+                        </MudBadge>
+                    </div>
+                </Answer>
+            </FaqItem>
         </MudExpansionPanels>
     </MudContainer>
 </MudMainContent>

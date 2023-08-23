@@ -37,11 +37,9 @@
             }
             else if (!_topMenuOpen && NavigationManager.IsFAQ())
             {
-@*                 <MudText Typo="Typo.subtitle1" Class="mt-1 mb-2 ml-2 d-flex d-md-none"><b>Getting Started</b></MudText>
-                <MudNavLink Href="getting-started/installation">Installation</MudNavLink>
-                <MudNavLink Href="getting-started/layouts">Layouts</MudNavLink>
-                <MudNavLink Href="getting-started/usage">Usage</MudNavLink>
-                <MudNavLink Href="getting-started/wireframes">Wireframes</MudNavLink> *@
+                <MudNavLink Disabled="true" Href="dashboard">Dashboard</MudNavLink>
+                <MudNavLink Href="commands/overview">Commands</MudNavLink>
+                <MudNavLink Href="faqs">FAQs</MudNavLink>
             }
             else if (!_topMenuOpen && NavigationManager.IsDashboard())
             {
