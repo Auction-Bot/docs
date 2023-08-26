@@ -11,7 +11,6 @@ namespace Homepage.Services
         {
             _http = httpClient;
 
-            //_http.BaseAddress ??= new Uri(configuration["API:BaseUri"]!);
         }
 
         public async Task<StatisticsDTO?> GetBotStatistics()

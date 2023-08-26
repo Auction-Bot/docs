@@ -9,7 +9,7 @@ namespace Homepage.Services
         void Enqueue(QueuedContent component);
 
         Task WaitUntilEmpty();
-        
+
         void Clear();
     }
 
@@ -44,7 +44,7 @@ namespace Homepage.Services
                 renderImmediately = _queue.Count == 0;
 
                 _queue.Enqueue(component);
-                
+
                 component.Rendered += OnComponentRendered;
                 component.Disposed += OnComponentDisposed;
             }

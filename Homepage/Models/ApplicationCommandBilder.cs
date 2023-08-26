@@ -14,7 +14,7 @@
             };
 
             _commands.Add(componentItem);
-            
+
             return this;
         }
 
@@ -29,7 +29,7 @@
             };
 
             _commands.Add(componentItem);
-            
+
             return this;
         }
 

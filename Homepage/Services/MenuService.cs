@@ -18,7 +18,7 @@ namespace Homepage.Services
     public class MenuService : IMenuService
     {
         private readonly List<BotCommand> _slashCommands = new ApplicationCommandBilder()
-            .AddNavGroup("Auction",false, new ApplicationCommandBilder()
+            .AddNavGroup("Auction", false, new ApplicationCommandBilder()
                 .AddItem("/Auction Add Standard")
                 .AddItem("/Auction Add Sealed")
                 .AddItem("/Auction Add Live"))

@@ -1,7 +1,4 @@
-﻿using Homepage.Models;
-using System.Net.Http.Json;
-
-namespace Homepage.Services
+﻿namespace Homepage.Services
 {
     public class AgoraSecuredApiService : IDisposable
     {
