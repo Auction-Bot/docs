@@ -1,6 +1,13 @@
 ﻿@inherits LayoutComponentBase
-
-<CascadingAuthenticationState>
+<MudLayout>
+    <MudAlert Severity="Severity.Warning" ContentAlignment="HorizontalAlignment.Center">Under Construction</MudAlert>
+    <MudMainContent Style="height:100%">
+        <MudStack Row="true" Class="mb-5" Style="width:100%; height:80%; min-height:45vh" Justify="Justify.Center" AlignItems="AlignItems.Center">
+            <MudImage Src="/images/under_construction.svg" Fluid />
+        </MudStack>
+    </MudMainContent>
+</MudLayout>
+@* <CascadingAuthenticationState>
     <AuthorizeView>
         <Authorized>
             <AccessControl />
@@ -11,4 +18,4 @@
             <p>You're not authorized to reach this page. You need to log in.</p>
         </NotAuthorized>
     </AuthorizeView>
-</CascadingAuthenticationState>
+</CascadingAuthenticationState> *@
