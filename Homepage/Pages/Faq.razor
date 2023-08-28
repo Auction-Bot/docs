@@ -3,26 +3,26 @@
 @layout StandardLayout
 
 <MudMainContent>
-    <MudContainer Class="mt-6" MaxWidth="MaxWidth.Large">
+    <MudContainer Class="mt-6 mb-8" MaxWidth="MaxWidth.Large">
         <MudStack>
             <MudText Typo="Typo.h5">Frequently Asked Questions</MudText>
         </MudStack>
         <MudExpansionPanels>
             <FaqItem>
-                <Question>How do I use the Bot</Question>
+                <Question>How do I <InlineCode>use</InlineCode> the <InlineCode>Bot</InlineCode></Question>
                 <Answer>
                     Follow the <MudLink Href="commands/overview">Quick Start Guide</MudLink> to get started.<br/>
                     Once you've setup the bot, you can start creating listings right away.
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>What is the command to add an item</Question>
+                <Question>What is the command to <InlineCode>add</InlineCode> an <InlineCode>item</InlineCode></Question>
                 <Answer>
                     To add an item, simply utilize the appropriate listing command: <InlineCode>/auction add</InlineCode> | <InlineCode>/market add</InlineCode> | <InlineCode>/trade add</InlineCode> | <InlineCode>/giveaway add</InlineCode>
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>How can I keep track of all the items that I placed a bid on</Question>
+                <Question>How can I keep <InlineCode>track</InlineCode> of all the <InlineCode>items</InlineCode> that I placed a bid on</Question>
                 <Answer>
                     You have two options for staying on top off the items you've bid on. <br/>
                     <div class="d-flex flex-column px-2">
@@ -40,13 +40,20 @@
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>Can more than one <strong>Merchant</strong> role be assigned</Question>
+                <Question>Can <InlineCode>multiple</InlineCode> <strong>Merchant</strong> <InlineCode>roles</InlineCode> be assigned</Question>
                 <Answer>
                     Sorry, this is not currently possible. Only one role can be set per Bot role (Manager, Broker, Merchant, Buyer).
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>Are administrators able to remove invalid bids submitted by other users</Question>
+                <Question>Is there a way to <InlineCode>disable</InlineCode> the <InlineCode>undo</InlineCode> bid button for buyers</Question>
+                <Answer>
+                    While discord doesn't allow buttons to be enabled/disabled per user/role, you can set the <InlineCode>Bidding Recall Limit</InlineCode> to <strong>zero (0)</strong> via <InlineCode>/server settings</InlineCode>.<br/>
+                    The bidding recall limit determines the duration in which a bid can be removed after it has been submitted.
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>Are <strong>admins</strong> able to <InlineCode>remove</InlineCode> invalid <InlineCode>bids</InlineCode> submitted by other users</Question>
                 <Answer>
                     Yes. The <InlineCode>Undo Bid</InlineCode> button allows for the following persons to undo a bid.
                     <div class="d-flex flex-column px-2">
@@ -69,7 +76,7 @@
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>Are administrators able to remove invalid listings created by other users</Question>
+                <Question>Are <strong>admins</strong> able to <InlineCode>remove</InlineCode> invalid <InlineCode>listings</InlineCode> created by other users</Question>
                 <Answer>
                     Yes. The <InlineCode>Withdraw</InlineCode> button allows for the following persons to undo a bid.
                     <div class="d-flex flex-column px-2">
@@ -87,13 +94,31 @@
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>Is it possible to use a currency other than <strong>$</strong></Question>
+                <Question>Is there a way to <InlineCode>change</InlineCode> the <strong>$</strong> <InlineCode>currency</InlineCode> symbol</Question>
                 <Answer>
                     Sure. You can change the default currency or even add multiple currencies. Check out the <MudLink Href="slash-commands/servercurrencies">/server currencies</MudLink> command for managing the currencies available on your server.
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>Sometimes the username is displayed as a number...why :/</Question>
+                <Question>Is it possible to automatically <InlineCode>extend</InlineCode> an <InlineCode>auction</InlineCode> if someone submits a bid one minute before it ends</Question>
+                <Answer>
+                    Definitely! An optional (configurable) <InlineCode>Anti-Snipe</InlineCode> setting is included, which allows you to set <br />
+                    <div class="d-flex flex-column px-2">
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4">
+                                <InlineCode>Anti-Snipe Trigger</InlineCode>: The time period before the scheduled end of an auction, when adding a bid triggers an extension.
+                            </div>
+                        </MudBadge>
+                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                            <div class="pl-4 mt-2">
+                                <InlineCode>Anti-Snipe Extension</InlineCode>: The amount of time to extend the auction by.
+                            </div>
+                        </MudBadge>
+                    </div>
+                </Answer>
+            </FaqItem>
+            <FaqItem>
+                <Question>Sometimes the <InlineCode>username</InlineCode> is displayed as a <InlineCode>number</InlineCode>...why :/</Question>
                 <Answer>
                     This is an issue that sometimes happens with the Discord client/application.<br/> 
                     One possible workaround is to copy the number shown and search for it using the Discord search feature.<br/>
@@ -101,15 +126,15 @@
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>Why does the Bot keep saying <strong>Missing Access</strong> or <strong>...lacks the necessary permissions</strong></Question>
+                <Question>Why does the Bot keep saying <InlineCode>Missing</InlineCode> Access or ...lacks the necessary <InlineCode>permissions</InlineCode></Question>
                 <Answer>
                     As the message suggests, the bot is unable to complete some action as it's restricted based on permissions granted in the <strong>channel</strong>.<br/>
-                    Execute the <InlineCode>server rooms</InlineCode> command and use the <InlineCode>permissions</InlineCode> button to see which permissions are required/missing. Once you give those permissions to the bot, the error message should go away.<br/><br/>
+                    Execute the <InlineCode>/server rooms</InlineCode> command and use the <InlineCode>permissions</InlineCode> button to see which permissions are required/missing. Once you give those permissions to the bot, the error message should go away.<br/><br/>
                     <strong>NOTE:</strong> In Discord, Channel permissions override Server/Guild permissions. So while you may have given the bot certain Server level permissions when you added it, your channel permissions may still be restricting access.
                 </Answer>
             </FaqItem>
             <FaqItem>
-                <Question>How can I use <strong>Auction Bot</strong> with <strong>UnbelievaBoat</strong> economy</Question>
+                <Question>How can I use <InlineCode>Auction Bot</InlineCode> with <InlineCode>UnbelievaBoat</InlineCode> economy</Question>
                 <Answer>
                     In order for <strong>Auction Bot</strong> to use <strong>UnbelievaBoat</strong> balances when making transactions, <strong>Auction Bot</strong> needs to be authorized by <strong>UnbelievaBoat</strong> <br/><br/>
                     To connect <strong>Auction Bot</strong> with <strong>UnbelievaBoat</strong>, you need to do the following:
