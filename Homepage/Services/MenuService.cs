@@ -66,8 +66,9 @@ namespace Homepage.Services
         private readonly List<BotCommand> _messageCommands = new ApplicationCommandBilder()
             .AddItem("Review Transaction")
             .AddItem("Remove Review")
-            .AddItem("View Logs")
             .AddItem("Cancel Reschedule")
+            .AddItem("Reroll Giveaway")
+            .AddItem("View Logs")
             .Build();
 
         private readonly List<BotCommand> _userCommands = new ApplicationCommandBilder()

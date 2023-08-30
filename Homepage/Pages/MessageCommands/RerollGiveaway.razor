@@ -1,29 +1,13 @@
-﻿@page "/message-commands/viewlogs"
+﻿@page "/message-commands/rerollgiveaway"
 
 @layout StandardLayout
 
 <CommandPage DisplayFooter="true">
     <PageContent>
         <PageSection>
-            <SectionHeader Title="View Transaction Logs">
+            <SectionHeader Title="Select New Winner">
                 <Description>
-                    Logs can be viewed for bids made on an auction item or tickets claimed for a giveaway. <br/> 
-                    A distinction is made between the active listing and a concluded transaction. 
-                    <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
-                        <div class="pl-4">
-                            <InlineCode>Active Listing Submissions</InlineCode> - View the submissions made on active Auctions or Giveaways.
-                        </div>
-                    </MudBadge>
-                    <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
-                        <div class="pl-4 mt-2">
-                            <InlineCode>Result Logs View</InlineCode> - View the submissions made for a listing that has concluded
-                        </div>
-                    </MudBadge>
-                    <br/><br/>
-                    Viewing the logs for active listings is availabe to the listing owner as long as the listing is still active.<br/>
-                    For a listing that has already ended, while giveaways automatically include the logs (as it is used to re-roll a winner if necessary), auctions need to have the result logs enabled via <InlineCode>/server settings</InlineCode>.
-                    Once enabled, all sold auctions will include a file attachment on the result log notification message. <br/>
-                    There's no need to actually download the attachment from result logs, as a <InlineCode>View Logs</InlineCode> message command is provided.
+                    Giveaway re-roll allows you to randomly select a new winner for the giveaway item. The previous winner is excluded from the re-roll.
                 </Description>
             </SectionHeader>
 
@@ -34,7 +18,7 @@
                             <div class="d-flex flex-column px-2">
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4">
-                                        Right-click the result log <InlineCode>message</InlineCode> with the attached file or the active listing <InlineCode>message</InlineCode>
+                                        Right-click the giveaway result <InlineCode>message</InlineCode>
                                     </div>
                                 </MudBadge>
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
@@ -44,7 +28,7 @@
                                 </MudBadge>
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4 mt-2">
-                                        Select <InlineCode>View Logs</InlineCode>
+                                        Select <InlineCode>Reroll Giveaway</InlineCode>
                                     </div>
                                 </MudBadge>
                             </div>
@@ -60,7 +44,7 @@
                             <div class="d-flex flex-column px-2">
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4">
-                                        Active Auction/Gateway message or Result log message with an attachment
+                                        A successful giveaway result
                                     </div>
                                 </MudBadge>
                             </div>
