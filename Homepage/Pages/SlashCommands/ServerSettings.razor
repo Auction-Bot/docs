@@ -70,11 +70,61 @@
                                 <InlineCode>Bid-Recall-Limit</InlineCode>: The amount of time a user is given to undo their submitted offer.
                             </div>
                         </MudBadge>
-                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
-                            <div class="pl-4 mt-2">
-                                <InlineCode>Toggle Options</InlineCode>: A list of options that can be enabled/disabled.
-                            </div>
-                        </MudBadge>
+                        <MudList Class="my-n4">
+                            <MudListItem Class="flex-none" DisableGutters="true" Dense="true" InitiallyExpanded="true">
+                                <ChildContent>
+                                    <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                        <div class="pl-4 mt-2">
+                                            <InlineCode>Toggle Options</InlineCode>: A list of options that can be enabled/disabled.
+                                        </div>
+                                    </MudBadge>
+                                </ChildContent>
+                                <NestedList>
+                                    <MudListItem>
+                                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                            <div class="pl-4 mt-2">
+                                                <InlineCode>Accept Offers</InlineCode>: Allows userss to accept an offer made before the listing duration ends.
+                                            </div>
+                                        </MudBadge>
+                                    </MudListItem>
+                                    <MudListItem>
+                                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                            <div class="pl-4 mt-2">
+                                                <InlineCode>Shill Bidding</InlineCode>: Allows item owners to bid on their own items.
+                                            </div>
+                                        </MudBadge>
+                                    </MudListItem>
+                                    <MudListItem>
+                                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                            <div class="pl-4 mt-2">
+                                                <InlineCode>Recall Listings</InlineCode>: Allows item owners to withdraw their listings
+                                            </div>
+                                        </MudBadge>
+                                    </MudListItem>
+                                    <MudListItem>
+                                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                            <div class="pl-4 mt-2">
+                                                <InlineCode>Confirm Transactions</InlineCode>: Allows item owners to confirm that a transaction was completed. Applies only to <strong>Markets</strong> and <strong>Trades</strong> while economy is <strong>disabled</strong>.
+                                            </div>
+                                        </MudBadge>
+                                    </MudListItem>
+                                    <MudListItem>
+                                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                            <div class="pl-4 mt-2">
+                                                <InlineCode>Attach Logs</InlineCode>: When enabled, a log file including all bids made on an auction item will be attached to the auction result logs message.
+                                            </div>
+                                        </MudBadge>
+                                    </MudListItem>
+                                    <MudListItem>
+                                        <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                            <div class="pl-4 mt-2">
+                                                <InlineCode>Disable Min/Max Buttons</InlineCode>: Allows admins to disable the Min/Max buttons for auctions. Only manually entered custom bids would be allowed.
+                                            </div>
+                                        </MudBadge>
+                                    </MudListItem>
+                                </NestedList>
+                            </MudListItem>
+                        </MudList>
                         <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                             <div class="pl-4 mt-2">
                                 <InlineCode>Access-Roles</InlineCode>: Bot roles used to restrict access to Auction Bot commands. See <MudLink Href="commands/overview-roles">Access Roles</MudLink> for more details.
