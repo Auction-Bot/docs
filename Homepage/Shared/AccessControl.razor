@@ -3,15 +3,20 @@
 
 @inject NavigationManager Navigation
 
-<AuthorizeView>
-    <Authorized>
-        Hello, @context.User.Identity!.Name
-        <a href="#" @onclick="BeginSignOut">Log out</a>
-    </Authorized>
-    <NotAuthorized>
-        <a href="authentication/login">Log in</a>
-    </NotAuthorized>
-</AuthorizeView>
+<CascadingAuthenticationState>
+    <AuthorizeView>
+        <Authorizing>
+            Loading Button
+        </Authorizing>
+        <Authorized>
+            Hello, @context.User.Identity!.Name
+            <a href="#" @onclick="BeginSignOut">Log out</a>
+        </Authorized>
+        <NotAuthorized>
+            <a href="authentication/login">Log in</a>
+        </NotAuthorized>
+    </AuthorizeView>
+</CascadingAuthenticationState>
 
 @code{
     private Task BeginSignOut(MouseEventArgs args)
