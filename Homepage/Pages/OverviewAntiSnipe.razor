@@ -1,0 +1,137 @@
+﻿@page "/commands/overview-antisnipe"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <CommandPageHeader Title="Anti-Snipe Settings" Typography="Typo.h5" SubTitle="Prevents bidders from swooping in at the final moment to snatch a win." />
+    </MudHidden>
+    <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+        <CommandPageHeader Title="Anti-Snipe Settings" SubTitle="Prevents bidders from swooping in at the final moment to snatch a win." />
+    </MudHidden>
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Configuring Anti-Snipe" HideSectionLink="true">
+                <Description>
+                    Follow these simple steps to enable the Anti-Snipe option for a more equitable bidding experience.
+                </Description>
+            </SectionHeader>
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Setup">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        Begin by executing the command: <InlineCode>/server settings</InlineCode>
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        From the drop-down, select <InlineCode>Snipe Trigger</InlineCode>.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        From the second drop-down, select the preferred trigger time period. This defines the time frame before an auction closes, during which last-second bids will trigger an extension.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        In the same settings menu, select <InlineCode>Snipe Extension</InlineCode> from the first drop-down
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        In the second drop-down, select the duration that best suites your needs. This determines the additional time that will be added to the auction if a bid is placed during the snipe trigger period.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        That's it, you're done!
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+
+        <PageSection>
+            <SectionHeader Title="How it Works" HideSectionLink="true" />
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Understanding how Anti-Snipe Functions">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <strong>Current Time</strong>: 12:03
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <strong>Scheduled End</strong>: 12:05 (in 2 minutes)
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <strong>Snipe Trigger</strong>: 5 minutes
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <strong>Snipe Extension</strong>: 10 minutes
+                                    </div>
+                                </MudBadge>
+                            </div>
+                            <br/>
+
+                            Imagine a scenario where a user places a bid when there are only 2 minutes left until the auction ends. 
+                            Normally, the auction would end at <strong>12:05</strong>. However, with the Anti-Snipe option activated,
+                            the auction end time is <strong>extended</strong> by the snipe extension duration (10 minutes in this case).
+                            This means that the new Auction End time is <strong>12:13</strong> (10 minutes from the current time).<br/><br/>
+
+                            Even though the scheduled end date remains unchanged, the actual expiration time gets updated to accommodate the additional time.
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+
+        <PageSection>
+            <SectionHeader Title="A Word of Caution">
+                <Description>
+                    While the Anti-Snipe option ensures fairness and excitement, it's essential to be mindful of potential extensions. 
+                    In some cases, auctions could be prolonged well beyond the initially expected end time due to continuous bidding within the snipe trigger period.<br/><br/>
+
+                    By following these guidelines and using the Anti-Snipe option strategically, you'll enhance the bidding process for all participants and increase the thrill of every auction.<br/> <br/>
+                    Happy bidding!
+                </Description>
+            </SectionHeader>
+        </PageSection>
+
+        <PageSection>
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Additional Details" HideTitle="true" />
+                    <div class="d-flex flex-row flex-wrap mud-width-full">
+                        <MudList Clickable="true" Class="flex-grow-1 flex-shrink-0 mud-paper-outlined rounded py-0 ma-2">
+                            <MudListItem Icon="@Icons.Material.Filled.VerifiedUser" IconColor="Color.Primary" Class="pl-6" Href="commands/overview-roles">
+                                <MudText Typo="Typo.body1">Access Roles</MudText>
+                                <MudText Typo="Typo.body2">Control who can buy/sell and more...</MudText>
+                            </MudListItem>
+                        </MudList>
+                        <MudList Clickable="true" Class="flex-grow-1 flex-shrink-0 mud-paper-outlined rounded py-0 ma-2">
+                            <MudListItem Icon="@Icons.Material.Filled.AutoAwesomeMosaic" IconColor="Color.Tertiary" Class="pl-6" Href="commands/overview-showrooms">
+                                <MudText Typo="Typo.body1">Showrooms</MudText>
+                                <MudText Typo="Typo.body2">Understing Showroom options!</MudText>
+                            </MudListItem>
+                        </MudList>
+                    </div>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>
