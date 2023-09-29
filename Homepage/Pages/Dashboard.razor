@@ -2,8 +2,79 @@
 
 @layout DashboardLayout
 
-<h3>Dashboard</h3>
+@inject IConfiguration Configuration
+@inject ISecuredApiService ApiService
+@inject CurrentUserService CurrentUser
+@inject NavigationManager Navigation
+
+<MudMainContent>
+    <MudContainer Class="mt-6 mb-8" MaxWidth="MaxWidth.Large">
+        <MudPaper Class="px-16 py-4 ma-2" Elevation="3" Outlined="true">
+            @if (UserData?.Guilds is { })
+            {
+                <MudStack AlignItems="AlignItems.Center">
+                    <MudText Typo="Typo.h5">Dashboard</MudText>
+                    @if (UserData.Guilds.Length > 0)
+                    {
+                        <MudText Typo="Typo.caption">SELECT A SERVER TO MANAGE</MudText>
+                    }
+                    else
+                    {
+                        <MudLink Href="@Configuration["Discord:BotInvite"]" Typo="Typo.caption">ADD AUCTION BOT TO A SERVER YOU MANAGE</MudLink>
+                    }
+                </MudStack>
+                <MudGrid Class="py-6" Justify="Justify.Center" Spacing="2">
+                    @for (int i = 0; i < UserData!.Guilds.Length; i++)
+                    {
+                        var index = i;
+                        var selectedGuild = $"dashboard/{UserData.Guilds[index].Id}";
+
+                        <MudItem>
+                            <MudTooltip Duration="1000" Text="@UserData.Guilds[index].Name" ShowOnFocus="false">
+                                <MudLink Href="@selectedGuild">
+                                    <MudAvatar Rounded="@(HoverIndex == index)" Style="height:95px; width:95px;" Elevation="3" Color="Color.Dark"
+                                    @onmouseover="() => HoverIndex = index" @onmouseout="() => HoverIndex = -1">
+                                        <ChildContent>
+                                            <MudImage Src=@GetAvatar(index)></MudImage>
+                                        </ChildContent>
+                                    </MudAvatar>
+                                </MudLink>
+                            </MudTooltip>
+                        </MudItem>
+                    }
+                </MudGrid>
+            } 
+            else
+            {
+                <MudStack Justify="Justify.Center" Row="true">
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                    <MudText Typo="Typo.caption">Fetching guilds...</MudText>
+                </MudStack>
+            }
+        </MudPaper>
+    </MudContainer>
+</MudMainContent>
 
 @code {
+    private const ulong ManageGuild = 1ul << 5;
+    
+    private int HoverIndex { get; set; } = -1;
+    private UserData UserData { get; set; } = null!;
 
+    protected override async Task OnInitializedAsync()
+    {
+        UserData = CurrentUser.Data;
+
+        if (UserData?.Guilds is { }) return;
+
+        var mutualGuilds = await ApiService.GetMutualGuildsAsync(UserData!.Id!);
+
+        UserData!.Guilds = mutualGuilds?.OrderBy(x => x.Name).Where(x => CanManageServer(x.Permissions)).ToArray() ?? Array.Empty<Guild>();
+
+        await base.OnInitializedAsync();
+    }
+
+    private string GetAvatar(int index) => $"https://cdn.discordapp.com/icons/{UserData!.Guilds![index].Id}/{UserData!.Guilds![index].Icon}.png";
+
+    private bool CanManageServer(ulong permissions) => (permissions & ManageGuild) == ManageGuild;
 }

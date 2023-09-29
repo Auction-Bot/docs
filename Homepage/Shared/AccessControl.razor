@@ -1,27 +1,94 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 
+@inject CurrentUserService CurrentUser
 @inject NavigationManager Navigation
+@inject IConfiguration Configuration
 
 <CascadingAuthenticationState>
+    ﻿<MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <NavLink ActiveClass="d-flex me-4" href="">
+            <AuctionBotLogo />
+        </NavLink>
+    </MudHidden>
+    <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+        <NavLink ActiveClass="d-flex me-4" href="">
+            <AuctionBotLogo />
+            <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction-Bot</MudText>
+        </NavLink>
+    </MudHidden>
+    <MudSpacer />
     <AuthorizeView>
         <Authorizing>
-            Loading Button
+            <MudButton Disabled="true" Variant="Variant.Filled" Color="Color.Primary">
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true" />
+                    <MudText Class="ms-2">Loading</MudText>
+            </MudButton>
         </Authorizing>
         <Authorized>
-            Hello, @context.User.Identity!.Name
-            <a href="#" @onclick="BeginSignOut">Log out</a>
+            <MudMenu FullWidth="true" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.BottomCenter">
+                <ActivatorContent>
+                    <MudStack Row="true" AlignItems="AlignItems.Center" Style="min-width:150px;">
+                        <MudAvatar Size="Size.Medium">
+                            <ChildContent>
+                                <MudImage Src="@UserData!.Avatar"></MudImage>
+                            </ChildContent>
+                        </MudAvatar>
+                        <MudText>@UserData!.Name</MudText>
+                        <MudIcon Icon="@Icons.Material.Filled.KeyboardArrowDown" />
+                    </MudStack>
+                </ActivatorContent>
+                <ChildContent>
+                    <MudMenuItem Href="dashboard">Dashboard</MudMenuItem>
+                    <MudMenuItem Style="color:indianred" OnClick="SignOut">Sign Out</MudMenuItem>
+                </ChildContent>
+            </MudMenu>
         </Authorized>
         <NotAuthorized>
-            <a href="authentication/login">Log in</a>
+            <MudButton OnClick="Authorize"  Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Login" Color="Color.Tertiary">Login</MudButton>
         </NotAuthorized>
     </AuthorizeView>
 </CascadingAuthenticationState>
 
 @code{
-    private Task BeginSignOut(MouseEventArgs args)
+    [CascadingParameter] public Task<AuthenticationState>? authenticationState { get; set; }
+
+    public UserData UserData { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
     {
-        Navigation.NavigateToLogout("authentication/logout", "");
+        UserData = CurrentUser.Data;
+
+        if (authenticationState is not null)
+        {
+            var state = await authenticationState;
+
+            if (state is null || UserData is null) return;
+            
+            UserData.Id = state.User.FindFirst("sub")?.Value.Split("|").Last();
+            UserData.Name = state.User.FindFirst("name")?.Value;
+            UserData.Avatar = state.User.FindFirst("picture")?.Value ?? UserData.Name?[0].ToString();
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    private Task Authorize(MouseEventArgs args)
+    {
+        InteractiveRequestOptions requestOptions = new()
+        {
+            Interaction = InteractionType.SignIn,
+            ReturnUrl = "/dashboard",
+        };
+
+        Navigation.NavigateToLogin("authentication/login", requestOptions);
+
+        return Task.CompletedTask;
+    }
+
+    private Task SignOut(MouseEventArgs args)
+    {
+        Navigation.NavigateToLogout("authentication/logout", "/");
         
         return Task.CompletedTask;
     }

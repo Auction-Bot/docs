@@ -1,4 +1,5 @@
 ﻿using Homepage.Services;
+using Homepage.Shared.Interfaces;
 
 namespace Homepage
 {
@@ -6,10 +7,12 @@ namespace Homepage
     {
         public static void AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddHttpClient<AgoraApiService>(client => client.BaseAddress = new Uri(configuration["API:BaseUri"]!));
-            services.AddHttpClient<AgoraSecuredApiService>(client => client.BaseAddress = new Uri(configuration["API:BaseUri"]!))
+            services.AddTransient<ApiAddressAuthorizationMessageHandler>();
+            services.AddHttpClient<IApiService, AgoraApiService>(client => client.BaseAddress = new Uri(configuration["API:BaseUri"]!));
+            services.AddHttpClient<ISecuredApiService, FakeApiService>(client => client.BaseAddress = new Uri(configuration["API:BaseUri"]!))
                     .AddHttpMessageHandler<ApiAddressAuthorizationMessageHandler>();
 
+            services.AddSingleton<CurrentUserService>();
             services.AddSingleton<IMenuService, MenuService>();
             services.AddSingleton<ICommandNavigationService, CommandNavigationService>();
             services.AddSingleton<IRenderQueueService>(new RenderQueueService { Capacity = int.MaxValue });

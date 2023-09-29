@@ -7,12 +7,14 @@
 @inject IConfiguration Configuration
 
 <RemoteAuthenticatorView Action="@Action">
+    <LoggingIn />
+    <CompletingLoggingIn />
     <LogOut>
         @{
             var authority = Configuration["Auth0:Authority"];
             var clientId = Configuration["Auth0:ClientId"];
 
-             Navigation.NavigateTo($"{authority}/v2/logout?client_id={clientId}");
+            Navigation.NavigateTo($"{authority}/v2/logout?client_id={clientId}");
         }
     </LogOut>
 </RemoteAuthenticatorView>

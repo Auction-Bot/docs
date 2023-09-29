@@ -1,26 +1,25 @@
 ﻿using Homepage.Models;
+using Homepage.Shared.Interfaces;
 using System.Net.Http.Json;
 
 namespace Homepage.Services
 {
-    public class AgoraApiService : IDisposable
+    public class AgoraApiService : IDisposable, IApiService
     {
         private readonly HttpClient _http;
 
-        public AgoraApiService(HttpClient httpClient, IConfiguration configuration)
+        private const string StatisticsUri = "api/stats";
+
+        public AgoraApiService(HttpClient httpClient)
         {
             _http = httpClient;
-
         }
 
         public async Task<StatisticsDTO?> GetBotStatistics()
         {
             try
             {
-                Console.WriteLine(_http.BaseAddress?.ToString());
-                Console.WriteLine(_http.BaseAddress?.AbsoluteUri);
-
-                return await _http.GetFromJsonAsync<StatisticsDTO>("api/stats");
+                return await _http.GetFromJsonAsync<StatisticsDTO>(StatisticsUri);
             }
             catch (Exception e)
             {
@@ -29,9 +28,6 @@ namespace Homepage.Services
             }
         }
 
-        public void Dispose()
-        {
-            _http?.Dispose();
-        }
+        public void Dispose() => _http?.Dispose();
     }
 }
