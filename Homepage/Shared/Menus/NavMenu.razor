@@ -1,5 +1,4 @@
 ﻿@using System.Linq
-@using System.Text.RegularExpressions
 
 @inject IMenuService MenuService;
 @inject NavigationManager NavigationManager;
@@ -14,14 +13,14 @@
             <MudNavGroup Title="@item.Name" Expanded="@(IsSubGroupExpanded(item))" ExpandIcon="@Icons.Material.Filled.ExpandMore">
                 @foreach (var subItem in item.GroupCommands)
                 {
-                    string href = $"slash-commands/{subItem.Link}";
+                    var href = $"slash-commands/{subItem.Link}";
                     <MudNavLink Href="@href">@subItem.Name</MudNavLink>
                 }
             </MudNavGroup>
         }
         else
         {
-            string href = $"slash-commands/{item.Link}";
+            var href = $"slash-commands/{item.Link}";
             <MudNavLink Href="@href">@item.Name</MudNavLink>
         }
     }
@@ -29,7 +28,7 @@
 <MudNavGroup Title="Message Commands" Expanded="@(_section == "message-commands")" ExpandIcon="@Icons.Material.Filled.ExpandMore">
     @foreach (var item in MenuService.MessageCommands.OrderBy(x => x.Name))
     {
-        string href = $"message-commands/{item.Link}";
+        var href = $"message-commands/{item.Link}";
         <MudNavLink Href="@href">@item.Name</MudNavLink>
     }
 </MudNavGroup>

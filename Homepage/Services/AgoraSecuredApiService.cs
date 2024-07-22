@@ -1,14 +1,12 @@
 ﻿namespace Homepage.Services
 {
-    public class AgoraSecuredApiService : IDisposable
+    public class AgoraSecuredApiService(HttpClient httpClient) : IDisposable
     {
-        private readonly HttpClient _http;
-
-        public AgoraSecuredApiService(HttpClient httpClient) => _http = httpClient;
+        private readonly HttpClient _http = httpClient;
 
         public void Dispose()
         {
-            _http?.Dispose();
+            _http.Dispose();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Homepage.Services
 
         public void Dispose()
         {
-            _http?.Dispose();
+            _http.Dispose();
         }
     }
 }

@@ -10,10 +10,10 @@
 
 @code{
     [CascadingParameter] CommandPage CommandPage { get; set; } = null!;
-    [CascadingParameter] public PageSection ParentSection { get; protected set; } = null!;
+    [CascadingParameter] public PageSection? ParentSection { get; protected set; }
 
     [Parameter] public RenderFragment? ChildContent { get; set; }    
-    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object> UserAttributes { get; set; } = new Dictionary<string, object>();
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object?> UserAttributes { get; set; } = [];
 
     private bool _renderImmediately = false;
 

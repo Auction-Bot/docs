@@ -22,7 +22,7 @@
                     <MudText Typo="Typo.subtitle1" Class="mud-text-secondary" Inline="true"> Manage auctions, sales, trades and giveaways with ease.</MudText>
                 </div>
                 <div class="d-flex py-4 mb-16 mb-md-0">
-                    <MudButton Color="Color.Primary" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.Discord" DisableElevation="true" 
+                    <MudButton Color="Color.Primary" Variant="Variant.Filled" StartIcon="@Icons.Custom.Brands.Discord" DropShadow="false" 
                                Class="mud-button-gradient-primary" Size="Size.Large" Target="_blank" Href=@Configuration["Discord:BotInvite"]>
                         Add to Discord
                     </MudButton>
@@ -89,7 +89,7 @@
             <MudText Class="mt-5">
                 UnbelievaBoat balances can be used when performaing transactions.
             </MudText>
-            <MudLink Class="landing-link" Href=@Configuration["Integration:UnbelievaBoat"] Taget="_blank">Visit UnbelievaBoat<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
+            <MudLink Class="landing-link" Href=@Configuration["Integration:UnbelievaBoat"] Target="_blank">Visit UnbelievaBoat<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
         </MudItem>
         <MudItem xs="12" sm="12" md="3" Class="pt-16">
             <MudIcon Icon="@Icons.Material.Filled.CrisisAlert" Size="Size.Large" />
@@ -97,7 +97,7 @@
             <MudText Class="mt-5">
                 DKP balances can be used when performing transactions.
             </MudText>
-            <MudLink Class="landing-link" Href=@Configuration["Integration:RaidHelper"] Taget="_blank">Visit Raid-Helper<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
+            <MudLink Class="landing-link" Href=@Configuration["Integration:RaidHelper"] Target="_blank">Visit Raid-Helper<MudIcon Icon="@Icons.Material.Rounded.KeyboardArrowRight" Size="Size.Small" /></MudLink>
         </MudItem>
     </MudGrid>
 </LandingSection>

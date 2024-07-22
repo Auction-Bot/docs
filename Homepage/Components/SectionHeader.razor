@@ -22,7 +22,7 @@
 
     private string Style => SubGroup is null ? "margin-top: 60px; margin-bottom: 20px;" : "margin-top: 24px; margin-bottom: 12px;";
 
-    protected string Classname =>
+    private string Classname =>
         new CssBuilder("docs-section-header")
             .AddClass(Class)
             .Build();
@@ -34,7 +34,7 @@
     [Parameter] public RenderFragment? SubTitle { get; set; }
     [Parameter] public RenderFragment? Description { get; set; }
 
-    public SectionLink? SectionInfo { get; set; }
+    private SectionLink? SectionInfo { get; set; }
 
     public ElementReference SectionReference;
 
@@ -42,7 +42,7 @@
     {
         await base.OnInitializedAsync();
 
-        if (CommandPage == null || string.IsNullOrWhiteSpace(Title) || HideSectionLink) return;
+        if (string.IsNullOrWhiteSpace(Title) || HideSectionLink) return;
 
         var id = (Title).Replace(" ", "-").ToLowerInvariant();
 
@@ -53,7 +53,7 @@
     {
         await base.OnAfterRenderAsync(firstRender);
 
-        if (firstRender && CommandPage != null && !String.IsNullOrWhiteSpace(Title) && SectionInfo != null)
+        if (firstRender && !string.IsNullOrWhiteSpace(Title) && SectionInfo != null)
             await CommandPage.AddSectionAsync(SectionInfo, Section);
     }
 

@@ -18,12 +18,7 @@ namespace Homepage.Services
         private readonly Queue<QueuedContent> _queue = new();
         private TaskCompletionSource? _tcs;
 
-        public int Capacity { get; init; }
-
-        public RenderQueueService()
-        {
-            Capacity = 3;
-        }
+        public int Capacity { get; init; } = 3;
 
         public void Clear()
         {
@@ -37,7 +32,7 @@ namespace Homepage.Services
 
         void IRenderQueueService.Enqueue(QueuedContent component)
         {
-            bool renderImmediately = false;
+            bool renderImmediately;
 
             lock (_queue)
             {

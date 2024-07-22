@@ -40,12 +40,12 @@ else
     [Parameter] public Typo Typography { get; set; } = Typo.h3;
 
 
-    public string? _componentName;
+    private string? _componentName;
 
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
-        _componentName = NavigationManager.Uri.ToString().Split('/', StringSplitOptions.RemoveEmptyEntries).LastOrDefault();
+        _componentName = NavigationManager.Uri.Split('/', StringSplitOptions.RemoveEmptyEntries).LastOrDefault();
     }   
 
     private string GetComponentLink()

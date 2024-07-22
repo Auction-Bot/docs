@@ -33,15 +33,16 @@
     </NotFound>
 </Router>
 
-<MudBlazor.MudThemeProvider Theme="_theme" />
+<MudBlazor.MudThemeProvider Theme="_theme" IsDarkMode />
 <MudBlazor.MudDialogProvider />
 <MudBlazor.MudSnackbarProvider />
+<MudBlazor.MudPopoverProvider />
 
 @code
 {
-    private MudTheme _theme = new()
+    private readonly MudTheme _theme = new()
     {
-        Palette = new PaletteDark()
+        PaletteDark = new PaletteDark()
         {
             Background = "#111019",
             Surface = "#151521",
