@@ -1,13 +1,13 @@
-﻿@page "/slash-commands/tradeaddstandard"
+﻿@page "/slash-commands/templatecreateauction"
 
 @layout StandardLayout
 
 <CommandPage DisplayFooter="true">
     <PageContent>
         <PageSection>
-            <SectionHeader Title="Standard Trade">
+            <SectionHeader Title="Create an Auction Template">
                 <Description>
-                    List the item you want to trade and specify what you're seeking in return.
+                    <MudText>This command is used to create a new auction template.</MudText>
                 </Description>
             </SectionHeader>
 
@@ -15,7 +15,7 @@
                 <PageSection>
                     <SectionHeader Title="Usage">
                         <Description>
-                            <InlineCode>/trade add standard</InlineCode> [offering] [accepting]
+                            <InlineCode>/template create auction</InlineCode>
                         </Description>
                     </SectionHeader>
                 </PageSection>
@@ -28,12 +28,7 @@
                             <div class="d-flex flex-column px-2">
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4">
-                                        <InlineCode>Offering</InlineCode> - Title of the item to be traded.
-                                    </div>
-                                </MudBadge>
-                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
-                                    <div class="pl-4 mt-2">
-                                        <InlineCode>Accepting</InlineCode> - Title of the item you want in return.
+                                        <InlineCode>Type</InlineCode> - The type of auction template to create.
                                     </div>
                                 </MudBadge>
                             </div>
@@ -49,7 +44,27 @@
                             <div class="d-flex flex-column px-2">
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4">
+                                        <InlineCode>Title</InlineCode> - Title of the item.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        <InlineCode>Starting-Price</InlineCode> - Price bidding should start at.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
                                         <InlineCode>Duration</InlineCode> - Length of time the auction should run for. Example: 7d or 1 week.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Currency</InlineCode> - Currency type/symbol to use.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Quantity</InlineCode> - Amount available.
                                     </div>
                                 </MudBadge>
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
@@ -64,7 +79,17 @@
                                 </MudBadge>
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4 mt-2">
-                                        <InlineCode>Scheduled-Start</InlineCode> - Scheduled start of the auction (yyyy-mm-dd HH:mm). Defaults to now.
+                                        <InlineCode>Reserve-Price</InlineCode> - Do NOT sell unless the final bid exceeds this price.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Min-Bid-Increase</InlineCode> - Minimum amount bids can be increased by.
+                                    </div>
+                                </MudBadge>
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4 mt-2">
+                                        <InlineCode>Max-Bid-Increase</InlineCode> - Maximum amount bids can be increased by.
                                     </div>
                                 </MudBadge>
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
@@ -84,12 +109,12 @@
                                 </MudBadge>
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4 mt-2">
-                                        <InlineCode>Required-Role</InlineCode> - Restricts trades to a defined role.
+                                        <InlineCode>Owner</InlineCode> - Item owner. Defaults to the command user. Can be set by Brokers.
                                     </div>
                                 </MudBadge>
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
                                     <div class="pl-4 mt-2">
-                                        <InlineCode>Owner</InlineCode> - Item owner. Defaults to the command user. Can be set by Brokers.
+                                        <InlineCode>Reverse-Bidding</InlineCode> - True to allow the lowest bid to win. Defaults to False
                                     </div>
                                 </MudBadge>
                                 <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">

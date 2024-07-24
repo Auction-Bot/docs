@@ -23,9 +23,6 @@
              Class="mx-1 px-3" PopoverClass="mainmenu-shadow" ListClass="d-flex px-4 pb-2 special-menu"
              EndIcon="@Icons.Material.Filled.KeyboardArrowDown" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter" >
         <MudList T="string">
-            <MudListSubheader>
-                Features
-            </MudListSubheader>
             <MudListItem Href="commands/overview-showrooms#category-channel-features">
                 <div class="d-flex">
                     <MudText Inline="true" Color="Color.Primary">Auto</MudText><MudText Inline="true" Color="Color.Secondary">-Showrooms</MudText>
@@ -58,15 +55,23 @@
             </MudListItem>
         </MudList>
         <MudList T="string" Class="relative">
-            <MudListSubheader>
-                Upcoming
-            </MudListSubheader>
-            <MudOverlay Visible="true" LightBackground="false" Absolute="true" Class="docs-menu-overlay" /> @*TODO - docs menu overlay*@
-            <MudListItem>
-                <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
+            <MudListItem Href="slash-commands/templatecreateauction">
+                <div class="d-flex">
                     <MudText Color="Color.Secondary">Default-</MudText><MudText Color="Color.Warning">Templates</MudText>
-                </MudBadge>
+                </div>
                 <MudText Typo="Typo.body2">Store and recall default field values for various listing types</MudText>
+            </MudListItem>
+            <MudListItem Href="slash-commands/serverannouncements">
+                <div class="d-flex">
+                    <MudText Color="Color.Secondary">Custom-</MudText><MudText Color="Color.Warning">Announcements</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Customize the announcement messages posted for each listing type.</MudText>
+            </MudListItem>
+            <MudListItem Href="slash-commands/serverfees">
+                <div class="d-flex">
+                    <MudText Color="Color.Error">Premium</MudText><MudText Color="Color.Secondary">-Auctions</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Require members to pay an entry-free in order to Participate in auctions.</MudText>
             </MudListItem>
         </MudList>
     </MudMenu>
