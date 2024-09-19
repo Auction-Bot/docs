@@ -1,0 +1,44 @@
+﻿@page "/callback"
+@inject NavigationManager NavigationManager
+@inject IJsApiService JsApiService
+
+<MudContainer Class="pt-20" MaxWidth="MaxWidth.Medium" Style="height:100svh">
+    <MudPaper Class="ma-20">  
+        @if (!string.IsNullOrEmpty(AuthCode))
+        {
+            <MudStack Class="mud-theme-tertiary pa-6 rounded-lg" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                <MudIcon Icon="@Icons.Material.Filled.GppGood" Size="Size.Large" />
+                <MudText Typo="Typo.h6">Authorization Successful</MudText>
+                <MudText Typo="Typo.body1">Your authorization code is:</MudText>
+                <MudPaper Class="pa-2" Elevation="5">
+                    <InlineCode >@AuthCode</InlineCode>
+                    <MudIconButton OnClick="CopyTextToClipboard" Icon="@Icons.Material.Filled.ContentCopy" Size="Size.Small" title="Copy" />
+                </MudPaper>
+                <MudText Typo="Typo.body2">Copy this code and submit it to Auction Bot by clicking the Submit Code button.</MudText>
+            </MudStack>
+        }
+        else
+        {
+            <MudStack Class="mud-theme-dark pa-6 rounded-lg" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                <MudIcon Icon="@Icons.Material.Filled.GppBad" Size="Size.Large" Color="Color.Error"/>
+                <MudText Typo="Typo.h6">Invalid Access</MudText>
+                <MudText Typo="Typo.body1">No authorization code found in the URL. Please try the authorization process again</MudText>
+            </MudStack>
+        }
+    </MudPaper>
+
+</MudContainer>
+
+@code {
+    private string? AuthCode { get; set; }
+
+    protected override void OnInitialized()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+
+        AuthCode = query["code"];
+    }
+
+    private async Task CopyTextToClipboard() => await JsApiService.CopyToClipboardAsync(AuthCode);
+}
