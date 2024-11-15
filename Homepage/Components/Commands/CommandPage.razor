@@ -19,15 +19,11 @@
     @if (DisplayFooter)
     {
         <MudContainer MaxWidth="MaxWidth.Large" Class="mt-16">
-            <Footer />
+            <Footer></Footer>
         </MudContainer>
     }
     <MudDrawer Class="page-content-navigation-drawer" @bind-Open="_contentDrawerOpen" Breakpoint="Breakpoint.Lg" Anchor="Anchor.End" ClipMode="DrawerClipMode.Always" Elevation="0" Color="Color.Transparent">
         <MudPageContentNavigation SectionClassSelector="docs-section-header" @ref="_contentNavigation" ActivateFirstSectionAsDefault="true"/>
-@*         @if (_renderAds)
-        {
-            <MudElement HtmlTag="script" async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESDLK3E&placement=mudblazorcom" id="_carbonads_js"></MudElement>
-        } *@
     </MudDrawer>
 </MudMainContent>
 
@@ -46,8 +42,6 @@
     private string? _anchor = null;
     private int _sectionCount;
     private bool _contentDrawerOpen = true;
-    private bool _displayView;
-    private bool _renderAds;
 
     public event Action<Stopwatch>? Rendered;
 
@@ -87,7 +81,6 @@
         _previous = CommandService.Previous;
         _next = CommandService.Next;
         _section = CommandService.Section;
-        _displayView = false;
         _componentName = "temp";
     }
 
@@ -97,11 +90,6 @@
         {
             _stopwatch.Stop();
             Rendered?.Invoke(_stopwatch);
-        }
-        if (firstRender)
-        {
-            _renderAds = true;
-            StateHasChanged();
         }
     }
 
@@ -113,23 +101,22 @@
         {
             while (_bufferedSections.Count > 0)
             {
-                var item = _bufferedSections.Dequeue();
+                _bufferedSections.Dequeue();
 
-                if (_contentNavigation.Sections.FirstOrDefault(x => x.Id == sectionLinkInfo.Id) == default)
+                if (_contentNavigation.Sections.FirstOrDefault(x => x.Id == sectionLinkInfo.Id) != default) continue;
+                
+                MudPageContentSection? parentInfo = null;
+
+                if (section.ParentSection != null && _sectionMapper.TryGetValue(section.ParentSection, out var value))
                 {
-                    MudPageContentSection? parentInfo = null;
-
-                    if (section.ParentSection != null && _sectionMapper.ContainsKey(section.ParentSection) == true)
-                    {
-                        parentInfo = _sectionMapper[section.ParentSection];
-                    }
-
-                    var info = new MudPageContentSection(sectionLinkInfo.Title, sectionLinkInfo.Id, section.Level, parentInfo);
-
-                    _sectionMapper.Add(section, info);
-
-                    _contentNavigation.AddSection(info, false);
+                    parentInfo = value;
                 }
+
+                var info = new MudPageContentSection(sectionLinkInfo.Title, sectionLinkInfo.Id, section.Level, parentInfo);
+
+                _sectionMapper.Add(section, info);
+
+                _contentNavigation.AddSection(info, false);
             }
 
             ((IMudStateHasChanged)_contentNavigation).StateHasChanged();

@@ -1,10 +1,10 @@
 ﻿namespace Homepage.Models
 {
-    public class ApplicationCommandBilder
+    public class ApplicationCommandBuilder
     {
-        private List<BotCommand> _commands = new();
+        private readonly List<BotCommand> _commands = [];
 
-        public ApplicationCommandBilder AddItem(string name)
+        public ApplicationCommandBuilder AddItem(string name)
         {
             var componentItem = new BotCommand
             {
@@ -18,7 +18,7 @@
             return this;
         }
 
-        public ApplicationCommandBilder AddNavGroup(string name, bool expanded, ApplicationCommandBilder groupItems)
+        public ApplicationCommandBuilder AddNavGroup(string name, bool expanded, ApplicationCommandBuilder groupItems)
         {
             var componentItem = new BotCommand
             {

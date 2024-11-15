@@ -56,7 +56,7 @@ namespace Homepage.Services
             return orderedLinks.ElementAt(position);
         }
 
-        private List<NavigationFooterLink> GetOrderedMenuLinks(NavigationSection section)
+        private static List<NavigationFooterLink> GetOrderedMenuLinks(NavigationSection section)
         {
             var links = new List<NavigationFooterLink>();
             return links;

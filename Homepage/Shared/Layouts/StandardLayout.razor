@@ -10,7 +10,7 @@
     </MudAppBar>
     <MudDrawer Open="@_drawerOpen" OpenChanged="OnDrawerOpenChanged" ClipMode="DrawerClipMode.Docked" Elevation="0" Breakpoint="Breakpoint.Lg">
         <MudHidden Breakpoint="Breakpoint.MdAndUp">
-            <MudToolBar Dense="true" DisableGutters="true" Class="docs-gray-bg">
+            <MudToolBar Dense Gutters="false" Class="docs-gray-bg">
                 @if (_topMenuOpen == false)
                 {
                     <MudIconButton Icon="@Icons.Material.Rounded.ArrowBack" Color="Color.Inherit" OnClick="@((e) => OpenTopMenu())"/>
@@ -21,7 +21,7 @@
                 }
             </MudToolBar>
     
-            @if (_topMenuOpen == true)
+            @if (_topMenuOpen)
             {
                 <MudNavMenu Color="Color.Primary" Margin="Margin.Dense" Rounded="true" Class="pa-2">
                     <MudNavLink Disabled="true" Href="dashboard">Dashboard</MudNavLink>
@@ -71,7 +71,7 @@
 
     private NavMenu? _navMenuRef;
     private bool _drawerOpen = true;
-    private bool _topMenuOpen = false;
+    private bool _topMenuOpen;
     
     protected override void OnAfterRender(bool firstRender)
     {

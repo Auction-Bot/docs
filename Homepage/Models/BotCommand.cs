@@ -2,13 +2,13 @@
 {
     public class BotCommand
     {
-        public string? Name { get; set; }
-        public string? Link { get; set; }
-        public bool IsNavGroup { get; set; }
+        public string? Name { get; init; }
+        public string? Link { get; init; }
+        public bool IsNavGroup { get; init; }
         public bool NavGroupExpanded { get; set; }
 
-        public List<BotCommand> GroupCommands { get; set; } = new();
+        public List<BotCommand> GroupCommands { get; init; } = [];
 
-        public string? CommandName { get; private set; }
+        public string? CommandName { get; init; }
     }
 }

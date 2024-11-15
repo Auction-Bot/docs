@@ -1,6 +1,4 @@
-﻿@using MudBlazor.Utilities
-
-<section class="@SectionClassnames">
+﻿<section class="@SectionClassnames">
     <div class="section-background-container">
         <div class="@BackgroundClassnames">
             @Stripes
@@ -29,24 +27,24 @@
     [Parameter] public string? BackgroundClass { get; set; }
     [Parameter] public string? Class { get; set; }
 
-    protected string SectionClassnames =>
+    private string SectionClassnames =>
         new CssBuilder("mud-landingpage-section")
           .AddClass(SectionClass)
         .Build();
 
-    protected string BackgroundClassnames =>
+    private string BackgroundClassnames =>
         new CssBuilder("section-background d-flex flex-column justify-end")
           .AddClass("straight", Straight)
           .AddClass("skew", !Straight)
           .AddClass(BackgroundClass)
         .Build();
 
-    protected string EndBackgroundClassnames =>
+    private string EndBackgroundClassnames =>
         new CssBuilder("section-background straight-end")
           .AddClass(BackgroundClass)
         .Build();
 
-    protected string ContainerClassnames =>
+    private string ContainerClassnames =>
         new CssBuilder("section-container")
           .AddClass("padding-straight", (!CustomPadding && Straight))
           .AddClass("padding-skew", (!CustomPadding && !Straight))

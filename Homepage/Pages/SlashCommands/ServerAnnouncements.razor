@@ -1,0 +1,63 @@
+﻿@page "/slash-commands/serverannouncements"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Customize Winner Announcements">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Warning">
+                        <MudText>Restricted to users with Manage_Server permissions.</MudText>
+                    </MudAlert>
+                </SubTitle>
+                <Description>
+                    <MudText>Setup and configure result log messages.</MudText>
+                    <MudText>Create a default message for all listings or individual messages per listing type</MudText>
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <InlineCode>/server announcements</InlineCode>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

@@ -1,20 +1,20 @@
 ﻿@inject NavigationManager NavigationManager
 @inject IConfiguration Configuration
 
-﻿<MudHidden Breakpoint="Breakpoint.MdAndUp">
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
     <MudIconButton OnClick="DrawerToggleCallback" Icon="@Icons.Material.Rounded.Notes" Color="Color.Inherit" Edge="Edge.Start"/>
     <MudSpacer/>
     <NavLink ActiveClass="d-flex" href="">
         <AuctionBotLogo />
-        <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction-Bot</MudText>
+        <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction Bot</MudText>
     </NavLink>
     <MudSpacer/>
-    <MudIconButton Icon="@Icons.Custom.Brands.Discord" Color="Color.Inherit" Edge="Edge.End" Href=@Configuration["Discord:ServerInvite"] Title="Discord Suppor Server" />
+    <MudIconButton Icon="@Icons.Custom.Brands.Discord" Color="Color.Inherit" Edge="Edge.End" Href=@Configuration["Discord:ServerInvite"] title="Discord Support Server" />
 </MudHidden>
 <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
     <NavLink ActiveClass="d-flex me-4" href="">
         <AuctionBotLogo />
-        <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction-Bot</MudText>
+        <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text">Auction Bot</MudText>
     </NavLink>
     <MudButton Href="dashboard" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.Dashboard)">Dashboard</MudButton>
     <MudButton Href="commands/overview" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(MenuOption.Commands)">Commands</MudButton>
@@ -22,29 +22,26 @@
     <MudMenu Color="Color.Inherit" Variant="Variant.Text" LockScroll="true" Label="Features"
              Class="mx-1 px-3" PopoverClass="mainmenu-shadow" ListClass="d-flex px-4 pb-2 special-menu"
              EndIcon="@Icons.Material.Filled.KeyboardArrowDown" AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter" >
-        <MudList Clickable="true">
-            <MudListSubheader>
-                Features
-            </MudListSubheader>
+        <MudList T="string">
             <MudListItem Href="commands/overview-showrooms#category-channel-features">
                 <div class="d-flex">
                     <MudText Inline="true" Color="Color.Primary">Auto</MudText><MudText Inline="true" Color="Color.Secondary">-Showrooms</MudText>
                 </div>
                 <MudText Typo="Typo.body2">Auto create a new showroom channel for each listing</MudText>
             </MudListItem>
-            <MudListItem Href="slash-commands//imageupload#optional-values">
+            <MudListItem Href="slash-commands/imageupload#optional-values">
                 <div class="d-flex">
                     <MudText Color="Color.Primary">Multi Image</MudText><MudText Color=" Color.Secondary">-Listings</MudText>
                 </div>
                 <MudText Typo="Typo.body2">Include up to four images on each listing</MudText>
             </MudListItem>
-            <MudListItem Href="slash-commands//imageupload#optional-values">
+            <MudListItem Href="commands/overview-antisnipe">
                 <div class="d-flex">
                     <MudText Color="Color.Primary">Anti Snipe</MudText><MudText Color=" Color.Secondary">-Settings</MudText>
                 </div>
                 <MudText Typo="Typo.body2">Prevent last minute auction sniping</MudText>
             </MudListItem>
-            <MudListItem Href="slash-commands//serversettings#auction-bot-settings">
+            <MudListItem Href="slash-commands/serversettings#auction-bot-settings">
                 <div class="d-flex">
                     <MudText Color="Color.Secondary">UnbelievaBoat-</MudText><MudText Color="Color.Success">Integration</MudText>
                 </div>
@@ -57,22 +54,24 @@
                 <MudText Typo="Typo.body2">Review completed transactions and view a merchants overall rating</MudText>
             </MudListItem>
         </MudList>
-        <MudList Clickable="true" Class="relative">
-            <MudListSubheader>
-                Upcoming
-            </MudListSubheader>
-            <MudOverlay Visible="true" LightBackground="false" Absolute="true" Class="docs-menu-overlay" />
-            <MudListItem>
-                <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
+        <MudList T="string" Class="relative">
+            <MudListItem Href="slash-commands/templatecreateauction">
+                <div class="d-flex">
                     <MudText Color="Color.Secondary">Default-</MudText><MudText Color="Color.Warning">Templates</MudText>
-                </MudBadge>
+                </div>
                 <MudText Typo="Typo.body2">Store and recall default field values for various listing types</MudText>
             </MudListItem>
-            <MudListItem>
-                <MudBadge Class="d-flex mr-16" Content="@_badgeTextSoon" Color="Color.Info" Overlap="true">
-                    <MudText Color="Color.Warning">Multiple</MudText><MudText Color="Color.Secondary">-Giveaways</MudText>
-                </MudBadge>
-                <MudText Typo="Typo.body2">Select multiple winners for a single Giveaway</MudText>
+            <MudListItem Href="slash-commands/serverannouncements">
+                <div class="d-flex">
+                    <MudText Color="Color.Secondary">Custom-</MudText><MudText Color="Color.Warning">Announcements</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Customize the announcement messages posted for each listing type.</MudText>
+            </MudListItem>
+            <MudListItem Href="slash-commands/serverfees">
+                <div class="d-flex">
+                    <MudText Color="Color.Error">Premium</MudText><MudText Color="Color.Secondary">-Auctions</MudText>
+                </div>
+                <MudText Typo="Typo.body2">Require members to pay an entry-free in order to Participate in auctions.</MudText>
             </MudListItem>
         </MudList>
     </MudMenu>
@@ -99,9 +98,9 @@
     {
         var selectedOption = NavigationManager.Uri switch
         {
-            { } when NavigationManager.Uri.Contains("dashboard") => MenuOption.Dashboard,
-            { } when NavigationManager.Uri.Contains("commands") => MenuOption.Commands,
-            { } when NavigationManager.Uri.Contains("faq") => MenuOption.FAQs,
+            not null when NavigationManager.Uri.Contains("dashboard") => MenuOption.Dashboard,
+            not null when NavigationManager.Uri.Contains("commands") => MenuOption.Commands,
+            not null when NavigationManager.Uri.Contains("faq") => MenuOption.FAQs,
             _ => MenuOption.None
         };
 

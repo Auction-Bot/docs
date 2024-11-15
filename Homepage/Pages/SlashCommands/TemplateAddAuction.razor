@@ -1,0 +1,58 @@
+﻿@page "/slash-commands/templateaddauction"
+
+@layout StandardLayout
+
+<CommandPage DisplayFooter="true">
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Add an Auction from a Template">
+                <Description>
+                    <MudText>This command is used to add an auction item based on a saved template.</MudText>
+                    <MudText>Stored template values can be overridden for the current item via this command.</MudText>
+                </Description>
+            </SectionHeader>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Usage">
+                        <Description>
+                            <InlineCode>/template add auction</InlineCode>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Required Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        <InlineCode>Template</InlineCode> - The name of the template to use.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Optional Values">
+                        <Description>
+                            <div class="d-flex flex-column px-2">
+                                <MudBadge Color="Color.Primary" Dot="true" Bordered="true" Origin="Origin.CenterLeft">
+                                    <div class="pl-4">
+                                        None.
+                                    </div>
+                                </MudBadge>
+                            </div>
+                        </Description>
+                    </SectionHeader>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>

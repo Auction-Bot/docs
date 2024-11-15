@@ -2,8 +2,8 @@
 {
     public class SectionLink
     {
-        public string Id { get; set; } = string.Empty;
-        public string Title { get; set; } = string.Empty;
+        public string Id { get; init; } = string.Empty;
+        public string Title { get; init; } = string.Empty;
         public bool Active { get; set; }
     }
 }
