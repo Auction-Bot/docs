@@ -47,7 +47,7 @@
         <PageSection>
             <SectionHeader Title="Command Translations">
                 <SubTitle>
-                    <MudAlert Severity="Severity.Info" OnClick="TranslationsUnavailable">
+                    <MudAlert Severity="Severity.Info" OnClick="@(() => TranslationsUnavailable())">
                         <MudStack Row Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center">
                             <MudText>Provide translations for all Auction Bot commands</MudText>
                             <MudSpacer />
@@ -61,7 +61,7 @@
         <PageSection>
             <SectionHeader Title="Response/Feedback Translations">
                 <SubTitle>
-                    <MudAlert Severity="Severity.Info" Onclick="TranslationsUnavailable">
+                    <MudAlert Severity="Severity.Info" OnClick="@(() => TranslationsUnavailable())">
                         <MudStack Row Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center">
                             <MudText>Provide translations for all Auction Bot responses</MudText>
                             <MudSpacer />
