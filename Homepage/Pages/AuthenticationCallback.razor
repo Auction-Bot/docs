@@ -1,0 +1,35 @@
+﻿@page "/authentication/login-callback"
+
+@inject IJSRuntime JsRunTime
+
+@inject NavigationManager Navigation
+@inject DiscordAuthenticationStateProvider AuthStateProvider
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var uri = new Uri(Navigation.Uri);
+        var fragment = uri.Fragment;
+
+        if (fragment.StartsWith("#"))
+            fragment = fragment.Substring(1);
+
+        var parameters = fragment.Split('&').Select(p => p.Split('=')).ToDictionary(p => p[0], p => p[1]);
+
+        if (parameters.ContainsKey("access_token"))
+        {
+            var token = parameters["access_token"];
+
+            await AuthStateProvider.SetTokenAsync(token);
+
+            var returnUrl = await JsRunTime.InvokeAsync<string>("localStorage.getItem", "returnUrl");
+            await JsRunTime.InvokeVoidAsync("localStorage.removeItem", "returnUrl");
+
+            Navigation.NavigateTo(string.IsNullOrEmpty(returnUrl) ? "/" : returnUrl);
+        }
+        else
+        {
+            Navigation.NavigateTo("/login");
+        }
+    }
+}

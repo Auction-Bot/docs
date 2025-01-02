@@ -1,0 +1,131 @@
+﻿@page "/translations"
+@page "/commands/overview-translations"
+
+@layout StandardLayout
+
+@inject ISnackbar Snackbar
+@inject IDialogService Dialog
+
+<CommandPage DisplayFooter="true">
+    <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <CommandPageHeader Title="Language Translations" Typography="Typo.h5" SubTitle="Contribute to multi-language support for Auction Bot." />
+    </MudHidden>
+    <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+        <CommandPageHeader Title="Language Translations" SubTitle="Contribute to multi-language support for Auction Bot." />
+    </MudHidden>
+    <PageContent>
+        <PageSection>
+            <SectionHeader Title="Community Support">
+                <Description>
+                    All translations are provided by the wider Discord community. Anyone can submit new translations for an unsupported language or update existing language translations.
+                </Description>
+            </SectionHeader>
+        </PageSection>
+
+        <PageSection>
+            <SectionHeader Title="Button Translations">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Info" Class="mud-full-height" OnClick="@(() => OpenDialogAsync("Button"))">
+                        <MudStack Row Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center">
+                            <MudText>Provide translations for all Auction Bot buttons</MudText>
+                            <MudSpacer />
+                            <MudButton Color="Color.Info" Variant="Variant.Outlined" OnClick="@(() => OpenDialogAsync("Button"))">Contribute</MudButton>
+                        </MudStack>
+                    </MudAlert>
+                </SubTitle>
+                <Description>
+                    <MudStack Row>
+                        <MudText>Supported languages:</MudText>
+                        <MudTooltip Arrow Placement="Placement.Top" ShowOnHover Text="English">
+                            <MudIcon Icon="@TranslationIcons.English" ViewBox="0 0 32 32" />
+                        </MudTooltip>
+                    </MudStack>
+                </Description>
+            </SectionHeader>
+        </PageSection>
+
+        <PageSection>
+            <SectionHeader Title="Command Translations">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Info" OnClick="TranslationsUnavailable">
+                        <MudStack Row Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center">
+                            <MudText>Provide translations for all Auction Bot commands</MudText>
+                            <MudSpacer />
+                            <MudButton Disabled Color="Color.Info" Variant="Variant.Outlined">Coming Soon</MudButton>
+                        </MudStack>
+                    </MudAlert>
+                </SubTitle>
+            </SectionHeader>
+        </PageSection>
+
+        <PageSection>
+            <SectionHeader Title="Response/Feedback Translations">
+                <SubTitle>
+                    <MudAlert Severity="Severity.Info" Onclick="TranslationsUnavailable">
+                        <MudStack Row Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center">
+                            <MudText>Provide translations for all Auction Bot responses</MudText>
+                            <MudSpacer />
+                            <MudButton Disabled Color="Color.Info" Variant="Variant.Outlined">Coming Soon</MudButton>
+                        </MudStack>
+                    </MudAlert>
+                </SubTitle>
+            </SectionHeader>
+        </PageSection>
+
+        <PageSection>
+            <SectionSubGroups>
+                <PageSection>
+                    <SectionHeader Title="Additional Details" HideTitle="true" />
+                    <div class="d-flex flex-row flex-wrap mud-width-full">
+                        <MudList T="string" Class="flex-grow-1 flex-shrink-0 mud-paper-outlined rounded py-0 ma-2">
+                            <MudListItem Icon="@Icons.Material.Filled.AutoAwesomeMosaic" IconColor="Color.Tertiary" Class="pl-6" Href="commands/overview-roles">
+                                <MudText Typo="Typo.body1">Showrooms</MudText>
+                                <MudText Typo="Typo.body2">Understing Showroom options!</MudText>
+                            </MudListItem>
+                        </MudList>
+                        <MudList T="string" Class="flex-grow-1 flex-shrink-0 mud-paper-outlined rounded py-0 ma-2">
+                            <MudListItem Icon="@Icons.Material.Filled.LocationSearching" IconColor="Color.Error" Class="pl-6" Href="commands/overview-antisnipe">
+                                <MudText Typo="Typo.body1">Anti-Snipe</MudText>
+                                <MudText Typo="Typo.body2">Extend the Auction after last second bidding</MudText>
+                            </MudListItem>
+                        </MudList>
+                    </div>
+                </PageSection>
+            </SectionSubGroups>
+        </PageSection>
+    </PageContent>
+</CommandPage>
+
+@code {
+    private void TranslationsUnavailable()
+    {
+        Snackbar.Configuration.PositionClass = Defaults.Classes.Position.TopCenter;
+        Snackbar.Add("Translations not yet available.", Severity.Info, config => { config.BackgroundBlurred = true; });
+    }
+
+    private async Task OpenDialogAsync(string translationType)
+    {
+        var parameters = new DialogParameters<TranslationDialog>
+        {
+            { x => x.TranslationType, translationType }
+        };
+
+        var dialog = await Dialog.ShowAsync<TranslationDialog>("", parameters, new DialogOptions() { FullScreen = true, NoHeader = true });
+        var result = await dialog.Result;
+
+        if (result is { Canceled: true }) return;
+
+        Snackbar.Configuration.PositionClass = Defaults.Classes.Position.TopCenter;
+
+        if (result?.Data is true)
+            Snackbar.Add("Your translation has been submitted for review.", Severity.Success, config => { config.BackgroundBlurred = true; });
+        else
+            Snackbar.Add("An error occurred while submitting your translation.", Severity.Error, config => { config.BackgroundBlurred = true; });
+    }
+}
+
+<style>
+    .mud-alert-message {
+        width: -webkit-fill-available;
+    }
+</style>                            
