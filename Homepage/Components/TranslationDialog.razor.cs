@@ -195,7 +195,7 @@ public partial class TranslationDialog
         var currentUrl = Navigation.Uri.Replace(Navigation.BaseUri, "/").Split('?')[0];
         if (currentUrl != "/login")
         {
-            await JsRuntime.InvokeVoidAsync("localStorage.setItem", "returnUrl", currentUrl);
+            await JsRuntime.InvokeVoidAsync("localStorage.setItem", "returnUrl", $"/docs{currentUrl}");
         }
 
         Navigation.NavigateTo(discordUrl, true);
