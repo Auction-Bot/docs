@@ -73,6 +73,12 @@
                 </div>
                 <MudText Typo="Typo.body2">Require members to pay an entry-free in order to Participate in auctions.</MudText>
             </MudListItem>
+            <MudListItem Href="commands/overview-translations">
+                <MudBadge Class="d-flex mr-16" Content="@("In-progress")" Color="Color.Info" Overlap="true">
+                    <MudText Color="Color.Error">Multi Language</MudText><MudText Color="Color.Secondary">-Support</MudText>
+                </MudBadge>
+                <MudText Typo="Typo.body2">Utilize Auction Bot in your preferred server language</MudText>
+            </MudListItem>
         </MudList>
     </MudMenu>
     <MudSpacer/>
@@ -93,7 +99,6 @@
 
     [Parameter] public EventCallback<MouseEventArgs> DrawerToggleCallback { get; set; }
 
-    private string _badgeTextSoon = "coming soon";
     private string GetActiveClass(MenuOption page)
     {
         var selectedOption = NavigationManager.Uri switch

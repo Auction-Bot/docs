@@ -1,0 +1,155 @@
+﻿@using System.Xml.Linq
+@using System.Security.Claims
+@implements IAsyncDisposable
+
+@inject NavigationManager Navigation
+@inject IConfiguration Configuration
+@inject IGitHubService GitHubService
+@inject IFileService FileService
+@inject IJSRuntime JsRuntime
+
+<CascadingAuthenticationState>
+    <MudDialog TitleClass="center-items" ActionsClass="pr-12 pb-12">
+        <DialogContent>
+            <MudContainer MaxWidth="MaxWidth.Medium">
+                <AuthorizeView>
+                    <Authorized>
+                        <MudTable T="TranslationItem" Items="_translationItems" EditTrigger="TableEditTrigger.RowClick" Loading="_isLoading"
+                                    Context="tableContext" Breakpoint="Breakpoint.None" Striped Bordered Dense>
+                            <ToolBarContent>
+                                <MudText Typo="Typo.h6">@($"{TranslationType} Translations")</MudText>
+                                <MudSpacer />
+                                @if (_translationItems.Count > 0)
+                                {
+                                    <MudTooltip Placement="Placement.Bottom" Text="Download Translations">
+                                        <MudIconButton Icon="@Icons.Material.Filled.FileDownload" Variant="Variant.Filled" Color="Color.Tertiary" OnClick="DownloadFile">
+                                            Download
+                                        </MudIconButton>
+                                    </MudTooltip>
+                                    <MudFileUpload T="IBrowserFile" Class="mx-2" OnFilesChanged="UploadFile" Disabled="string.IsNullOrEmpty(_locale)">
+                                        <ActivatorContent>
+                                            <MudTooltip Placement="Placement.Bottom" Text="Upload Translations">
+                                                <MudIconButton Icon="@Icons.Material.Filled.FileUpload" Variant="Variant.Filled" Color="Color.Tertiary">
+                                                    Upload Translation
+                                                </MudIconButton>
+                                            </MudTooltip>
+                                        </ActivatorContent>
+                                    </MudFileUpload>
+                                }
+                                <MudSelect @bind-Value="_locale" @bind-Value:after="LoadTranslations" Label="Select Target Language" Dense
+                                            Class="select-content" OuterClass="select-content" Variant="Variant.Outlined" Margin="Margin.Dense">
+                                    @foreach (var locale in _locales)
+                                    {
+                                        <MudSelectItem Value="locale.Key">
+                                            <MudStack Row>
+                                                <MudIcon Icon="@locale.Value.icon" Size="Size.Small" ViewBox="0 0 32 32" /> @locale.Value.language
+                                            </MudStack>
+                                        </MudSelectItem>
+                                    }
+                                </MudSelect>
+                            </ToolBarContent>
+                            <ColGroup>
+                                <col style="width: 45%;" />
+                                <col style="width: 45%;" />
+                                <col />
+                            </ColGroup>
+                            <HeaderContent>
+                                <MudTh>@(_translationItems.Count == 0 ? "" : "English")</MudTh>
+                                <MudTh>@(_translationItems.Count == 0 ? "" : _locales[_locale].language)</MudTh>
+                            </HeaderContent>
+                            <RowTemplate>
+                                <MudTd DataLabel="English">@tableContext.OriginalValue</MudTd>
+                                <MudTd DataLabel="@_locales[_locale].language">@tableContext.TranslatedValue</MudTd>
+                            </RowTemplate>
+                            <RowEditingTemplate>
+                                <MudTd DataLabel="English">@tableContext.OriginalValue</MudTd>
+                                <MudTd DataLabel="@_locales[_locale].language">
+                                    <MudTextField @bind-Value="tableContext.TranslatedValue" Variant="Variant.Outlined" Margin="Margin.Dense" Clearable />
+                                </MudTd>
+                            </RowEditingTemplate>
+                            <NoRecordsContent>
+                                <MudStack Class="mud-theme-dark pa-6 rounded-lg" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                                    <MudText Typo="Typo.body1">Select a Target Language to proceed</MudText>
+                                    <MudPaper Class="mud-theme-dark pa-6 my-8" Elevation="3" Outlined Square>
+                                        <MudIcon Icon="@FileIcon" Size="Size.Large" Color="Color.Default" Style="width: 110px; height:110px" />
+                                        @if (_fileInError)
+                                        {
+                                            <MudText Typo="Typo.body1" Color="Color.Error">Invalid File Upload</MudText>
+                                        }
+                                        <MudStack Class="ma-4" Row Spacing="6" AlignItems="AlignItems.Start">
+                                            <MudButton StartIcon="@Icons.Material.Filled.FileDownload" Variant="Variant.Filled" Color="Color.Tertiary"
+                                                        Disabled="string.IsNullOrEmpty(_locale)" OnClick="DownloadFile">
+                                                Download Template
+                                            </MudButton>
+                                            <MudFileUpload T="IBrowserFile" OnFilesChanged="UploadFile" Disabled="string.IsNullOrEmpty(_locale)">
+                                                <ActivatorContent>
+                                                    <MudButton StartIcon="@Icons.Material.Filled.FileUpload" Variant="Variant.Filled" Color="Color.Tertiary" Disabled="string.IsNullOrEmpty(_locale)">
+                                                        Upload Translation
+                                                    </MudButton>
+                                                </ActivatorContent>
+                                                <SelectedTemplate Context="templateContext">
+                                                    @if (templateContext != null)
+                                                    {
+                                                        _fileLoaded = true;
+                                                        <MudText>@templateContext.Name</MudText>
+                                                    }
+                                                </SelectedTemplate>
+                                            </MudFileUpload>
+                                        </MudStack>
+                                    </MudPaper>
+                                </MudStack>
+                            </NoRecordsContent>
+                        </MudTable>
+                        @{
+                            _discordUser = context.User.Identity?.Name;
+                            _discordId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                        }
+                    </Authorized>
+                    <NotAuthorized>
+                        <MudStack Class="mud-theme-dark pa-6 rounded-lg" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                            <MudButton StartIcon="@Icons.Custom.Brands.Discord" Variant="Variant.Filled" Color="Color.Primary" 
+                                       OnClick="LoginWithDiscord" >Login with Discord</MudButton>
+                        </MudStack>
+                    </NotAuthorized>
+                </AuthorizeView>
+            </MudContainer>
+        </DialogContent>
+        <DialogActions>
+            <AuthorizeView>
+                <MudButton Variant="Variant.Filled" OnClick="Cancel">Cancel</MudButton>
+                <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="Submit" Disabled="@(!_fileLoaded || _fileInError)">Submit</MudButton>
+            </AuthorizeView>
+        </DialogActions>
+    </MudDialog>
+</CascadingAuthenticationState>
+
+@code {
+    [CascadingParameter]
+    private MudDialogInstance? MudDialog { get; set; }
+
+    [Parameter]
+    public string TranslationType { get; set; } = string.Empty;
+}
+
+<style>
+    .center-items {
+        justify-items: center;
+    }
+
+    .select-content {
+        min-width: 250px;
+        max-width: 250px;
+    }
+</style>
+
+<script>
+    window.downloadFile = (fileName, contentType, content) => {
+        const blob = new Blob([content], { type: contentType });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = fileName;
+        anchor.click();
+        URL.revokeObjectURL(url);
+    };
+</script>

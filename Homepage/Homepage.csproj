@@ -37,6 +37,15 @@
     <Content Update="wwwroot\favicon.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\files\ButtonStrings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ButtonStrings.resx</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\files\ButtonStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ButtonStrings.Designer.cs</LastGenOutput>
+    </Content>
     <Content Update="wwwroot\images\auction.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

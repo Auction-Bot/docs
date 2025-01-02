@@ -1,37 +1,21 @@
-﻿@* <CascadingAuthenticationState>
+﻿<CascadingAuthenticationState>
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(DashboardLayout)">
-                <Authorizing>
-                    <p>Determining session state, please wait...</p>
-                </Authorizing>
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <Authorizing />
                 <NotAuthorized>
-                    <h1>Sorry</h1>
-                    <p>You're not authorized to reach this page. You need to log in.</p>
+                    <MudAlert Class="mt-1" Severity="Severity.Warning" Variant="Variant.Filled" Dense>You are not authorized to access this resource.</MudAlert>
                 </NotAuthorized>
             </AuthorizeRouteView>
-            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
         </Found>
         <NotFound>
             <PageTitle>Not found</PageTitle>
             <LayoutView Layout="@typeof(MainLayout)">
-                <p role="alert">Sorry, there's nothing at this address.</p>
+                <MudAlert Class="mt-1" Severity="Severity.Info" Variant="Variant.Filled" Dense>Sorry, there's nothing at this address.</MudAlert>
             </LayoutView>
         </NotFound>
     </Router>
-</CascadingAuthenticationState> *@
-
-<Router AppAssembly="@typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-    </Found>
-    <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+</CascadingAuthenticationState>
 
 <MudBlazor.MudThemeProvider Theme="_theme" IsDarkMode />
 <MudBlazor.MudDialogProvider />
