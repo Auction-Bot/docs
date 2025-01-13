@@ -55,7 +55,9 @@ public partial class TranslationDialog
 
     private async Task LoadTranslations()
     {
-        _fileName = $"{TranslationType}Strings.{_locale}.resx";
+        var locale = _locale.StartsWith("zh") ? _locale : _locale.Split('-')[0];
+
+        _fileName = $"{TranslationType}Strings.{locale}.resx";
 
         try
         {
@@ -224,9 +226,9 @@ public partial class TranslationDialog
                 );
             }
 
-            _locale = _locale.StartsWith("zh") ? _locale : _locale.Split('-')[0];
+            var locale = _locale.StartsWith("zh") ? _locale : _locale.Split('-')[0];
 
-            var fileName = $"{TranslationType}Strings.{_locale}.resx";
+            var fileName = $"{TranslationType}Strings.{locale}.resx";
 
 #if DEBUG
             await JsRuntime.InvokeVoidAsync("downloadFile", fileName, "text/xml", newDoc.ToString());
