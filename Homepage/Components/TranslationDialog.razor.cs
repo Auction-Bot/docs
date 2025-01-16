@@ -17,7 +17,6 @@ public partial class TranslationDialog
     private bool _fileInError;
     private string _locale = string.Empty;
     private string? _english = string.Empty;
-    private string? _fileName = string.Empty;
     private string? _discordId = string.Empty;
     private string? _discordUser = string.Empty;
     private CancellationTokenSource? _cts;
@@ -57,7 +56,7 @@ public partial class TranslationDialog
     {
         var locale = _locale.StartsWith("zh") ? _locale : _locale.Split('-')[0];
 
-        _fileName = $"{TranslationType}Strings.{locale}.resx";
+        var fileName = $"{TranslationType}Strings.{locale}.resx";
 
         try
         {
@@ -66,7 +65,7 @@ public partial class TranslationDialog
             _cts?.Cancel();
             _cts = new CancellationTokenSource();
 
-            var content = await FileService.GetFileContentAsync(_fileName);
+            var content = await FileService.GetFileContentAsync(fileName);
 
             if (content is null)
             {
@@ -124,8 +123,9 @@ public partial class TranslationDialog
             jsonDict[item.Key] = item.TranslatedValue;
 
         var content = JsonSerializer.Serialize(jsonDict, new JsonSerializerOptions { WriteIndented = true });
+        var fileName = $"{TranslationType}Strings.{_locale}.json";
 
-        await JsRuntime.InvokeVoidAsync("downloadFile", _fileName!.Replace("resx", "json"), "application/json", content);
+        await JsRuntime.InvokeVoidAsync("downloadFile", fileName, "application/json", content);
     }
 
     private async Task UploadFile(InputFileChangeEventArgs e)
