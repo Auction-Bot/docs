@@ -165,6 +165,9 @@
   <data name="Continue" xml:space="preserve">
     <value>Continue</value>
   </data>
+  <data name="Custom Bid" xml:space="preserve">
+    <value>Custom Bid</value>
+  </data>
   <data name="Decrease" xml:space="preserve">
     <value>Decrease</value>
   </data>
@@ -212,6 +215,9 @@
   </data>
   <data name="Entry Fees" xml:space="preserve">
     <value>Entry Fees</value>
+  </data>
+  <data name="Extend" xml:space="preserve">
+    <value>Extend</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Format</value>
@@ -330,6 +336,9 @@
   <data name="Transaction Confirmation" xml:space="preserve">
     <value>Transaction Confirmation</value>
   </data>
+  <data name="Undo Bid" xml:space="preserve">
+    <value>Undo Bid</value>
+  </data>
   <data name="Update" xml:space="preserve">
     <value>Update</value>
   </data>
@@ -341,5 +350,8 @@
   </data>
   <data name="View Settings" xml:space="preserve">
     <value>View Settings</value>
+  </data>
+  <data name="Withdraw" xml:space="preserve">
+    <value>Withdraw</value>
   </data>
 </root>

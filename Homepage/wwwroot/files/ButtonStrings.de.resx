@@ -165,6 +165,9 @@
   <data name="Continue" xml:space="preserve">
     <value>Fortsetzen</value>
   </data>
+  <data name="Custom Bid" xml:space="preserve">
+    <value>Benutzerdefiniertes Gebot</value>
+  </data>
   <data name="Decrease" xml:space="preserve">
     <value>Reduzieren</value>
   </data>
@@ -212,6 +215,9 @@
   </data>
   <data name="Entry Fees" xml:space="preserve">
     <value>Teilnahmegebühr</value>
+  </data>
+  <data name="Extend" xml:space="preserve">
+    <value>Verlängern</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Format</value>
@@ -330,6 +336,9 @@
   <data name="Transaction Confirmation" xml:space="preserve">
     <value>Transaktion Bestätigen</value>
   </data>
+  <data name="Undo Bid" xml:space="preserve">
+    <value>Gebot rückgängig machen</value>
+  </data>
   <data name="Update" xml:space="preserve">
     <value>Aktualisierung</value>
   </data>
@@ -341,5 +350,8 @@
   </data>
   <data name="View Settings" xml:space="preserve">
     <value>Einstellungen ansehen</value>
+  </data>
+  <data name="Withdraw" xml:space="preserve">
+    <value>Zurückziehen</value>
   </data>
 </root>
