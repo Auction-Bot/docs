@@ -205,6 +205,8 @@ public partial class TranslationDialog
 
     private async Task Submit()
     {
+        var step = string.Empty;
+
         try
         {
             XDocument newDoc = new(
@@ -230,21 +232,23 @@ public partial class TranslationDialog
 
             var fileName = $"{TranslationType}Strings.{locale}.resx";
 
-#if DEBUG
-            await JsRuntime.InvokeVoidAsync("downloadFile", fileName, "text/xml", newDoc.ToString());
-#else
             var mainBranch = "master";
             var newBranch = $"{_locale}-Translation-{DateTime.UtcNow.Ticks}";
 
+            step = "Create Branch";
             await GitHubService.CreateBranchAsync(newBranch, mainBranch);
+
+            step = "Upload File";
             await GitHubService.UploadFileAsync(newBranch, fileName, newDoc.ToString());
+
+#if !DEBUG
+            step = "Create PR";
             await GitHubService.CreatePullRequestAsync(newBranch, $"Add {_locale} Translation", $"{_locale} translations submitted by [{_discordUser}](https://discord.com/users/{_discordId})", mainBranch);
 #endif
-
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error generating RESX file: {ex.Message}");
+            Console.WriteLine($"Error at step {step} while generating RESX file: {ex.Message}");
          
             MudDialog!.Close(DialogResult.Ok(false));
         }

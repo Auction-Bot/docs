@@ -97,6 +97,6 @@ public class GitHubService : IGitHubService
         return json.RootElement.GetProperty("object").GetProperty("sha").GetString() ?? string.Empty;
     }
 
-    private static StringContent CreateJsonContent(object obj) => new StringContent(JsonSerializer.Serialize(obj), Encoding.UTF8, "application/json");
+    private static StringContent CreateJsonContent(object obj) => new(JsonSerializer.Serialize(obj), Encoding.UTF8, "application/json");
 }
 

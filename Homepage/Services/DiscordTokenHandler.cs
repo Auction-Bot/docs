@@ -9,12 +9,8 @@ internal sealed class DiscordTokenHandler(DiscordAuthenticationStateProvider aut
         var authState = await authStateProvider.GetAuthenticationStateAsync();
 
         if (authState.User.Identity?.IsAuthenticated == true)
-        {
-            var accessToken = authState.User.Claims.Single(c => c.Type == "access_token").Value;
+            return await base.SendAsync(request, cancellationToken);
 
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-        }
-
-        return await base.SendAsync(request, cancellationToken);
+        return new HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
     }
 }
