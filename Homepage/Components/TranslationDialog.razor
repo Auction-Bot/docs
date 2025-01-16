@@ -117,7 +117,16 @@
         <DialogActions>
             <AuthorizeView>
                 <MudButton Variant="Variant.Filled" OnClick="Cancel">Cancel</MudButton>
-                <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="Submit" Disabled="@(!_fileLoaded || _fileInError)">Submit</MudButton>
+                <MudButton Style="min-width:84px;" Color="Color.Primary" Variant="Variant.Filled" OnClick="Submit" Disabled="@(!_fileLoaded || _fileInError || _processing)">
+                    @if (_processing) 
+                    {
+                        <MudProgressCircular Class="mx-3" Size="Size.Small" Indeterminate="true" />
+                    }
+                    else
+                    {
+                        <MudText>Submit</MudText>
+                    }
+                </MudButton>
             </AuthorizeView>
         </DialogActions>
     </MudDialog>

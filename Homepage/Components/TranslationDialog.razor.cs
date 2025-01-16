@@ -13,6 +13,7 @@ public partial class TranslationDialog
         ? _fileInError ? Icons.Material.Filled.CancelPresentation : Icons.Material.Filled.FilePresent 
         : Icons.Material.Filled.UploadFile;
     private bool _isLoading;
+    private bool _processing;
     private bool _fileLoaded;
     private bool _fileInError;
     private string _locale = string.Empty;
@@ -205,6 +206,8 @@ public partial class TranslationDialog
 
     private async Task Submit()
     {
+        _processing = true;
+
         var step = string.Empty;
 
         try
@@ -249,9 +252,11 @@ public partial class TranslationDialog
         catch (Exception ex)
         {
             Console.WriteLine($"Error at step {step} while generating RESX file: {ex.Message}");
-         
+
             MudDialog!.Close(DialogResult.Ok(false));
         }
+        
+        _processing = false;
 
         MudDialog!.Close(DialogResult.Ok(true));
     }
