@@ -151,6 +151,15 @@ namespace Homepage.wwwroot.files {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Buy Now.
+        /// </summary>
+        public static string Buy_Now {
+            get {
+                return ResourceManager.GetString("Buy Now", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {

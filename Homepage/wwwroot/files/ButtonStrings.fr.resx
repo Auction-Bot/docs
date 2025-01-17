@@ -147,6 +147,9 @@
   <data name="Broker Fees" xml:space="preserve">
     <value>Frais de courtage</value>
   </data>
+  <data name="Buy Now" xml:space="preserve">
+    <value>Achat immédiat</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>

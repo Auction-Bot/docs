@@ -147,6 +147,9 @@
   <data name="Broker Fees" xml:space="preserve">
     <value>Vermittlergebühren</value>
   </data>
+  <data name="Buy Now" xml:space="preserve">
+    <value>Jetzt kaufen</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Abbruch</value>
   </data>

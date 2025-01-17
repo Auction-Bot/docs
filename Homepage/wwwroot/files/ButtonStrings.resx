@@ -147,6 +147,9 @@
   <data name="Broker Fees" xml:space="preserve">
     <value>Broker Fees</value>
   </data>
+  <data name="Buy Now" xml:space="preserve">
+    <value>Buy Now</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
