@@ -22,7 +22,7 @@ namespace Homepage.wwwroot.files {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ButtonStrings {
+    public class ButtonStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Homepage.wwwroot.files {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Homepage.wwwroot.files.ButtonStrings", typeof(ButtonStrings).Assembly);
@@ -51,7 +51,7 @@ namespace Homepage.wwwroot.files {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Accept Current Bid.
         /// </summary>
-        internal static string Accept_Current_Bid {
+        public static string Accept_Current_Bid {
             get {
                 return ResourceManager.GetString("Accept Current Bid", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Accept Current Offer.
         /// </summary>
-        internal static string Accept_Current_Offer {
+        public static string Accept_Current_Offer {
             get {
                 return ResourceManager.GetString("Accept Current Offer", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Accept Offer.
         /// </summary>
-        internal static string Accept_Offer {
+        public static string Accept_Offer {
             get {
                 return ResourceManager.GetString("Accept Offer", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Accept Trade Offer.
         /// </summary>
-        internal static string Accept_Trade_Offer {
+        public static string Accept_Trade_Offer {
             get {
                 return ResourceManager.GetString("Accept Trade Offer", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Add Category.
         /// </summary>
-        internal static string Add_Category {
+        public static string Add_Category {
             get {
                 return ResourceManager.GetString("Add Category", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Add Subcategory.
         /// </summary>
-        internal static string Add_Subcategory {
+        public static string Add_Subcategory {
             get {
                 return ResourceManager.GetString("Add Subcategory", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Attach Logs.
         /// </summary>
-        internal static string Attach_Logs {
+        public static string Attach_Logs {
             get {
                 return ResourceManager.GetString("Attach Logs", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
-        internal static string Back {
+        public static string Back {
             get {
                 return ResourceManager.GetString("Back", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Back to Categories.
         /// </summary>
-        internal static string Back_to_Categories {
+        public static string Back_to_Categories {
             get {
                 return ResourceManager.GetString("Back to Categories", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Broker Fees.
         /// </summary>
-        internal static string Broker_Fees {
+        public static string Broker_Fees {
             get {
                 return ResourceManager.GetString("Broker Fees", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        internal static string Cancel {
+        public static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
-        internal static string Close {
+        public static string Close {
             get {
                 return ResourceManager.GetString("Close", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Closes At.
         /// </summary>
-        internal static string Closes_At {
+        public static string Closes_At {
             get {
                 return ResourceManager.GetString("Closes At", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Confirm This Purchase.
         /// </summary>
-        internal static string Confirm_This_Purchase {
+        public static string Confirm_This_Purchase {
             get {
                 return ResourceManager.GetString("Confirm This Purchase", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Confirm This Sale.
         /// </summary>
-        internal static string Confirm_This_Sale {
+        public static string Confirm_This_Sale {
             get {
                 return ResourceManager.GetString("Confirm This Sale", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Continue.
         /// </summary>
-        internal static string Continue {
+        public static string Continue {
             get {
                 return ResourceManager.GetString("Continue", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Custom Bid.
         /// </summary>
-        internal static string Custom_Bid {
+        public static string Custom_Bid {
             get {
                 return ResourceManager.GetString("Custom Bid", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Decrease.
         /// </summary>
-        internal static string Decrease {
+        public static string Decrease {
             get {
                 return ResourceManager.GetString("Decrease", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Default Balance.
         /// </summary>
-        internal static string Default_Balance {
+        public static string Default_Balance {
             get {
                 return ResourceManager.GetString("Default Balance", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Default Minimum Bid Limit.
         /// </summary>
-        internal static string Default_Minimum_Bid_Limit {
+        public static string Default_Minimum_Bid_Limit {
             get {
                 return ResourceManager.GetString("Default Minimum Bid Limit", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Default to.
         /// </summary>
-        internal static string Default_to {
+        public static string Default_to {
             get {
                 return ResourceManager.GetString("Default to", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
-        internal static string Delete {
+        public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Disable.
         /// </summary>
-        internal static string Disable {
+        public static string Disable {
             get {
                 return ResourceManager.GetString("Disable", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Disable Entry Fees.
         /// </summary>
-        internal static string Disable_Entry_Fees {
+        public static string Disable_Entry_Fees {
             get {
                 return ResourceManager.GetString("Disable Entry Fees", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Donations.
         /// </summary>
-        internal static string Donations {
+        public static string Donations {
             get {
                 return ResourceManager.GetString("Donations", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Early Acceptance.
         /// </summary>
-        internal static string Early_Acceptance {
+        public static string Early_Acceptance {
             get {
                 return ResourceManager.GetString("Early Acceptance", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
-        internal static string Edit {
+        public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Edit Details.
         /// </summary>
-        internal static string Edit_Details {
+        public static string Edit_Details {
             get {
                 return ResourceManager.GetString("Edit Details", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Edit Item.
         /// </summary>
-        internal static string Edit_Item {
+        public static string Edit_Item {
             get {
                 return ResourceManager.GetString("Edit Item", resourceCulture);
             }
@@ -324,7 +324,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Edit Listing.
         /// </summary>
-        internal static string Edit_Listing {
+        public static string Edit_Listing {
             get {
                 return ResourceManager.GetString("Edit Listing", resourceCulture);
             }
@@ -333,7 +333,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Enable.
         /// </summary>
-        internal static string Enable {
+        public static string Enable {
             get {
                 return ResourceManager.GetString("Enable", resourceCulture);
             }
@@ -342,7 +342,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Enable Entry Fees.
         /// </summary>
-        internal static string Enable_Entry_Fees {
+        public static string Enable_Entry_Fees {
             get {
                 return ResourceManager.GetString("Enable Entry Fees", resourceCulture);
             }
@@ -351,7 +351,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Entry Fees.
         /// </summary>
-        internal static string Entry_Fees {
+        public static string Entry_Fees {
             get {
                 return ResourceManager.GetString("Entry Fees", resourceCulture);
             }
@@ -360,7 +360,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Extend.
         /// </summary>
-        internal static string Extend {
+        public static string Extend {
             get {
                 return ResourceManager.GetString("Extend", resourceCulture);
             }
@@ -369,7 +369,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Format.
         /// </summary>
-        internal static string Format {
+        public static string Format {
             get {
                 return ResourceManager.GetString("Format", resourceCulture);
             }
@@ -378,7 +378,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Highest Bid.
         /// </summary>
-        internal static string Highest_Bid {
+        public static string Highest_Bid {
             get {
                 return ResourceManager.GetString("Highest Bid", resourceCulture);
             }
@@ -387,7 +387,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Increase.
         /// </summary>
-        internal static string Increase {
+        public static string Increase {
             get {
                 return ResourceManager.GetString("Increase", resourceCulture);
             }
@@ -396,7 +396,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Inline Results.
         /// </summary>
-        internal static string Inline_Results {
+        public static string Inline_Results {
             get {
                 return ResourceManager.GetString("Inline Results", resourceCulture);
             }
@@ -405,7 +405,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Left Align.
         /// </summary>
-        internal static string Left_Align {
+        public static string Left_Align {
             get {
                 return ResourceManager.GetString("Left Align", resourceCulture);
             }
@@ -414,7 +414,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Listing Fees.
         /// </summary>
-        internal static string Listing_Fees {
+        public static string Listing_Fees {
             get {
                 return ResourceManager.GetString("Listing Fees", resourceCulture);
             }
@@ -423,25 +423,43 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Max.
         /// </summary>
-        internal static string Max {
+        public static string Max {
             get {
                 return ResourceManager.GetString("Max", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max Bid.
+        /// </summary>
+        public static string Max_Bid {
+            get {
+                return ResourceManager.GetString("Max Bid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Min.
         /// </summary>
-        internal static string Min {
+        public static string Min {
             get {
                 return ResourceManager.GetString("Min", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Min Bid.
+        /// </summary>
+        public static string Min_Bid {
+            get {
+                return ResourceManager.GetString("Min Bid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Min Bid Button.
         /// </summary>
-        internal static string Min_Bid_Button {
+        public static string Min_Bid_Button {
             get {
                 return ResourceManager.GetString("Min Bid Button", resourceCulture);
             }
@@ -450,7 +468,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Negotiate Offer.
         /// </summary>
-        internal static string Negotiate_Offer {
+        public static string Negotiate_Offer {
             get {
                 return ResourceManager.GetString("Negotiate Offer", resourceCulture);
             }
@@ -459,7 +477,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
-        internal static string Next {
+        public static string Next {
             get {
                 return ResourceManager.GetString("Next", resourceCulture);
             }
@@ -468,7 +486,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Opens At.
         /// </summary>
-        internal static string Opens_At {
+        public static string Opens_At {
             get {
                 return ResourceManager.GetString("Opens At", resourceCulture);
             }
@@ -477,7 +495,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Permissions.
         /// </summary>
-        internal static string Permissions {
+        public static string Permissions {
             get {
                 return ResourceManager.GetString("Permissions", resourceCulture);
             }
@@ -486,7 +504,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Preview.
         /// </summary>
-        internal static string Preview {
+        public static string Preview {
             get {
                 return ResourceManager.GetString("Preview", resourceCulture);
             }
@@ -495,7 +513,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Recall Listings.
         /// </summary>
-        internal static string Recall_Listings {
+        public static string Recall_Listings {
             get {
                 return ResourceManager.GetString("Recall Listings", resourceCulture);
             }
@@ -504,7 +522,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
-        internal static string Register {
+        public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
             }
@@ -513,7 +531,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Reject Offer.
         /// </summary>
-        internal static string Reject_Offer {
+        public static string Reject_Offer {
             get {
                 return ResourceManager.GetString("Reject Offer", resourceCulture);
             }
@@ -522,7 +540,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Remove Auction Listing.
         /// </summary>
-        internal static string Remove_Auction_Listing {
+        public static string Remove_Auction_Listing {
             get {
                 return ResourceManager.GetString("Remove Auction Listing", resourceCulture);
             }
@@ -531,7 +549,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Remove Category.
         /// </summary>
-        internal static string Remove_Category {
+        public static string Remove_Category {
             get {
                 return ResourceManager.GetString("Remove Category", resourceCulture);
             }
@@ -540,7 +558,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Remove Channel.
         /// </summary>
-        internal static string Remove_Channel {
+        public static string Remove_Channel {
             get {
                 return ResourceManager.GetString("Remove Channel", resourceCulture);
             }
@@ -549,7 +567,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Remove Default Balance.
         /// </summary>
-        internal static string Remove_Default_Balance {
+        public static string Remove_Default_Balance {
             get {
                 return ResourceManager.GetString("Remove Default Balance", resourceCulture);
             }
@@ -558,7 +576,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Remove Market Listing.
         /// </summary>
-        internal static string Remove_Market_Listing {
+        public static string Remove_Market_Listing {
             get {
                 return ResourceManager.GetString("Remove Market Listing", resourceCulture);
             }
@@ -567,7 +585,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Remove Room.
         /// </summary>
-        internal static string Remove_Room {
+        public static string Remove_Room {
             get {
                 return ResourceManager.GetString("Remove Room", resourceCulture);
             }
@@ -576,7 +594,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Remove Subcategory.
         /// </summary>
-        internal static string Remove_Subcategory {
+        public static string Remove_Subcategory {
             get {
                 return ResourceManager.GetString("Remove Subcategory", resourceCulture);
             }
@@ -585,7 +603,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Remove Trade Listing.
         /// </summary>
-        internal static string Remove_Trade_Listing {
+        public static string Remove_Trade_Listing {
             get {
                 return ResourceManager.GetString("Remove Trade Listing", resourceCulture);
             }
@@ -594,7 +612,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
-        internal static string Reset {
+        public static string Reset {
             get {
                 return ResourceManager.GetString("Reset", resourceCulture);
             }
@@ -603,7 +621,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Right Align.
         /// </summary>
-        internal static string Right_Align {
+        public static string Right_Align {
             get {
                 return ResourceManager.GetString("Right Align", resourceCulture);
             }
@@ -612,7 +630,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
-        internal static string Save {
+        public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
             }
@@ -621,7 +639,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Sealed Payout.
         /// </summary>
-        internal static string Sealed_Payout {
+        public static string Sealed_Payout {
             get {
                 return ResourceManager.GetString("Sealed Payout", resourceCulture);
             }
@@ -630,7 +648,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Second Highest.
         /// </summary>
-        internal static string Second_Highest {
+        public static string Second_Highest {
             get {
                 return ResourceManager.GetString("Second Highest", resourceCulture);
             }
@@ -639,7 +657,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Set Default.
         /// </summary>
-        internal static string Set_Default {
+        public static string Set_Default {
             get {
                 return ResourceManager.GetString("Set Default", resourceCulture);
             }
@@ -648,7 +666,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Set Default Balance.
         /// </summary>
-        internal static string Set_Default_Balance {
+        public static string Set_Default_Balance {
             get {
                 return ResourceManager.GetString("Set Default Balance", resourceCulture);
             }
@@ -657,7 +675,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Set Duration Limits.
         /// </summary>
-        internal static string Set_Duration_Limits {
+        public static string Set_Duration_Limits {
             get {
                 return ResourceManager.GetString("Set Duration Limits", resourceCulture);
             }
@@ -666,7 +684,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Set Listing Limits.
         /// </summary>
-        internal static string Set_Listing_Limits {
+        public static string Set_Listing_Limits {
             get {
                 return ResourceManager.GetString("Set Listing Limits", resourceCulture);
             }
@@ -675,7 +693,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Shill Bidding.
         /// </summary>
-        internal static string Shill_Bidding {
+        public static string Shill_Bidding {
             get {
                 return ResourceManager.GetString("Shill Bidding", resourceCulture);
             }
@@ -684,7 +702,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Submit Bot Review.
         /// </summary>
-        internal static string Submit_Bot_Review {
+        public static string Submit_Bot_Review {
             get {
                 return ResourceManager.GetString("Submit Bot Review", resourceCulture);
             }
@@ -693,7 +711,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Support Server.
         /// </summary>
-        internal static string Support_Server {
+        public static string Support_Server {
             get {
                 return ResourceManager.GetString("Support Server", resourceCulture);
             }
@@ -702,7 +720,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Toggle.
         /// </summary>
-        internal static string Toggle {
+        public static string Toggle {
             get {
                 return ResourceManager.GetString("Toggle", resourceCulture);
             }
@@ -711,7 +729,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Transaction Confirmation.
         /// </summary>
-        internal static string Transaction_Confirmation {
+        public static string Transaction_Confirmation {
             get {
                 return ResourceManager.GetString("Transaction Confirmation", resourceCulture);
             }
@@ -720,7 +738,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Undo Bid.
         /// </summary>
-        internal static string Undo_Bid {
+        public static string Undo_Bid {
             get {
                 return ResourceManager.GetString("Undo Bid", resourceCulture);
             }
@@ -729,7 +747,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Update.
         /// </summary>
-        internal static string Update {
+        public static string Update {
             get {
                 return ResourceManager.GetString("Update", resourceCulture);
             }
@@ -738,7 +756,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Update Hours.
         /// </summary>
-        internal static string Update_Hours {
+        public static string Update_Hours {
             get {
                 return ResourceManager.GetString("Update Hours", resourceCulture);
             }
@@ -747,7 +765,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to View Item.
         /// </summary>
-        internal static string View_Item {
+        public static string View_Item {
             get {
                 return ResourceManager.GetString("View Item", resourceCulture);
             }
@@ -756,7 +774,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to View Settings.
         /// </summary>
-        internal static string View_Settings {
+        public static string View_Settings {
             get {
                 return ResourceManager.GetString("View Settings", resourceCulture);
             }
@@ -765,7 +783,7 @@ namespace Homepage.wwwroot.files {
         /// <summary>
         ///   Looks up a localized string similar to Withdraw.
         /// </summary>
-        internal static string Withdraw {
+        public static string Withdraw {
             get {
                 return ResourceManager.GetString("Withdraw", resourceCulture);
             }

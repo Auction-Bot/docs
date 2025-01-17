@@ -240,8 +240,14 @@
   <data name="Max" xml:space="preserve">
     <value>Max</value>
   </data>
+  <data name="Max Bid" xml:space="preserve">
+    <value>Max Bid</value>
+  </data>
   <data name="Min" xml:space="preserve">
     <value>Min</value>
+  </data>
+  <data name="Min Bid" xml:space="preserve">
+    <value>Min Bid</value>
   </data>
   <data name="Min Bid Button" xml:space="preserve">
     <value>Min Bid Button</value>
