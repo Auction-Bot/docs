@@ -78,7 +78,7 @@ public partial class TranslationDialog
             var doc = XDocument.Load(textReader);
             var dataElements = doc.Descendants("data");
 
-            _translationItems = dataElements.Select(element => new TranslationItem(element.Attribute("name")!.Value, element.Element("value")!.Value, GetExistingTranslation(element)))
+            _translationItems = dataElements.Select(element => new TranslationItem(element.Attribute("name")!.Value, element.Attribute("name")!.Value, GetExistingTranslation(element)))
                                             .ToList();
         }
         catch (Exception)
