@@ -1,0 +1,248 @@
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <data name="Accept Current Bid" xml:space="preserve">
+    <value>Accepter l'offre actuelle</value>
+  </data>
+  <data name="Accept Current Offer" xml:space="preserve">
+    <value>Accepter l'offre actuelle</value>
+  </data>
+  <data name="Accept Offer" xml:space="preserve">
+    <value>Accepter l'offre</value>
+  </data>
+  <data name="Accept Trade Offer" xml:space="preserve">
+    <value>Accepter l'offre d'échange</value>
+  </data>
+  <data name="Add Category" xml:space="preserve">
+    <value>Ajouter une catégorie</value>
+  </data>
+  <data name="Add Subcategory" xml:space="preserve">
+    <value>Ajouter une sous-catégorie</value>
+  </data>
+  <data name="Attach Logs" xml:space="preserve">
+    <value>Joindre les journaux</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Retour</value>
+  </data>
+  <data name="Back to Categories" xml:space="preserve">
+    <value>Retour aux catégories</value>
+  </data>
+  <data name="Broker Fees" xml:space="preserve">
+    <value>Frais de courtage</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Closes At" xml:space="preserve">
+    <value>Ferme à</value>
+  </data>
+  <data name="Confirm This Purchase" xml:space="preserve">
+    <value>Confirmer cet achat</value>
+  </data>
+  <data name="Confirm This Sale" xml:space="preserve">
+    <value>Confirmer cette vente</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continuer</value>
+  </data>
+  <data name="Custom Bid" xml:space="preserve">
+    <value>Custom Bid</value>
+  </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>Diminuer</value>
+  </data>
+  <data name="Default Balance" xml:space="preserve">
+    <value>Solde par défaut</value>
+  </data>
+  <data name="Default Minimum Bid Limit" xml:space="preserve">
+    <value>Limite minimale d'enchère par défaut</value>
+  </data>
+  <data name="Default to" xml:space="preserve">
+    <value>Défaut à</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Désactiver</value>
+  </data>
+  <data name="Disable Entry Fees" xml:space="preserve">
+    <value>Désactiver les frais d'entrée</value>
+  </data>
+  <data name="Donations" xml:space="preserve">
+    <value>Dons</value>
+  </data>
+  <data name="Early Acceptance" xml:space="preserve">
+    <value>Acceptation anticipée</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="Edit Details" xml:space="preserve">
+    <value>Modifier les détails</value>
+  </data>
+  <data name="Edit Item" xml:space="preserve">
+    <value>Modifier l'article</value>
+  </data>
+  <data name="Edit Listing" xml:space="preserve">
+    <value>Modifier l'annonce</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Activer</value>
+  </data>
+  <data name="Enable Entry Fees" xml:space="preserve">
+    <value>Activer les frais d'entrée</value>
+  </data>
+  <data name="Entry Fees" xml:space="preserve">
+    <value>Frais d'entrée</value>
+  </data>
+  <data name="Extend" xml:space="preserve">
+    <value>Extend</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="Highest Bid" xml:space="preserve">
+    <value>Offre la plus élevée</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Augmenter</value>
+  </data>
+  <data name="Inline Results" xml:space="preserve">
+    <value>Résultats en ligne</value>
+  </data>
+  <data name="Left Align" xml:space="preserve">
+    <value>Aligner à gauche</value>
+  </data>
+  <data name="Listing Fees" xml:space="preserve">
+    <value>Frais d'inscription</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Max Bid" xml:space="preserve">
+    <value>Max Bid</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="Min Bid" xml:space="preserve">
+    <value>Min Bid</value>
+  </data>
+  <data name="Min Bid Button" xml:space="preserve">
+    <value>Bouton d'enchère minimale</value>
+  </data>
+  <data name="Negotiate Offer" xml:space="preserve">
+    <value>Négocier l'offre</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Opens At" xml:space="preserve">
+    <value>Ouvre à</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Autorisations</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Aperçu</value>
+  </data>
+  <data name="Recall Listings" xml:space="preserve">
+    <value>Rappeler les annonces</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>S'inscrire</value>
+  </data>
+  <data name="Reject Offer" xml:space="preserve">
+    <value>Rejeter l'offre</value>
+  </data>
+  <data name="Remove Auction Listing" xml:space="preserve">
+    <value>Supprimer l'annonce d'enchère</value>
+  </data>
+  <data name="Remove Category" xml:space="preserve">
+    <value>Supprimer la catégorie</value>
+  </data>
+  <data name="Remove Channel" xml:space="preserve">
+    <value>Supprimer le canal</value>
+  </data>
+  <data name="Remove Default Balance" xml:space="preserve">
+    <value>Supprimer le solde par défaut</value>
+  </data>
+  <data name="Remove Market Listing" xml:space="preserve">
+    <value>Supprimer l'annonce de marché</value>
+  </data>
+  <data name="Remove Room" xml:space="preserve">
+    <value>Supprimer la salle</value>
+  </data>
+  <data name="Remove Subcategory" xml:space="preserve">
+    <value>Supprimer la sous-catégorie</value>
+  </data>
+  <data name="Remove Trade Listing" xml:space="preserve">
+    <value>Supprimer l'annonce d'échange</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="Right Align" xml:space="preserve">
+    <value>Aligner à droite</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Sealed Payout" xml:space="preserve">
+    <value>Paiement scellé</value>
+  </data>
+  <data name="Second Highest" xml:space="preserve">
+    <value>Deuxième plus élevé</value>
+  </data>
+  <data name="Set Default" xml:space="preserve">
+    <value>Définir par défaut</value>
+  </data>
+  <data name="Set Default Balance" xml:space="preserve">
+    <value>Définir le solde par défaut</value>
+  </data>
+  <data name="Set Duration Limits" xml:space="preserve">
+    <value>Définir les limites de durée</value>
+  </data>
+  <data name="Set Listing Limits" xml:space="preserve">
+    <value>Définir les limites d'inscription</value>
+  </data>
+  <data name="Shill Bidding" xml:space="preserve">
+    <value>Enchères fictives</value>
+  </data>
+  <data name="Submit Bot Review" xml:space="preserve">
+    <value>Soumettre une évaluation de bot</value>
+  </data>
+  <data name="Support Server" xml:space="preserve">
+    <value>Serveur de support</value>
+  </data>
+  <data name="Toggle" xml:space="preserve">
+    <value>Basculer</value>
+  </data>
+  <data name="Transaction Confirmation" xml:space="preserve">
+    <value>Confirmation de transaction</value>
+  </data>
+  <data name="Undo Bid" xml:space="preserve">
+    <value>Undo Bid</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
+  <data name="Update Hours" xml:space="preserve">
+    <value>Mettre à jour les heures</value>
+  </data>
+  <data name="View Item" xml:space="preserve">
+    <value>Voir l'article</value>
+  </data>
+  <data name="View Settings" xml:space="preserve">
+    <value>Voir les paramètres</value>
+  </data>
+  <data name="Withdraw" xml:space="preserve">
+    <value>Withdraw</value>
+  </data>
+</root>
