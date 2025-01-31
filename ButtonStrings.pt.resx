@@ -42,7 +42,7 @@
     <value>Fechar</value>
   </data>
   <data name="Closes At" xml:space="preserve">
-    <value>Terma em</value>
+    <value>Termina em</value>
   </data>
   <data name="Confirm This Purchase" xml:space="preserve">
     <value>Confirmar Esta Compra</value>
@@ -78,7 +78,7 @@
     <value>Desabilitar Taxas de Entrada</value>
   </data>
   <data name="Donations" xml:space="preserve">
-    <value>Doação</value>
+    <value>Doações</value>
   </data>
   <data name="Early Acceptance" xml:space="preserve">
     <value>Aceitação Antecipada</value>
@@ -108,7 +108,7 @@
     <value>Prolongar</value>
   </data>
   <data name="Format" xml:space="preserve">
-    <value>Formatação</value>
+    <value>Formato</value>
   </data>
   <data name="Highest Bid" xml:space="preserve">
     <value>Maior Lance</value>
@@ -144,7 +144,7 @@
     <value>Negociar Oferta</value>
   </data>
   <data name="Next" xml:space="preserve">
-    <value>Proximo</value>
+    <value>Próximo</value>
   </data>
   <data name="Opens At" xml:space="preserve">
     <value>Começa às</value>
@@ -153,7 +153,7 @@
     <value>Permissões</value>
   </data>
   <data name="Preview" xml:space="preserve">
-    <value>Anterior</value>
+    <value>Visualizar</value>
   </data>
   <data name="Recall Listings" xml:space="preserve">
     <value>Retirar Anúncio</value>
