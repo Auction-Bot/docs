@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accept Current Bid" xml:space="preserve">
+    <value>Aceitar Lance Atual</value>
+  </data>
+  <data name="Accept Current Offer" xml:space="preserve">
+    <value>Aceitar Oferta Atual</value>
+  </data>
+  <data name="Accept Offer" xml:space="preserve">
+    <value>Aceitar Oferta</value>
+  </data>
+  <data name="Accept Trade Offer" xml:space="preserve">
+    <value>Aceitar Oferta de Troca</value>
+  </data>
+  <data name="Add Category" xml:space="preserve">
+    <value>Adicionar Categoria</value>
+  </data>
+  <data name="Add Subcategory" xml:space="preserve">
+    <value>Adicionar Subcategoria</value>
+  </data>
+  <data name="Attach Logs" xml:space="preserve">
+    <value>Anexar Logs</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Voltar</value>
+  </data>
+  <data name="Back to Categories" xml:space="preserve">
+    <value>Voltar para Categorias</value>
+  </data>
+  <data name="Broker Fees" xml:space="preserve">
+    <value>Taxas da Corretora</value>
+  </data>
+  <data name="Buy Now" xml:space="preserve">
+    <value>Comprar Agora</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="Closes At" xml:space="preserve">
+    <value>Termina em</value>
+  </data>
+  <data name="Confirm This Purchase" xml:space="preserve">
+    <value>Confirmar Esta Compra</value>
+  </data>
+  <data name="Confirm This Sale" xml:space="preserve">
+    <value>Confirmar Esta Venda</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="Custom Bid" xml:space="preserve">
+    <value>Lance Personalizado</value>
+  </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>Diminuir</value>
+  </data>
+  <data name="Default Balance" xml:space="preserve">
+    <value>Saldo Padrão</value>
+  </data>
+  <data name="Default Minimum Bid Limit" xml:space="preserve">
+    <value>Limite mínimo de lances</value>
+  </data>
+  <data name="Default to" xml:space="preserve">
+    <value>Definir como Padrão</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Deletar</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Desativar</value>
+  </data>
+  <data name="Disable Entry Fees" xml:space="preserve">
+    <value>Desabilitar Taxas de Entrada</value>
+  </data>
+  <data name="Donations" xml:space="preserve">
+    <value>Doações</value>
+  </data>
+  <data name="Early Acceptance" xml:space="preserve">
+    <value>Aceitação Antecipada</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="Edit Details" xml:space="preserve">
+    <value>Editar detalhes</value>
+  </data>
+  <data name="Edit Item" xml:space="preserve">
+    <value>Editar Item</value>
+  </data>
+  <data name="Edit Listing" xml:space="preserve">
+    <value>Editar Anúncio</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Ativar</value>
+  </data>
+  <data name="Enable Entry Fees" xml:space="preserve">
+    <value>Ativar Taxas de Entrada</value>
+  </data>
+  <data name="Entry Fees" xml:space="preserve">
+    <value>Taxas de Entrada</value>
+  </data>
+  <data name="Extend" xml:space="preserve">
+    <value>Prolongar</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="Highest Bid" xml:space="preserve">
+    <value>Maior Lance</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Aumentar</value>
+  </data>
+  <data name="Inline Results" xml:space="preserve">
+    <value>Resultados em Linha</value>
+  </data>
+  <data name="Left Align" xml:space="preserve">
+    <value>Alinhar à Esquerda</value>
+  </data>
+  <data name="Listing Fees" xml:space="preserve">
+    <value>Taxas de Anúncio</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Máx</value>
+  </data>
+  <data name="Max Bid" xml:space="preserve">
+    <value>Lance Máximo</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="Min Bid" xml:space="preserve">
+    <value>Lance Mínimo</value>
+  </data>
+  <data name="Min Bid Button" xml:space="preserve">
+    <value>Botão de Lance Mínimo</value>
+  </data>
+  <data name="Negotiate Offer" xml:space="preserve">
+    <value>Negociar Oferta</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Próximo</value>
+  </data>
+  <data name="Opens At" xml:space="preserve">
+    <value>Começa às</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Permissões</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Visualizar</value>
+  </data>
+  <data name="Recall Listings" xml:space="preserve">
+    <value>Retirar Anúncio</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="Reject Offer" xml:space="preserve">
+    <value>Rejeitar Oferta</value>
+  </data>
+  <data name="Remove Auction Listing" xml:space="preserve">
+    <value>Remover Anúncio do Leilão</value>
+  </data>
+  <data name="Remove Category" xml:space="preserve">
+    <value>Remover Categoria</value>
+  </data>
+  <data name="Remove Channel" xml:space="preserve">
+    <value>Remover Canal</value>
+  </data>
+  <data name="Remove Default Balance" xml:space="preserve">
+    <value>Remover Saldo Padrão</value>
+  </data>
+  <data name="Remove Market Listing" xml:space="preserve">
+    <value>Remover Anúncio de Mercado</value>
+  </data>
+  <data name="Remove Room" xml:space="preserve">
+    <value>Remover Sala</value>
+  </data>
+  <data name="Remove Subcategory" xml:space="preserve">
+    <value>Remover Subcategoria</value>
+  </data>
+  <data name="Remove Trade Listing" xml:space="preserve">
+    <value>Remover Anúncio de Troca</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Redefinir</value>
+  </data>
+  <data name="Right Align" xml:space="preserve">
+    <value>Alinhar à Direita</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="Sealed Payout" xml:space="preserve">
+    <value>Pagamento Selado</value>
+  </data>
+  <data name="Second Highest" xml:space="preserve">
+    <value>Segundo Maior</value>
+  </data>
+  <data name="Set Default" xml:space="preserve">
+    <value>Definir Padrão</value>
+  </data>
+  <data name="Set Default Balance" xml:space="preserve">
+    <value>Definir Saldo Padrão</value>
+  </data>
+  <data name="Set Duration Limits" xml:space="preserve">
+    <value>Definir Limites de Duração</value>
+  </data>
+  <data name="Set Listing Limits" xml:space="preserve">
+    <value>Definir Limites de Anúncios</value>
+  </data>
+  <data name="Shill Bidding" xml:space="preserve">
+    <value>Lances do Vendedor</value>
+  </data>
+  <data name="Submit Bot Review" xml:space="preserve">
+    <value>Enviar Avaliação do Bot</value>
+  </data>
+  <data name="Support Server" xml:space="preserve">
+    <value>Servidor de Suporte</value>
+  </data>
+  <data name="Toggle" xml:space="preserve">
+    <value>Alternar</value>
+  </data>
+  <data name="Transaction Confirmation" xml:space="preserve">
+    <value>Confirmação de Transação</value>
+  </data>
+  <data name="Undo Bid" xml:space="preserve">
+    <value>Desfazer Lance</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="Update Hours" xml:space="preserve">
+    <value>Atualizar Horas</value>
+  </data>
+  <data name="View Item" xml:space="preserve">
+    <value>Ver Item</value>
+  </data>
+  <data name="View Settings" xml:space="preserve">
+    <value>Ver Configurações</value>
+  </data>
+  <data name="Withdraw" xml:space="preserve">
+    <value>Retirar</value>
+  </data>
+</root>
