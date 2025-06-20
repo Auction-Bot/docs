@@ -24,26 +24,27 @@ public partial class TranslationDialog
     private List<TranslationItem> _translationItems = [];
     private readonly Dictionary<string, (string icon, string language)> _locales = new()
     {
-        { "es-ES", (TranslationIcons.Spanish, "Spanish") },
-        { "fr-FR", (TranslationIcons.French, "French") },
-        { "de-DE", (TranslationIcons.German, "German") },
-        { "it-IT", (TranslationIcons.Italian, "Italian") },
-        { "pt-BR", (TranslationIcons.Portuguese, "Portuguese") },
-        { "ru-RU", (TranslationIcons.Russian, "Russian") },
-        { "ja-JP", (TranslationIcons.Japanese, "Japanese") },
-        { "ko-KR", (TranslationIcons.Korean, "Korean") },
+        { "bg-BG", (TranslationIcons.Bulgaria, "Bulgarian") },
         { "zh-CN", (TranslationIcons.SimplifiedChinese, "Chinese (Simplified)") },
         { "zh-TW", (TranslationIcons.TraditionalChinese, "Chinese (Traditional)") },
-        { "pl-PL", (TranslationIcons.Polish, "Polish") },
-        { "tr-TR", (TranslationIcons.Turkish, "Turkish") },
-        { "th-TH", (TranslationIcons.Thailand, "Thai") },
-        { "hi-IN", (TranslationIcons.India, "Hindi") },
-        { "uk-UA", (TranslationIcons.Ukraine, "Ukrainian ") },
-        { "bg-BG", (TranslationIcons.Bulgaria, "Bulgarian") },
-        { "el-GR", (TranslationIcons.Greece, "Greek") },
         { "cs-CZ", (TranslationIcons.Czech, "Czech") },
         { "nl-NL", (TranslationIcons.Dutch, "Dutch") },
-        { "sv-SE", (TranslationIcons.Swedish, "Swedish") }
+        { "fr-FR", (TranslationIcons.French, "French") },
+        { "de-DE", (TranslationIcons.German, "German") },
+        { "el-GR", (TranslationIcons.Greece, "Greek") },
+        { "hi-IN", (TranslationIcons.India, "Hindi") },
+        { "hu-HU", (TranslationIcons.Hungary, "Hungarian") },
+        { "it-IT", (TranslationIcons.Italian, "Italian") },
+        { "ja-JP", (TranslationIcons.Japanese, "Japanese") },
+        { "ko-KR", (TranslationIcons.Korean, "Korean") },
+        { "pl-PL", (TranslationIcons.Polish, "Polish") },
+        { "pt-BR", (TranslationIcons.Portuguese, "Portuguese") },
+        { "ru-RU", (TranslationIcons.Russian, "Russian") },
+        { "es-ES", (TranslationIcons.Spanish, "Spanish") },
+        { "sv-SE", (TranslationIcons.Swedish, "Swedish") },
+        { "th-TH", (TranslationIcons.Thailand, "Thai") },
+        { "tr-TR", (TranslationIcons.Turkish, "Turkish") },
+        { "uk-UA", (TranslationIcons.Ukraine, "Ukrainian") },
     };
 
     protected override async Task OnInitializedAsync()
