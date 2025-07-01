@@ -1,0 +1,251 @@
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <data name="Accept Current Bid" xml:space="preserve">
+    <value>Принять текущую ставку</value>
+  </data>
+  <data name="Accept Current Offer" xml:space="preserve">
+    <value>Принять текущее предложение</value>
+  </data>
+  <data name="Accept Offer" xml:space="preserve">
+    <value>Принять предложение</value>
+  </data>
+  <data name="Accept Trade Offer" xml:space="preserve">
+    <value>Принять торговое предложение</value>
+  </data>
+  <data name="Add Category" xml:space="preserve">
+    <value>Добавить категорию</value>
+  </data>
+  <data name="Add Subcategory" xml:space="preserve">
+    <value>Добавить подкатегорию</value>
+  </data>
+  <data name="Attach Logs" xml:space="preserve">
+    <value>Прикрепить логи</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="Back to Categories" xml:space="preserve">
+    <value>Назад к категориям</value>
+  </data>
+  <data name="Broker Fees" xml:space="preserve">
+    <value>Комиссия брокера</value>
+  </data>
+  <data name="Buy Now" xml:space="preserve">
+    <value>Купить сейчас</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отменить </value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Closes At" xml:space="preserve">
+    <value>Закрывается в</value>
+  </data>
+  <data name="Confirm This Purchase" xml:space="preserve">
+    <value>Подтвердить покупку</value>
+  </data>
+  <data name="Confirm This Sale" xml:space="preserve">
+    <value>Подтвердить продажу</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="Custom Bid" xml:space="preserve">
+    <value>Пользовательская ставка</value>
+  </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>Уменьшить</value>
+  </data>
+  <data name="Default Balance" xml:space="preserve">
+    <value>Баланс по умолчанию</value>
+  </data>
+  <data name="Default Minimum Bid Limit" xml:space="preserve">
+    <value>Минимальный лимит ставки по умолчанию</value>
+  </data>
+  <data name="Default to" xml:space="preserve">
+    <value>Установить по умолчанию</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Отключить</value>
+  </data>
+  <data name="Disable Entry Fees" xml:space="preserve">
+    <value>Отключить вступительные взносы</value>
+  </data>
+  <data name="Donations" xml:space="preserve">
+    <value>Пожертвования</value>
+  </data>
+  <data name="Early Acceptance" xml:space="preserve">
+    <value>Досрочное принятие</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="Edit Details" xml:space="preserve">
+    <value>Редактировать детали</value>
+  </data>
+  <data name="Edit Item" xml:space="preserve">
+    <value>Редактировать предмет</value>
+  </data>
+  <data name="Edit Listing" xml:space="preserve">
+    <value>Редактировать объявление</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Включить</value>
+  </data>
+  <data name="Enable Entry Fees" xml:space="preserve">
+    <value>Включить вступительные взносы</value>
+  </data>
+  <data name="Entry Fees" xml:space="preserve">
+    <value>Вступительные взносы</value>
+  </data>
+  <data name="Extend" xml:space="preserve">
+    <value>Продлить</value>
+  </data>
+  <data name="Format" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="Highest Bid" xml:space="preserve">
+    <value>Наивысшая ставка</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Увеличить</value>
+  </data>
+  <data name="Inline Results" xml:space="preserve">
+    <value>Встроенные результаты</value>
+  </data>
+  <data name="Left Align" xml:space="preserve">
+    <value>Выровнять по левому краю</value>
+  </data>
+  <data name="Listing Fees" xml:space="preserve">
+    <value>Плата за размещение</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Максимум</value>
+  </data>
+  <data name="Max Bid" xml:space="preserve">
+    <value>Максимальная ставка</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Минимум</value>
+  </data>
+  <data name="Min Bid" xml:space="preserve">
+    <value>Минимальная ставка</value>
+  </data>
+  <data name="Min Bid Button" xml:space="preserve">
+    <value>Кнопка минимальной ставки</value>
+  </data>
+  <data name="Negotiate Offer" xml:space="preserve">
+    <value>Обсудить предложение</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Далее</value>
+  </data>
+  <data name="Opens At" xml:space="preserve">
+    <value>Открывается в</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Разрешения</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Предпросмотр</value>
+  </data>
+  <data name="Recall Listings" xml:space="preserve">
+    <value>Отозвать объявления</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Зарегистрироваться</value>
+  </data>
+  <data name="Reject Offer" xml:space="preserve">
+    <value>Отклонить предложение</value>
+  </data>
+  <data name="Remove Auction Listing" xml:space="preserve">
+    <value>Удалить аукционное объявление</value>
+  </data>
+  <data name="Remove Category" xml:space="preserve">
+    <value>Удалить категорию</value>
+  </data>
+  <data name="Remove Channel" xml:space="preserve">
+    <value>Удалить канал</value>
+  </data>
+  <data name="Remove Default Balance" xml:space="preserve">
+    <value>Удалить баланс по умолчанию</value>
+  </data>
+  <data name="Remove Market Listing" xml:space="preserve">
+    <value>Удалить рыночное объявление</value>
+  </data>
+  <data name="Remove Room" xml:space="preserve">
+    <value>Удалить комнату</value>
+  </data>
+  <data name="Remove Subcategory" xml:space="preserve">
+    <value>Удалить подкатегорию</value>
+  </data>
+  <data name="Remove Trade Listing" xml:space="preserve">
+    <value>Удалить торговое объявление</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Сброс</value>
+  </data>
+  <data name="Right Align" xml:space="preserve">
+    <value>Выровнять по правому краю</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Sealed Payout" xml:space="preserve">
+    <value>Закрытая выплата</value>
+  </data>
+  <data name="Second Highest" xml:space="preserve">
+    <value>Вторая по величине ставка</value>
+  </data>
+  <data name="Set Default" xml:space="preserve">
+    <value>Установить по умолчанию</value>
+  </data>
+  <data name="Set Default Balance" xml:space="preserve">
+    <value>Установить баланс по умолчанию</value>
+  </data>
+  <data name="Set Duration Limits" xml:space="preserve">
+    <value>Установить лимиты времени</value>
+  </data>
+  <data name="Set Listing Limits" xml:space="preserve">
+    <value>Установить лимиты размещения</value>
+  </data>
+  <data name="Shill Bidding" xml:space="preserve">
+    <value>Фиктивные ставки</value>
+  </data>
+  <data name="Submit Bot Review" xml:space="preserve">
+    <value>Отправить на проверку бота</value>
+  </data>
+  <data name="Support Server" xml:space="preserve">
+    <value>Сервер поддержки</value>
+  </data>
+  <data name="Toggle" xml:space="preserve">
+    <value>Переключить</value>
+  </data>
+  <data name="Transaction Confirmation" xml:space="preserve">
+    <value>Подтверждение транзакции</value>
+  </data>
+  <data name="Undo Bid" xml:space="preserve">
+    <value>Отменить ставку</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Update Hours" xml:space="preserve">
+    <value>Обновить часы</value>
+  </data>
+  <data name="View Item" xml:space="preserve">
+    <value>Просмотреть предмет</value>
+  </data>
+  <data name="View Settings" xml:space="preserve">
+    <value>Просмотреть настройки</value>
+  </data>
+  <data name="Withdraw" xml:space="preserve">
+    <value>Снять</value>
+  </data>
+</root>
